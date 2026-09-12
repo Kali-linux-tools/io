@@ -92,7 +92,7 @@ a {
     width:
         min(
             1180px,
-            calc(50% - 36px)
+            calc(100% - 36px)
         );
 
     margin: auto;
@@ -126,7 +126,7 @@ a {
 
     width:
         min(
-            1280px,
+            280px,
             calc(100% - 36px)
         );
 
