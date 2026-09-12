@@ -1,0 +1,1112 @@
+[
+  {
+    "name": "0trace",
+    "id": "0trace",
+    "category": "Network Reconnaissance",
+    "categories": ["Network Reconnaissance", "Information Gathering", "Network Analysis"],
+    "importance": "أداة تساعد في دراسة مسار الاتصالات الشبكية وتحليل الـRouting.",
+    "description": "0trace مجموعة أدوات صغيرة تستخدم في تحليل مسارات الشبكة وفهم كيفية انتقال الحزم بين الأنظمة، ويمكن الاستفادة منها في دراسات الشبكات واختبارات البنية التحتية.",
+    "use_cases": [
+      "تحليل مسارات الشبكة.",
+      "دراسة Routing.",
+      "اختبارات البنية التحتية.",
+      "التدريب على Network Reconnaissance."
+    ],
+    "installation": "sudo apt update && sudo apt install -y 0trace",
+    "basic_usage": "0trace.sh -h",
+    "examples": [
+      "0trace.sh -h",
+      "sendprobe -h"
+    ],
+    "requirements": [
+      "Kali Linux أو Debian-based Linux.",
+      "صلاحيات مناسبة.",
+      "شبكة مصرح بتحليلها."
+    ],
+    "official_website": "https://www.kali.org/tools/0trace/",
+    "kali_page": "https://www.kali.org/tools/0trace/",
+    "legal_note": "استخدم الأداة فقط على الشبكات والأنظمة التي تملك تصريحًا بتحليلها.",
+    "tags": ["0trace", "Routing", "Network", "Recon"],
+    "img": ["https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"]
+  },
+  {
+    "name": "7zip",
+    "id": "7zip",
+    "category": "Forensics",
+    "categories": ["Forensics", "File Analysis", "Archive Analysis"],
+    "importance": "أداة قوية للتعامل مع الأرشيفات والملفات المضغوطة أثناء التحليل الجنائي الرقمي.",
+    "description": "7zip يدعم عددًا كبيرًا من صيغ الضغط والأرشفة، ويمكن استخدامه لاستخراج وتحليل ملفات الأرشيف ضمن عمليات Forensics وفحص الملفات.",
+    "use_cases": [
+      "استخراج الملفات المضغوطة.",
+      "فحص أرشيفات مشبوهة.",
+      "التحليل الجنائي للملفات.",
+      "إنشاء واختبار الأرشيفات."
+    ],
+    "installation": "sudo apt install -y 7zip",
+    "basic_usage": "7z l archive.7z",
+    "examples": [
+      "7z l archive.zip",
+      "7z x archive.7z"
+    ],
+    "requirements": [
+      "Linux أو Kali Linux.",
+      "ملف أرشيف للتحليل.",
+      "صلاحية قراءة الملف."
+    ],
+    "official_website": "https://www.7-zip.org/",
+    "kali_page": "https://www.kali.org/tools/7zip/",
+    "legal_note": "حلل الأرشيفات والملفات التي تملكها أو لديك تصريح بفحصها.",
+    "tags": ["7zip", "Archive", "Forensics", "Files"],
+    "img": ["https://cdn.simpleicons.org/7zip"]
+  },
+  {
+    "name": "AES Fix",
+    "id": "aesfix",
+    "category": "Cryptography",
+    "categories": ["Cryptography", "Forensics", "Password Auditing"],
+    "importance": "أداة متخصصة في أبحاث واستعادة مفاتيح AES من بيانات معينة.",
+    "description": "AES Fix أداة بحثية مرتبطة بتحليل واستعادة مفاتيح AES في حالات محددة، وتستخدم بشكل أساسي في أبحاث التشفير والتحليل الجنائي.",
+    "use_cases": [
+      "أبحاث التشفير.",
+      "تحليل ملفات مشفرة في المختبر.",
+      "دراسة AES.",
+      "Digital Forensics."
+    ],
+    "installation": "sudo apt install -y aesfix",
+    "basic_usage": "aesfix -h",
+    "examples": [
+      "aesfix -h",
+      "aesfix --help"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "بيانات اختبار مناسبة.",
+      "معرفة بأساسيات التشفير."
+    ],
+    "official_website": "https://www.kali.org/tools/aesfix/",
+    "kali_page": "https://www.kali.org/tools/aesfix/",
+    "legal_note": "استخدم الأداة على البيانات المشفرة التي تملكها أو لديك تصريح بتحليلها.",
+    "tags": ["AES", "Cryptography", "Forensics", "Keys"],
+    "img": ["https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"]
+  },
+  {
+    "name": "AESKeyFind",
+    "id": "aeskeyfind",
+    "category": "Cryptography",
+    "categories": ["Cryptography", "Forensics", "Memory Analysis"],
+    "importance": "أداة بحثية للعثور على مؤشرات مفاتيح AES داخل بيانات الذاكرة.",
+    "description": "AESKeyFind تساعد في البحث عن أنماط مرتبطة بمفاتيح AES داخل dumps وبيانات الذاكرة، وتفيد في أبحاث Forensics وتحليل الذاكرة.",
+    "use_cases": [
+      "تحليل Memory Dumps.",
+      "Digital Forensics.",
+      "أبحاث التشفير.",
+      "البحث عن مؤشرات مفاتيح."
+    ],
+    "installation": "sudo apt install -y aeskeyfind",
+    "basic_usage": "aeskeyfind -h",
+    "examples": [
+      "aeskeyfind memory.dump",
+      "aeskeyfind -h"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "Memory Dump مصرح بتحليله.",
+      "مساحة تخزين كافية."
+    ],
+    "official_website": "https://www.kali.org/tools/aeskeyfind/",
+    "kali_page": "https://www.kali.org/tools/aeskeyfind/",
+    "legal_note": "لا تحلل Memory Dumps من أجهزة الآخرين بدون تصريح.",
+    "tags": ["AES", "Memory", "Forensics", "Keys"],
+    "img": ["https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"]
+  },
+  {
+    "name": "AFFLIB Tools",
+    "id": "afflib-tools",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Disk Analysis", "Evidence"],
+    "importance": "مجموعة أدوات للتعامل مع ملفات الأدلة الجنائية الرقمية بصيغة AFF.",
+    "description": "AFFLIB Tools توفر أدوات للتعامل مع ملفات وأجزاء الأدلة الرقمية المستخدمة في التحقيقات الجنائية، بما في ذلك القراءة والمعلومات والتحويل والاستعادة.",
+    "use_cases": [
+      "تحليل Disk Images.",
+      "Digital Forensics.",
+      "إدارة Evidence.",
+      "استخراج معلومات من AFF."
+    ],
+    "installation": "sudo apt install -y afflib-tools",
+    "basic_usage": "affinfo evidence.aff",
+    "examples": [
+      "affinfo evidence.aff",
+      "affcat evidence.aff"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "ملف Evidence مناسب.",
+      "صلاحية قانونية لتحليل الدليل."
+    ],
+    "official_website": "https://github.com/aff4/Standard",
+    "kali_page": "https://www.kali.org/tools/afflib/",
+    "legal_note": "استخدم أدوات Forensics على الأدلة التي لديك صلاحية قانونية لتحليلها.",
+    "tags": ["AFF", "Forensics", "Disk", "Evidence"],
+    "img": ["https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"]
+  },
+  {
+    "name": "Apple BLEEE",
+    "id": "apple-bleee",
+    "category": "Bluetooth Security",
+    "categories": ["Bluetooth Security", "Wireless Security", "Apple Security"],
+    "importance": "أداة بحثية مرتبطة باختبارات Bluetooth Low Energy على أجهزة Apple.",
+    "description": "Apple BLEEE مخصصة لأبحاث Bluetooth Low Energy واختبار بعض جوانب التواصل اللاسلكي مع الأجهزة المتوافقة في بيئات بحثية.",
+    "use_cases": [
+      "أبحاث BLE.",
+      "اختبار أجهزة Apple في المختبر.",
+      "تحليل Bluetooth.",
+      "Wireless Security Research."
+    ],
+    "installation": "sudo apt install -y apple-bleee",
+    "basic_usage": "apple-bleee -h",
+    "examples": [
+      "apple-bleee -h",
+      "فحص BLE داخل مختبر"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "Bluetooth adapter مناسب.",
+      "أجهزة اختبار مملوكة أو مصرح بها."
+    ],
+    "official_website": "https://www.kali.org/tools/apple-bleee/",
+    "kali_page": "https://www.kali.org/tools/apple-bleee/",
+    "legal_note": "لا تختبر أجهزة Bluetooth لا تملك تصريحًا لاختبارها.",
+    "tags": ["BLE", "Bluetooth", "Apple", "Wireless"],
+    "img": ["https://cdn.simpleicons.org/apple"]
+  },
+  {
+    "name": "Armitage",
+    "id": "armitage",
+    "category": "Security Testing",
+    "categories": ["Security Testing", "Metasploit", "Network Security"],
+    "importance": "واجهة رسومية تساعد في إدارة واستخدام Metasploit داخل بيئات الاختبار.",
+    "description": "Armitage توفر واجهة رسومية لإدارة جلسات واختبارات Metasploit وتصور الأنظمة المكتشفة، وهي مفيدة للتدريب والاختبارات الأمنية المصرح بها.",
+    "use_cases": [
+      "إدارة اختبارات Metasploit.",
+      "التدريب على Penetration Testing.",
+      "تصور الشبكات المختبرية.",
+      "إدارة Sessions."
+    ],
+    "installation": "sudo apt install -y armitage",
+    "basic_usage": "armitage",
+    "examples": [
+      "armitage",
+      "teamserver --help"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "Metasploit Framework.",
+      "مختبر أمني مصرح."
+    ],
+    "official_website": "https://www.kali.org/tools/armitage/",
+    "kali_page": "https://www.kali.org/tools/armitage/",
+    "legal_note": "استخدم Armitage فقط في المختبرات أو اختبارات الاختراق المصرح بها.",
+    "tags": ["Armitage", "Metasploit", "Pentest", "Security"],
+    "img": ["https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"]
+  },
+  {
+    "name": "Arping",
+    "id": "arping",
+    "category": "Network Discovery",
+    "categories": ["Network Discovery", "Network Utilities", "ARP"],
+    "importance": "أداة لاختبار الوصول إلى الأجهزة باستخدام ARP.",
+    "description": "Arping تستخدم لإرسال ARP requests واختبار وجود الأجهزة على الشبكات المحلية، وتفيد في تشخيص الشبكات وفهم Layer 2.",
+    "use_cases": [
+      "اكتشاف الأجهزة المحلية.",
+      "تشخيص الشبكة.",
+      "اختبار ARP.",
+      "Network Troubleshooting."
+    ],
+    "installation": "sudo apt install -y arping",
+    "basic_usage": "sudo arping -c 3 192.168.1.1",
+    "examples": [
+      "sudo arping -c 3 192.168.1.1",
+      "arping -h"
+    ],
+    "requirements": [
+      "Linux.",
+      "واجهة شبكة مناسبة.",
+      "شبكة مصرح باختبارها."
+    ],
+    "official_website": "https://github.com/iputils/iputils",
+    "kali_page": "https://www.kali.org/tools/arping/",
+    "legal_note": "استخدم Arping داخل الشبكات المملوكة أو المصرح باختبارها.",
+    "tags": ["ARP", "Network", "Discovery", "LAN"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Arpwatch",
+    "id": "arpwatch",
+    "category": "Network Monitoring",
+    "categories": ["Network Monitoring", "Network Security", "ARP"],
+    "importance": "أداة لمراقبة تغييرات عناوين MAC وIP داخل الشبكة.",
+    "description": "Arpwatch تراقب ARP traffic وتحاول اكتشاف تغييرات في ربط IP وMAC، مما يجعلها مفيدة في مراقبة الشبكات واكتشاف بعض التغييرات غير المتوقعة.",
+    "use_cases": [
+      "مراقبة ARP.",
+      "اكتشاف تغييرات الأجهزة.",
+      "Network Monitoring.",
+      "تحليل أحداث الشبكة."
+    ],
+    "installation": "sudo apt install -y arpwatch",
+    "basic_usage": "sudo arpwatch -i eth0",
+    "examples": [
+      "sudo arpwatch -i eth0",
+      "arpwatch -h"
+    ],
+    "requirements": [
+      "Linux.",
+      "صلاحيات مناسبة.",
+      "واجهة شبكة."
+    ],
+    "official_website": "https://github.com/pturley/arpwatch",
+    "kali_page": "https://www.kali.org/tools/arpwatch/",
+    "legal_note": "راقب الشبكات التي تملك تصريحًا بإدارتها فقط.",
+    "tags": ["ARP", "Monitoring", "MAC", "Network"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Asleap",
+    "id": "asleap",
+    "category": "Wireless Security",
+    "categories": ["Wireless Security", "Credential Auditing", "Network Security"],
+    "importance": "أداة بحثية مرتبطة باختبار بروتوكولات المصادقة اللاسلكية القديمة.",
+    "description": "Asleap تستخدم في أبحاث واختبارات أمن بروتوكولات المصادقة اللاسلكية مثل LEAP ضمن بيئات مصرح بها.",
+    "use_cases": [
+      "Wireless Security Research.",
+      "اختبار LEAP.",
+      "دراسة المصادقة اللاسلكية.",
+      "تقييم شبكات مختبرية."
+    ],
+    "installation": "sudo apt install -y asleap",
+    "basic_usage": "asleap -h",
+    "examples": [
+      "asleap -h",
+      "genkeys -h"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "Wireless Lab.",
+      "بيانات اختبار مصرح بها."
+    ],
+    "official_website": "https://www.kali.org/tools/asleap/",
+    "kali_page": "https://www.kali.org/tools/asleap/",
+    "legal_note": "اختبر الشبكات اللاسلكية التي تملكها أو لديك تصريح باختبارها فقط.",
+    "tags": ["LEAP", "Wireless", "Authentication", "Auditing"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Assetfinder",
+    "id": "assetfinder",
+    "category": "DNS Reconnaissance",
+    "categories": ["DNS Reconnaissance", "OSINT", "Subdomain Enumeration"],
+    "importance": "أداة سريعة لاكتشاف الأصول والنطاقات الفرعية المرتبطة بنطاق.",
+    "description": "Assetfinder تساعد في جمع أسماء النطاقات الفرعية والأصول المرتبطة بنطاق رئيسي من مصادر عامة، وهي مفيدة في مرحلة Reconnaissance.",
+    "use_cases": [
+      "Subdomain Enumeration.",
+      "Attack Surface Discovery.",
+      "OSINT.",
+      "Reconnaissance."
+    ],
+    "installation": "go install github.com/tomnomnom/assetfinder@latest",
+    "basic_usage": "assetfinder example.com",
+    "examples": [
+      "assetfinder example.com",
+      "assetfinder --subs-only example.com"
+    ],
+    "requirements": [
+      "Go.",
+      "اتصال بالإنترنت.",
+      "نطاق مصرح بتحليله."
+    ],
+    "official_website": "https://github.com/tomnomnom/assetfinder",
+    "kali_page": "https://www.kali.org/tools/assetfinder/",
+    "legal_note": "استخدم Assetfinder على النطاقات التي تملك تصريحًا باختبارها.",
+    "tags": ["Subdomains", "OSINT", "Recon", "DNS"],
+    "img": ["https://cdn.simpleicons.org/go"]
+  },
+  {
+    "name": "ATFTP",
+    "id": "atftp",
+    "category": "Network Utilities",
+    "categories": ["Network Utilities", "TFTP", "Network Testing"],
+    "importance": "عميل وخادم TFTP يستخدمان لاختبار ونقل الملفات عبر بروتوكول TFTP.",
+    "description": "ATFTP يوفر أدوات للتعامل مع TFTP، وهو بروتوكول يستخدم في بعض البيئات الشبكية مثل أجهزة الشبكات والـPXE.",
+    "use_cases": [
+      "اختبار TFTP.",
+      "مختبرات الشبكات.",
+      "اختبار نقل الملفات.",
+      "دراسة بروتوكولات الشبكة."
+    ],
+    "installation": "sudo apt install -y atftp",
+    "basic_usage": "atftp --help",
+    "examples": [
+      "atftp --help",
+      "atftp 192.168.1.10"
+    ],
+    "requirements": [
+      "Linux.",
+      "TFTP Server عند الحاجة.",
+      "شبكة اختبار."
+    ],
+    "official_website": "https://www.atftp.org/",
+    "kali_page": "https://www.kali.org/tools/atftp/",
+    "legal_note": "استخدم TFTP على خوادم وشبكات مصرح بها فقط.",
+    "tags": ["TFTP", "Network", "Files", "Testing"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Atomic Operator",
+    "id": "atomic-operator",
+    "category": "Security Testing",
+    "categories": ["Security Testing", "Adversary Simulation", "Detection"],
+    "importance": "أداة لتشغيل اختبارات Atomic Red Team بطريقة منظمة.",
+    "description": "Atomic Operator يساعد فرق الأمن على تنفيذ اختبارات محاكاة لسلوكيات هجومية معروفة بهدف تقييم قدرات الكشف والاستجابة داخل بيئات اختبار.",
+    "use_cases": [
+      "Purple Team.",
+      "Detection Engineering.",
+      "Adversary Simulation.",
+      "اختبار SIEM وEDR."
+    ],
+    "installation": "sudo apt install -y atomic-operator",
+    "basic_usage": "atomic-operator --help",
+    "examples": [
+      "atomic-operator --help",
+      "تشغيل اختبار Atomic داخل مختبر"
+    ],
+    "requirements": [
+      "Linux.",
+      "صلاحيات مناسبة.",
+      "بيئة اختبار معزولة أو مصرح بها."
+    ],
+    "official_website": "https://github.com/redcanaryco/atomic-operator",
+    "kali_page": "https://www.kali.org/tools/atomic-operator/",
+    "legal_note": "نفذ اختبارات المحاكاة فقط على الأنظمة التي تديرها أو لديك تصريح صريح لاختبارها.",
+    "tags": ["Atomic Red Team", "Purple Team", "Detection", "Simulation"],
+    "img": ["https://cdn.simpleicons.org/python"]
+  },
+  {
+    "name": "AutoRecon",
+    "id": "autorecon",
+    "category": "Network Reconnaissance",
+    "categories": ["Network Reconnaissance", "Information Gathering", "Enumeration"],
+    "importance": "أداة لأتمتة مجموعة من خطوات الاستطلاع والفحص الأولي للأهداف.",
+    "description": "AutoRecon تنفذ مجموعة من اختبارات الاستطلاع على أهداف محددة وتجمع النتائج في ملفات منظمة، وتستخدم كثيرًا في المختبرات وCTF.",
+    "use_cases": [
+      "Automated Recon.",
+      "CTF.",
+      "Network Enumeration.",
+      "جمع نتائج الفحص."
+    ],
+    "installation": "sudo apt install -y autorecon",
+    "basic_usage": "autorecon 192.168.1.10",
+    "examples": [
+      "autorecon 192.168.1.10",
+      "autorecon --help"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "أدوات Recon المطلوبة.",
+      "هدف مصرح باختباره."
+    ],
+    "official_website": "https://github.com/Tib3rius/AutoRecon",
+    "kali_page": "https://www.kali.org/tools/autorecon/",
+    "legal_note": "استخدم AutoRecon على أهداف المختبر أو الأنظمة المصرح باختبارها.",
+    "tags": ["Recon", "Automation", "Enumeration", "CTF"],
+    "img": ["https://cdn.simpleicons.org/python"]
+  },
+  {
+    "name": "AzureHound",
+    "id": "azurehound",
+    "category": "Cloud Security",
+    "categories": ["Cloud Security", "Azure", "Identity Security"],
+    "importance": "أداة لجمع بيانات علاقات الهوية والصلاحيات في Microsoft Azure.",
+    "description": "AzureHound تستخدم لجمع بيانات تساعد فرق الأمن على تحليل العلاقات والصلاحيات داخل بيئات Azure وEntra ID، خصوصًا أثناء اختبارات Identity Security المصرح بها.",
+    "use_cases": [
+      "Azure Security Assessment.",
+      "تحليل الصلاحيات.",
+      "Identity Attack Surface.",
+      "Cloud Security."
+    ],
+    "installation": "sudo apt install -y azurehound",
+    "basic_usage": "azurehound --help",
+    "examples": [
+      "azurehound --help",
+      "جمع بيانات من Azure Lab مصرح"
+    ],
+    "requirements": [
+      "حساب Azure مصرح.",
+      "صلاحيات مناسبة.",
+      "بيئة Cloud اختبارية."
+    ],
+    "official_website": "https://github.com/SpecterOps/AzureHound",
+    "kali_page": "https://www.kali.org/tools/azurehound/",
+    "legal_note": "لا تجمع بيانات Azure من مؤسسات أو حسابات لا تملك تصريحًا باختبارها.",
+    "tags": ["Azure", "Cloud", "Identity", "Entra"],
+    "img": ["https://cdn.simpleicons.org/microsoftazure"]
+  },
+  {
+    "name": "Braа",
+    "id": "braa",
+    "category": "SNMP Enumeration",
+    "categories": ["SNMP Enumeration", "Network Enumeration", "Network Reconnaissance"],
+    "importance": "أداة سريعة للتعامل مع SNMP وجمع معلومات من الأجهزة المصرح بها.",
+    "description": "Braа هي SNMP scanner بسيط وسريع يمكن استخدامه في عمليات Network Enumeration لاكتشاف معلومات توفرها أجهزة الشبكة عبر SNMP.",
+    "use_cases": [
+      "SNMP Enumeration.",
+      "Network Discovery.",
+      "فحص أجهزة الشبكة.",
+      "Inventory."
+    ],
+    "installation": "sudo apt install -y braa",
+    "basic_usage": "braa -h",
+    "examples": [
+      "braa -h",
+      "braa public@192.168.1.10:.1.3.6.1.2.1.1.1.0"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "SNMP service مصرح بفحصه.",
+      "شبكة اختبار."
+    ],
+    "official_website": "https://www.kali.org/tools/braa/",
+    "kali_page": "https://www.kali.org/tools/braa/",
+    "legal_note": "لا تفحص SNMP على أجهزة خارج نطاق تصريحك.",
+    "tags": ["SNMP", "Enumeration", "Network", "Recon"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Cabextract",
+    "id": "cabextract",
+    "category": "Forensics",
+    "categories": ["Forensics", "File Analysis", "Windows"],
+    "importance": "أداة لاستخراج ملفات Microsoft Cabinet وتحليل محتوياتها.",
+    "description": "Cabextract تسمح بفك ملفات CAB التي تستخدم في Windows وبعض حزم البرامج، وتفيد في التحليل الجنائي وفحص الملفات.",
+    "use_cases": [
+      "استخراج CAB.",
+      "تحليل ملفات Windows.",
+      "Malware Triage.",
+      "Forensics."
+    ],
+    "installation": "sudo apt install -y cabextract",
+    "basic_usage": "cabextract archive.cab",
+    "examples": [
+      "cabextract archive.cab",
+      "cabextract -l archive.cab"
+    ],
+    "requirements": [
+      "Linux.",
+      "ملف CAB.",
+      "صلاحية تحليل الملف."
+    ],
+    "official_website": "https://www.cabextract.org.uk/",
+    "kali_page": "https://www.kali.org/tools/cabextract/",
+    "legal_note": "حلل الملفات التي تملكها أو لديك تصريح بفحصها.",
+    "tags": ["CAB", "Windows", "Forensics", "Files"],
+    "img": ["https://cdn.simpleicons.org/windows"]
+  },
+  {
+    "name": "Chntpw",
+    "id": "chntpw",
+    "category": "Windows Forensics",
+    "categories": ["Windows Forensics", "Password Auditing", "Registry"],
+    "importance": "مجموعة أدوات للتعامل مع Windows Registry وقواعد بيانات كلمات المرور في بيئات الاستعادة والتحليل.",
+    "description": "Chntpw توفر أدوات للتعامل مع بعض ملفات Registry الخاصة بـWindows، وتستخدم في Recovery وForensics واختبارات أنظمة Windows المصرح بها.",
+    "use_cases": [
+      "Windows Forensics.",
+      "تحليل Registry.",
+      "استعادة الأنظمة.",
+      "Password Auditing في المختبر."
+    ],
+    "installation": "sudo apt install -y chntpw",
+    "basic_usage": "chntpw -h",
+    "examples": [
+      "chntpw -h",
+      "chntpw -l SAM"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "Windows Registry files.",
+      "صلاحية قانونية للوصول للملفات."
+    ],
+    "official_website": "https://pogostick.net/~pnh/ntpasswd/",
+    "kali_page": "https://www.kali.org/tools/chntpw/",
+    "legal_note": "استخدم الأداة فقط على أجهزة وملفات Windows المملوكة لك أو المصرح لك باستعادتها.",
+    "tags": ["Windows", "Registry", "Recovery", "Forensics"],
+    "img": ["https://cdn.simpleicons.org/windows"]
+  },
+  {
+    "name": "Crackle",
+    "id": "crackle",
+    "category": "Bluetooth Security",
+    "categories": ["Bluetooth Security", "Wireless Security", "Cryptography"],
+    "importance": "أداة بحثية لتحليل بعض اتصالات Bluetooth Low Energy.",
+    "description": "Crackle تستخدم في أبحاث أمن Bluetooth وتحليل بعض عمليات التفاوض والمفاتيح في سيناريوهات BLE محددة.",
+    "use_cases": [
+      "BLE Security Research.",
+      "تحليل Bluetooth.",
+      "Wireless Testing.",
+      "دراسة بروتوكولات BLE."
+    ],
+    "installation": "sudo apt install -y crackle",
+    "basic_usage": "crackle -h",
+    "examples": [
+      "crackle -h",
+      "تحليل Capture داخل مختبر"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "Bluetooth captures.",
+      "بيئة Wireless مصرح بها."
+    ],
+    "official_website": "https://github.com/mikeryan/crackle",
+    "kali_page": "https://www.kali.org/tools/crackle/",
+    "legal_note": "استخدم Crackle على بيانات Bluetooth التي جمعتها بشكل قانوني ومن أجهزة مصرح بها.",
+    "tags": ["BLE", "Bluetooth", "Wireless", "Crypto"],
+    "img": ["https://cdn.simpleicons.org/bluetooth"]
+  },
+  {
+    "name": "dc3dd",
+    "id": "dc3dd",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Disk Imaging", "Evidence"],
+    "importance": "نسخة مطورة من dd مخصصة لعمليات النسخ الجنائي الرقمي والتحقق من الأدلة.",
+    "description": "dc3dd تستخدم لإنشاء نسخ جنائية من الأقراص والأجهزة مع إمكانيات إضافية للتسجيل والتحقق والـhashing، وتفيد في التحقيقات الرقمية.",
+    "use_cases": [
+      "Disk Imaging.",
+      "Digital Forensics.",
+      "Evidence Acquisition.",
+      "Hash Verification."
+    ],
+    "installation": "sudo apt install -y dc3dd",
+    "basic_usage": "dc3dd if=/dev/sdb of=image.dd hash=sha256",
+    "examples": [
+      "dc3dd --help",
+      "إنشاء Image من وسيط اختبار"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "صلاحيات root عند التعامل مع الأجهزة.",
+      "وسيط مصرح بتحليله."
+    ],
+    "official_website": "https://www.kali.org/tools/dc3dd/",
+    "kali_page": "https://www.kali.org/tools/dc3dd/",
+    "legal_note": "التقط الأدلة الرقمية فقط من الأجهزة التي لديك صلاحية قانونية لفحصها.",
+    "tags": ["Forensics", "Disk", "Imaging", "Evidence"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "dcfldd",
+    "id": "dcfldd",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Disk Imaging", "Evidence"],
+    "importance": "أداة متخصصة في النسخ الجنائي والتحقق من البيانات أثناء Imaging.",
+    "description": "dcfldd نسخة محسنة من dd تحتوي على إمكانيات مفيدة للتحقيقات الرقمية مثل Hashing وتقسيم النتائج وتسجيل المعلومات.",
+    "use_cases": [
+      "Disk Imaging.",
+      "Forensics.",
+      "Evidence Collection.",
+      "Data Verification."
+    ],
+    "installation": "sudo apt install -y dcfldd",
+    "basic_usage": "dcfldd --help",
+    "examples": [
+      "dcfldd --help",
+      "إنشاء صورة جنائية لوسيط اختبار"
+    ],
+    "requirements": [
+      "Linux.",
+      "صلاحيات مناسبة.",
+      "وسيط تخزين مصرح بتحليله."
+    ],
+    "official_website": "https://github.com/resurrecting-open-source-projects/dcfldd",
+    "kali_page": "https://www.kali.org/tools/dcfldd/",
+    "legal_note": "استخدم dcfldd فقط في عمليات Forensics المصرح بها.",
+    "tags": ["Forensics", "Imaging", "Hashing", "Disk"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "GNU ddrescue",
+    "id": "ddrescue",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Data Recovery", "Disk Analysis"],
+    "importance": "أداة لاستعادة البيانات من الأقراص التي تحتوي على أخطاء قراءة.",
+    "description": "GNU ddrescue مصممة لنسخ البيانات من وسائط التخزين التي تحتوي على قطاعات تالفة أو مشاكل قراءة، ويمكن أن تكون مفيدة في عمليات Recovery وForensics.",
+    "use_cases": [
+      "استعادة البيانات.",
+      "نسخ الأقراص التالفة.",
+      "Forensics.",
+      "Recovery."
+    ],
+    "installation": "sudo apt install -y gddrescue",
+    "basic_usage": "ddrescue --help",
+    "examples": [
+      "ddrescue --help",
+      "إنشاء Image من وسيط تالف داخل مختبر"
+    ],
+    "requirements": [
+      "Linux.",
+      "مساحة تخزين كافية.",
+      "صلاحيات على وسيط التخزين."
+    ],
+    "official_website": "https://www.gnu.org/software/ddrescue/",
+    "kali_page": "https://www.kali.org/tools/gddrescue/",
+    "legal_note": "لا تستعمل الأداة لاستعادة بيانات من أجهزة لا تملك تصريحًا بالوصول إليها.",
+    "tags": ["Recovery", "Disk", "Forensics", "Data"],
+    "img": ["https://cdn.simpleicons.org/gnubash"]
+  },
+  {
+    "name": "Dumpzilla",
+    "id": "dumpzilla",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Browser Forensics", "Privacy"],
+    "importance": "أداة لتحليل واستخراج معلومات جنائية من ملفات تعريف Firefox.",
+    "description": "Dumpzilla تستطيع استخراج أنواع مختلفة من البيانات من ملفات Firefox Profiles، وتستخدم في التحقيقات الرقمية وتحليل آثار المتصفح.",
+    "use_cases": [
+      "Browser Forensics.",
+      "تحليل Firefox Profiles.",
+      "Digital Investigations.",
+      "تحليل Browser Artifacts."
+    ],
+    "installation": "sudo apt install -y dumpzilla",
+    "basic_usage": "dumpzilla --help",
+    "examples": [
+      "dumpzilla --help",
+      "تحليل Firefox Profile مصرح"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "Firefox Profile.",
+      "صلاحية قانونية لتحليل البيانات."
+    ],
+    "official_website": "https://www.kali.org/tools/dumpzilla/",
+    "kali_page": "https://www.kali.org/tools/dumpzilla/",
+    "legal_note": "بيانات المتصفح قد تكون شديدة الخصوصية؛ لا تحللها بدون تصريح.",
+    "tags": ["Firefox", "Browser", "Forensics", "Artifacts"],
+    "img": ["https://cdn.simpleicons.org/firefoxbrowser"]
+  },
+  {
+    "name": "EDB Debugger",
+    "id": "edb-debugger",
+    "category": "Reverse Engineering",
+    "categories": ["Reverse Engineering", "Debugging", "Binary Analysis"],
+    "importance": "مصحح رسومي لنظام Linux يساعد في تحليل البرامج الثنائية.",
+    "description": "EDB Debugger يوفر واجهة رسومية للتعامل مع البرامج أثناء التشغيل وفحص الذاكرة والتعليمات والـregisters.",
+    "use_cases": [
+      "Debugging.",
+      "Reverse Engineering.",
+      "تحليل ELF.",
+      "CTF."
+    ],
+    "installation": "sudo apt install -y edb-debugger",
+    "basic_usage": "edb --help",
+    "examples": [
+      "edb --help",
+      "فتح Binary داخل المصحح"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "برنامج Binary.",
+      "بيئة اختبار."
+    ],
+    "official_website": "https://github.com/eteran/edb-debugger",
+    "kali_page": "https://www.kali.org/tools/edb-debugger/",
+    "legal_note": "استخدم EDB Debugger على البرامج التي تملك تصريحًا لتحليلها.",
+    "tags": ["Debugger", "ELF", "Reverse Engineering", "Linux"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Exiv2",
+    "id": "exiv2",
+    "category": "Metadata Analysis",
+    "categories": ["Metadata Analysis", "Forensics", "Image Analysis"],
+    "importance": "أداة ومكتبة لتحليل Metadata الخاصة بالصور والوسائط.",
+    "description": "Exiv2 تستطيع قراءة معلومات EXIF وIPTC وXMP وغيرها من Metadata الموجودة داخل ملفات الصور، وتفيد في التحليل الجنائي.",
+    "use_cases": [
+      "Image Forensics.",
+      "Metadata Extraction.",
+      "تحليل الصور.",
+      "التحقيقات الرقمية."
+    ],
+    "installation": "sudo apt install -y exiv2",
+    "basic_usage": "exiv2 image.jpg",
+    "examples": [
+      "exiv2 image.jpg",
+      "exiv2 -pt image.jpg"
+    ],
+    "requirements": [
+      "Linux.",
+      "ملف صورة.",
+      "صلاحية تحليل الملف."
+    ],
+    "official_website": "https://exiv2.org/",
+    "kali_page": "https://www.kali.org/tools/exiv2/",
+    "legal_note": "استخدم Exiv2 لتحليل الصور التي تملكها أو لديك تصريح بفحصها.",
+    "tags": ["EXIF", "Metadata", "Images", "Forensics"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Ext3grep",
+    "id": "ext3grep",
+    "category": "File Recovery",
+    "categories": ["File Recovery", "Digital Forensics", "Linux Filesystems"],
+    "importance": "أداة لاستعادة وتحليل الملفات المحذوفة من أنظمة ملفات ext3.",
+    "description": "Ext3grep تستخدم في عمليات Recovery وForensics لمحاولة استعادة ملفات من أنظمة ملفات ext3 عندما تكون البيانات قابلة للاسترجاع.",
+    "use_cases": [
+      "استعادة الملفات.",
+      "Linux Forensics.",
+      "تحليل ext3.",
+      "Recovery."
+    ],
+    "installation": "sudo apt install -y ext3grep",
+    "basic_usage": "ext3grep --help",
+    "examples": [
+      "ext3grep --help",
+      "تحليل Disk Image مختبرية"
+    ],
+    "requirements": [
+      "Linux.",
+      "ext3 filesystem.",
+      "نسخة أو Image مصرح بتحليلها."
+    ],
+    "official_website": "https://github.com/thierry-c/gext3grep",
+    "kali_page": "https://www.kali.org/tools/ext3grep/",
+    "legal_note": "استرجع الملفات فقط من وسائط تملك صلاحية تحليلها.",
+    "tags": ["ext3", "Recovery", "Forensics", "Linux"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Ext4magic",
+    "id": "ext4magic",
+    "category": "File Recovery",
+    "categories": ["File Recovery", "Digital Forensics", "Linux Filesystems"],
+    "importance": "أداة لاستعادة الملفات من أنظمة ملفات ext3 وext4 في حالات معينة.",
+    "description": "Ext4magic تستخدم في Recovery وForensics لمحاولة استعادة الملفات والمعلومات من أنظمة ملفات Linux المتوافقة.",
+    "use_cases": [
+      "File Recovery.",
+      "Linux Forensics.",
+      "تحليل ext4.",
+      "استعادة بيانات محذوفة."
+    ],
+    "installation": "sudo apt install -y ext4magic",
+    "basic_usage": "ext4magic -h",
+    "examples": [
+      "ext4magic -h",
+      "تحليل صورة قرص مختبرية"
+    ],
+    "requirements": [
+      "Linux.",
+      "ext filesystem.",
+      "Disk Image أو partition مصرح بها."
+    ],
+    "official_website": "https://github.com/gktrk/ext4magic",
+    "kali_page": "https://www.kali.org/tools/ext4magic/",
+    "legal_note": "لا تسترجع أو تحلل بيانات من أجهزة لا تملك تصريحًا قانونيًا للوصول إليها.",
+    "tags": ["ext4", "Recovery", "Forensics", "Linux"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Extundelete",
+    "id": "extundelete",
+    "category": "File Recovery",
+    "categories": ["File Recovery", "Digital Forensics", "Linux Filesystems"],
+    "importance": "أداة لمحاولة استعادة الملفات المحذوفة من أنظمة ملفات ext3 وext4.",
+    "description": "Extundelete تستخدم لاستعادة الملفات المحذوفة من أقراص Linux في الحالات التي تسمح فيها حالة نظام الملفات بذلك.",
+    "use_cases": [
+      "استعادة الملفات.",
+      "Forensics.",
+      "تحليل ext3/ext4.",
+      "Data Recovery."
+    ],
+    "installation": "sudo apt install -y extundelete",
+    "basic_usage": "extundelete --help",
+    "examples": [
+      "extundelete --help",
+      "فحص Disk Image بدل القرص الأصلي"
+    ],
+    "requirements": [
+      "Linux.",
+      "ext3 أو ext4.",
+      "نسخة احتياطية أو Image يصرح بتحليلها."
+    ],
+    "official_website": "https://extundelete.sourceforge.net/",
+    "kali_page": "https://www.kali.org/tools/extundelete/",
+    "legal_note": "استخدم Extundelete فقط على وسائط التخزين المصرح بتحليلها.",
+    "tags": ["Recovery", "ext4", "Forensics", "Deleted Files"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Firmware Mod Kit",
+    "id": "firmware-mod-kit",
+    "category": "Firmware Analysis",
+    "categories": ["Firmware Analysis", "IoT Security", "Reverse Engineering"],
+    "importance": "مجموعة أدوات لتحليل وتعديل Firmware في أبحاث الأجهزة المضمنة.",
+    "description": "Firmware Mod Kit تساعد الباحثين على استخراج مكونات Firmware وفحصها وإعادة بنائها، وتستخدم في أبحاث IoT والأجهزة المضمنة.",
+    "use_cases": [
+      "Firmware Analysis.",
+      "IoT Security.",
+      "Reverse Engineering.",
+      "تحليل Embedded Linux."
+    ],
+    "installation": "sudo apt install -y firmware-mod-kit",
+    "basic_usage": "استخدم أدوات الحزمة مع خيارات --help لمعرفة الوظائف المتاحة.",
+    "examples": [
+      "فحص Firmware داخل مختبر.",
+      "استخراج مكونات Embedded Linux."
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "Firmware مصرح بتحليله.",
+      "مساحة تخزين مناسبة."
+    ],
+    "official_website": "https://github.com/rampageX/firmware-mod-kit",
+    "kali_page": "https://www.kali.org/tools/firmware-mod-kit/",
+    "legal_note": "حلل Firmware الذي تملكه أو لديك تصريح بإجراء Reverse Engineering عليه.",
+    "tags": ["Firmware", "IoT", "Embedded", "Reverse Engineering"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "GParted",
+    "id": "gparted",
+    "category": "Disk Analysis",
+    "categories": ["Disk Analysis", "Digital Forensics", "Storage"],
+    "importance": "أداة رسومية لإدارة وتقسيم الأقراص وأنظمة الملفات.",
+    "description": "GParted تسمح بإنشاء وتعديل وحذف partitions وإدارة أنظمة الملفات، وتفيد في تجهيز بيئات Forensics وإدارة وسائط التخزين.",
+    "use_cases": [
+      "إدارة partitions.",
+      "تجهيز أقراص التحليل.",
+      "Storage Management.",
+      "Forensics Preparation."
+    ],
+    "installation": "sudo apt install -y gparted",
+    "basic_usage": "sudo gparted",
+    "examples": [
+      "sudo gparted",
+      "فحص partition layout"
+    ],
+    "requirements": [
+      "Linux.",
+      "صلاحيات root.",
+      "الحذر عند التعامل مع الأقراص."
+    ],
+    "official_website": "https://gparted.org/",
+    "kali_page": "https://www.kali.org/tools/gparted/",
+    "legal_note": "تأكد من اختيار القرص الصحيح قبل أي عملية تعديل لتجنب فقدان البيانات.",
+    "tags": ["GParted", "Partitions", "Disk", "Storage"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Guymager",
+    "id": "guymager",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Disk Imaging", "Evidence Acquisition"],
+    "importance": "أداة رسومية لإنشاء Disk Images في التحقيقات الجنائية الرقمية.",
+    "description": "Guymager توفر واجهة سهلة لإنشاء صور جنائية من الأقراص والوسائط مع دعم تنسيقات شائعة في Forensics.",
+    "use_cases": [
+      "Disk Imaging.",
+      "Evidence Acquisition.",
+      "Digital Forensics.",
+      "حفظ نسخة من الأدلة."
+    ],
+    "installation": "sudo apt install -y guymager",
+    "basic_usage": "sudo guymager",
+    "examples": [
+      "sudo guymager",
+      "إنشاء Image لوسيط اختبار"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "صلاحيات مناسبة.",
+      "وسيط مصرح بفحصه."
+    ],
+    "official_website": "https://guymager.sourceforge.io/",
+    "kali_page": "https://www.kali.org/tools/guymager/",
+    "legal_note": "استخدم Guymager فقط أثناء عمليات جمع الأدلة المصرح بها.",
+    "tags": ["Guymager", "Forensics", "Imaging", "Evidence"],
+    "img": ["https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"]
+  },
+  {
+    "name": "Hashdeep",
+    "id": "hashdeep",
+    "category": "Forensics",
+    "categories": ["Forensics", "File Integrity", "Hash Analysis"],
+    "importance": "أداة لإنشاء ومقارنة Hashes لعدد كبير من الملفات.",
+    "description": "Hashdeep تساعد في التحقق من سلامة الملفات ومقارنة مجموعات كبيرة من الملفات باستخدام Hashes، وهي مفيدة في Forensics وIntegrity Monitoring.",
+    "use_cases": [
+      "File Integrity.",
+      "Digital Forensics.",
+      "Hash Verification.",
+      "مقارنة مجموعات الملفات."
+    ],
+    "installation": "sudo apt install -y hashdeep",
+    "basic_usage": "hashdeep -r /path/to/files",
+    "examples": [
+      "hashdeep -r ./evidence",
+      "hashdeep -c md5,sha256 -r ./files"
+    ],
+    "requirements": [
+      "Linux.",
+      "ملفات للتحليل.",
+      "صلاحية قراءة الملفات."
+    ],
+    "official_website": "https://github.com/jessek/hashdeep",
+    "kali_page": "https://www.kali.org/tools/hashdeep/",
+    "legal_note": "استخدم Hashdeep للتحقق من الملفات التي تملك صلاحية تحليلها.",
+    "tags": ["Hash", "Integrity", "Forensics", "Files"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "Inetsim",
+    "id": "inetsim",
+    "category": "Malware Analysis",
+    "categories": ["Malware Analysis", "Network Analysis", "Sandbox"],
+    "importance": "بيئة محاكاة لخدمات الإنترنت تستخدم في تحليل سلوك البرامج والبرمجيات المشبوهة.",
+    "description": "INetSim توفر خدمات شبكية محلية وهمية مثل HTTP وDNS وغيرها، مما يساعد الباحث على مراقبة سلوك البرامج داخل مختبر معزول.",
+    "use_cases": [
+      "Malware Analysis.",
+      "Network Behavior Analysis.",
+      "Sandboxing.",
+      "تحليل الاتصالات."
+    ],
+    "installation": "sudo apt install -y inetsim",
+    "basic_usage": "sudo inetsim",
+    "examples": [
+      "sudo inetsim",
+      "inetsim --help"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "بيئة معزولة.",
+      "ملفات اختبار."
+    ],
+    "official_website": "https://www.inetsim.org/",
+    "kali_page": "https://www.kali.org/tools/inetsim/",
+    "legal_note": "استخدم INetSim داخل مختبر معزول عند تحليل ملفات مشبوهة.",
+    "tags": ["INetSim", "Malware", "Sandbox", "Network"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "JavaSnoop",
+    "id": "javasnoop",
+    "category": "Java Security",
+    "categories": ["Java Security", "Reverse Engineering", "Application Security"],
+    "importance": "أداة لتحليل والتفاعل مع تطبيقات Java أثناء التشغيل.",
+    "description": "JavaSnoop تساعد الباحثين في مراقبة والتفاعل مع بعض تطبيقات Java أثناء تشغيلها، وتفيد في تحليل التطبيقات واختبارات Application Security.",
+    "use_cases": [
+      "Java Application Testing.",
+      "Runtime Analysis.",
+      "Reverse Engineering.",
+      "Security Research."
+    ],
+    "installation": "sudo apt install -y javasnoop",
+    "basic_usage": "javasnoop --help",
+    "examples": [
+      "javasnoop --help",
+      "تحليل Java Application داخل مختبر"
+    ],
+    "requirements": [
+      "Java.",
+      "Kali Linux.",
+      "تطبيق Java مصرح بتحليله."
+    ],
+    "official_website": "https://github.com/google/javasnoop",
+    "kali_page": "https://www.kali.org/tools/javasnoop/",
+    "legal_note": "استخدم JavaSnoop فقط على تطبيقات Java المصرح بتحليلها.",
+    "tags": ["Java", "Runtime", "Reverse Engineering", "Security"],
+    "img": ["https://cdn.simpleicons.org/openjdk"]
+  },
+  {
+    "name": "Johnny",
+    "id": "johnny",
+    "category": "Password Auditing",
+    "categories": ["Password Auditing", "Credential Auditing", "GUI"],
+    "importance": "واجهة رسومية تساعد على استخدام John the Ripper في تدقيق كلمات المرور.",
+    "description": "Johnny توفر واجهة رسومية لبعض وظائف John the Ripper، مما يجعل إدارة ملفات Hash وإعداد عمليات التدقيق أسهل للمستخدمين.",
+    "use_cases": [
+      "Password Auditing.",
+      "إدارة Hash Files.",
+      "التدريب على Password Security.",
+      "اختبارات كلمات المرور."
+    ],
+    "installation": "sudo apt install -y johnny",
+    "basic_usage": "johnny",
+    "examples": [
+      "johnny",
+      "فتح ملف Hash داخل الواجهة"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "John the Ripper.",
+      "Hashes مملوكة أو مصرح بتدقيقها."
+    ],
+    "official_website": "https://www.kali.org/tools/johnny/",
+    "kali_page": "https://www.kali.org/tools/johnny/",
+    "legal_note": "استخدم Johnny فقط لتدقيق كلمات المرور الخاصة بك أو داخل مختبر مصرح.",
+    "tags": ["Johnny", "John", "Passwords", "GUI"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "LBD",
+    "id": "lbd",
+    "category": "Web Reconnaissance",
+    "categories": ["Web Reconnaissance", "Load Balancing", "Information Gathering"],
+    "importance": "أداة تساعد في اكتشاف استخدام Load Balancing أمام المواقع.",
+    "description": "LBD أو Load Balancing Detector تقوم بمجموعة من الاختبارات لمحاولة تحديد ما إذا كان الموقع يستخدم Load Balancer أو أكثر من خادم خلف الواجهة.",
+    "use_cases": [
+      "Web Recon.",
+      "Infrastructure Discovery.",
+      "تحليل Load Balancing.",
+      "Asset Mapping."
+    ],
+    "installation": "sudo apt install -y lbd",
+    "basic_usage": "lbd example.com",
+    "examples": [
+      "lbd example.com",
+      "lbd --help"
+    ],
+    "requirements": [
+      "Kali Linux.",
+      "اتصال بالإنترنت.",
+      "نطاق مصرح بتحليله."
+    ],
+    "official_website": "https://www.kali.org/tools/lbd/",
+    "kali_page": "https://www.kali.org/tools/lbd/",
+    "legal_note": "استخدم LBD على النطاقات المملوكة لك أو التي لديك تصريح بتحليلها.",
+    "tags": ["LBD", "Load Balancer", "Recon", "Web"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  },
+  {
+    "name": "MagicRescue",
+    "id": "magicrescue",
+    "category": "File Recovery",
+    "categories": ["File Recovery", "Digital Forensics", "Data Recovery"],
+    "importance": "أداة لاستعادة أنواع معينة من الملفات من بيانات خام ووسائط التخزين.",
+    "description": "MagicRescue تستخدم File Signatures لمحاولة العثور على ملفات قابلة للاستعادة من وسائط التخزين أو Images، وتفيد في Data Recovery وForensics.",
+    "use_cases": [
+      "استعادة الملفات.",
+      "Digital Forensics.",
+      "تحليل Disk Images.",
+      "Recovery."
+    ],
+    "installation": "sudo apt install -y magicrescue",
+    "basic_usage": "magicrescue --help",
+    "examples": [
+      "magicrescue --help",
+      "تحليل Disk Image داخل مختبر"
+    ],
+    "requirements": [
+      "Linux.",
+      "Disk Image أو وسيط مصرح.",
+      "مساحة تخزين كافية."
+    ],
+    "official_website": "https://github.com/jbj/magicrescue",
+    "kali_page": "https://www.kali.org/tools/magicrescue/",
+    "legal_note": "استخدم MagicRescue فقط على وسائط التخزين التي تملك صلاحية استعادتها وتحليلها.",
+    "tags": ["Recovery", "Forensics", "Files", "Disk"],
+    "img": ["https://cdn.simpleicons.org/linux"]
+  }
+    ]
