@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kali-linux-tools.github.io/io/sitemap.xml
