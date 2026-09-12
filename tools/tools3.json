@@ -1,0 +1,1356 @@
+Enter[
+  {
+    "id": "subfinder",
+    "name": "Subfinder",
+    "category": "Web Reconnaissance",
+    "categories": ["Web Reconnaissance", "OSINT", "Information Gathering"],
+    "importance": "Subfinder أداة سريعة لاكتشاف النطاقات الفرعية باستخدام مصادر الاستطلاع السلبي.",
+    "description": "Subfinder أداة مفتوحة المصدر من ProjectDiscovery مخصصة لاكتشاف Subdomains المرتبطة بنطاق معين. تعتمد بشكل أساسي على مصادر Passive DNS ومصادر OSINT المختلفة، وتفيد في مرحلة جمع المعلومات ورسم سطح الهجوم الخاص بنطاق تملكه أو لديك تصريح باختباره.",
+    "use_cases": [
+      "اكتشاف النطاقات الفرعية",
+      "جمع معلومات DNS بشكل سلبي",
+      "بناء قائمة أصول الويب",
+      "الاستطلاع الأمني",
+      "إعداد أهداف لاختبارات أمنية لاحقة"
+    ],
+    "installation": "sudo apt update && sudo apt install subfinder",
+    "basic_usage": "subfinder -d example.com",
+    "examples": [
+      "subfinder -d example.com",
+      "subfinder -d example.com -o subdomains.txt",
+      "subfinder -d example.com -silent"
+    ],
+    "requirements": [
+      "Kali Linux أو نظام Linux متوافق",
+      "اتصال بالإنترنت لبعض مصادر البيانات",
+      "تصريح باختبار النطاق"
+    ],
+    "official_website": "https://github.com/projectdiscovery/subfinder",
+    "kali_page": "https://www.kali.org/tools/subfinder/",
+    "legal_note": "استخدم Subfinder فقط على النطاقات التي تملكها أو لديك تصريح واضح لاختبارها."
+  },
+  {
+    "id": "httpx",
+    "name": "HTTPX",
+    "category": "Web Reconnaissance",
+    "categories": ["Web Reconnaissance", "Web Enumeration", "Information Gathering"],
+    "importance": "HTTPX أداة سريعة لفحص خدمات HTTP واستخراج معلومات مفيدة عن مواقع الويب.",
+    "description": "HTTPX من ProjectDiscovery أداة command-line تساعد في التحقق من خدمات HTTP وHTTPS وتحليل الاستجابات واستخراج معلومات مثل status code وtitle وtechnologies وبعض خصائص الخادم. تستخدم عادة بعد اكتشاف الأصول لتحديد المواقع والخدمات التي تستجيب فعليًا.",
+    "use_cases": [
+      "التحقق من Web Hosts",
+      "استخراج عناوين الصفحات",
+      "فحص Status Codes",
+      "التعرف الأولي على التقنيات",
+      "تنظيم نتائج الاستطلاع"
+    ],
+    "installation": "sudo apt update && sudo apt install httpx-toolkit",
+    "basic_usage": "httpx -u https://example.com",
+    "examples": [
+      "httpx -u https://example.com",
+      "cat subdomains.txt | httpx",
+      "cat subdomains.txt | httpx -title -status-code -tech-detect"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "اتصال شبكي",
+      "قائمة أهداف مصرح بها"
+    ],
+    "official_website": "https://github.com/projectdiscovery/httpx",
+    "kali_page": "https://www.kali.org/tools/httpx-toolkit/",
+    "legal_note": "لا تفحص خدمات أو مواقع لا تملك تصريحًا لاختبارها."
+  },
+  {
+    "id": "nuclei",
+    "name": "Nuclei",
+    "category": "Vulnerability Assessment",
+    "categories": ["Vulnerability Assessment", "Security Testing", "Web Security"],
+    "importance": "Nuclei إطار سريع يعتمد على Templates لاكتشاف مؤشرات ومشكلات أمنية معروفة.",
+    "description": "Nuclei أداة من ProjectDiscovery تستخدم نظام Templates لإجراء فحوصات أمنية قابلة للتخصيص. يمكن استخدامها للتحقق من وجود تقنيات أو إعدادات أو مؤشرات مرتبطة بثغرات معروفة داخل بيئات الاختبار، وتتميز بإمكانية بناء Templates خاصة بالباحث.",
+    "use_cases": [
+      "فحص مؤشرات الثغرات المعروفة",
+      "اكتشاف إعدادات غير آمنة",
+      "اختبار Web Applications",
+      "الفحص الأمني الآلي",
+      "إنشاء قوالب فحص مخصصة"
+    ],
+    "installation": "sudo apt update && sudo apt install nuclei",
+    "basic_usage": "nuclei -u https://example.com",
+    "examples": [
+      "nuclei -u https://example.com",
+      "nuclei -u https://example.com -severity low,medium,high,critical",
+      "nuclei -l targets.txt"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Templates محدثة عند الحاجة",
+      "نطاق اختبار مصرح به"
+    ],
+    "official_website": "https://github.com/projectdiscovery/nuclei",
+    "kali_page": "https://www.kali.org/tools/nuclei/",
+    "legal_note": "الفحص النشط يجب أن يتم فقط على أهداف مصرح بها."
+  },
+  {
+    "id": "naabu",
+    "name": "Naabu",
+    "category": "Network Discovery",
+    "categories": ["Network Discovery", "Network Enumeration", "Network Reconnaissance"],
+    "importance": "Naabu ماسح منافذ سريع مصمم للاستطلاع الشبكي واكتشاف المنافذ المفتوحة.",
+    "description": "Naabu أداة Port Scanner من ProjectDiscovery تركز على السرعة والبساطة. تساعد الباحث الأمني على اكتشاف المنافذ المفتوحة على أهداف مصرح بها، وغالبًا تستخدم كمرحلة بين اكتشاف الأصول وفحص خدمات HTTP أو غيرها.",
+    "use_cases": [
+      "اكتشاف المنافذ المفتوحة",
+      "استطلاع الخوادم",
+      "جرد الخدمات الشبكية",
+      "تحديد الخدمات التي تحتاج إلى مراجعة",
+      "تغذية أدوات الاستطلاع الأخرى بالنتائج"
+    ],
+    "installation": "sudo apt update && sudo apt install naabu",
+    "basic_usage": "naabu -host example.com",
+    "examples": [
+      "naabu -host example.com",
+      "naabu -host example.com -p 80,443",
+      "naabu -list hosts.txt"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "صلاحيات الشبكة المناسبة",
+      "أهداف مصرح بها"
+    ],
+    "official_website": "https://github.com/projectdiscovery/naabu",
+    "kali_page": "https://www.kali.org/tools/naabu/",
+    "legal_note": "Port scanning قد يولد حركة شبكية ملحوظة؛ استخدمه فقط ضمن نطاق مصرح."
+  },
+  {
+    "id": "dnsx",
+    "name": "DNSX",
+    "category": "DNS Enumeration",
+    "categories": ["DNS Enumeration", "DNS Reconnaissance", "Network Reconnaissance"],
+    "importance": "DNSX أداة متخصصة في الاستعلامات والتحقق من سجلات DNS على نطاقات وأهداف مصرح بها.",
+    "description": "DNSX من ProjectDiscovery أداة command-line لإجراء DNS queries والتحقق من النطاقات والمضيفين واستخراج سجلات DNS المختلفة. تفيد في تنظيم نتائج الاستطلاع وربط الأصول بعناوين IP وخدمات DNS.",
+    "use_cases": [
+      "حل أسماء النطاقات",
+      "التحقق من Subdomains",
+      "قراءة سجلات DNS",
+      "اكتشاف عناوين IP المرتبطة بالأصول",
+      "تنظيم نتائج الاستطلاع"
+    ],
+    "installation": "sudo apt update && sudo apt install dnsx",
+    "basic_usage": "echo example.com | dnsx",
+    "examples": [
+      "echo example.com | dnsx",
+      "cat domains.txt | dnsx -a",
+      "cat domains.txt | dnsx -cname"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "خادم DNS متاح",
+      "أهداف مصرح بها"
+    ],
+    "official_website": "https://github.com/projectdiscovery/dnsx",
+    "kali_page": "https://www.kali.org/tools/dnsx/",
+    "legal_note": "استخدم DNSX ضمن نطاقات وأصول مصرح لك بفحصها."
+  },
+  {
+    "id": "katana",
+    "name": "Katana",
+    "category": "Web Enumeration",
+    "categories": ["Web Enumeration", "Web Reconnaissance", "Web Security"],
+    "importance": "Katana Web Crawler حديث لاكتشاف الروابط والمسارات والموارد داخل تطبيقات الويب.",
+    "description": "Katana أداة Crawler من ProjectDiscovery مصممة لاكتشاف الروابط والموارد والـEndpoints داخل تطبيقات الويب. تساعد الباحث في بناء خريطة للتطبيق واكتشاف نقاط دخول قد تحتاج إلى مراجعة أمنية.",
+    "use_cases": [
+      "زحف مواقع الويب",
+      "اكتشاف الروابط",
+      "جمع Endpoints",
+      "اكتشاف الموارد المرتبطة بالتطبيق",
+      "الاستطلاع قبل اختبار الويب"
+    ],
+    "installation": "sudo apt update && sudo apt install katana",
+    "basic_usage": "katana -u https://example.com",
+    "examples": [
+      "katana -u https://example.com",
+      "katana -u https://example.com -d 3",
+      "katana -list targets.txt"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "اتصال بالإنترنت",
+      "تطبيقات مصرح باختبارها"
+    ],
+    "official_website": "https://github.com/projectdiscovery/katana",
+    "kali_page": "https://www.kali.org/tools/katana/",
+    "legal_note": "Crawling قد يرسل عددًا كبيرًا من الطلبات؛ استخدمه على أهداف مصرح بها."
+  },
+  {
+    "id": "feroxbuster",
+    "name": "Feroxbuster",
+    "category": "Web Enumeration",
+    "categories": ["Web Enumeration", "Web Reconnaissance", "Web Security Testing"],
+    "importance": "Feroxbuster أداة سريعة لاكتشاف الملفات والمجلدات والمسارات المخفية في تطبيقات الويب.",
+    "description": "Feroxbuster أداة مكتوبة بلغة Rust وتستخدم لاكتشاف Content غير المرتبط مباشرة بالواجهة العامة للموقع. تعتمد على Wordlists وعمليات enumeration، وتفيد في المختبرات الأمنية لمعرفة المسارات الموجودة داخل تطبيق مصرح باختباره.",
+    "use_cases": [
+      "اكتشاف المسارات",
+      "اكتشاف الملفات",
+      "فحص Content Discovery",
+      "اختبار تطبيقات الويب",
+      "استخدام Wordlists"
+    ],
+    "installation": "sudo apt update && sudo apt install feroxbuster",
+    "basic_usage": "feroxbuster -u https://example.com",
+    "examples": [
+      "feroxbuster -u https://example.com",
+      "feroxbuster -u https://example.com -w /usr/share/wordlists/dirb/common.txt",
+      "feroxbuster -u https://example.com -x php,txt,html"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Wordlist عند الحاجة",
+      "هدف مصرح به"
+    ],
+    "official_website": "https://github.com/epi052/feroxbuster",
+    "kali_page": "https://www.kali.org/tools/feroxbuster/",
+    "legal_note": "Content Discovery قد يولد عددًا كبيرًا من الطلبات؛ استخدمه فقط في بيئة مصرح بها."
+  },
+  {
+    "id": "dirsearch",
+    "name": "Dirsearch",
+    "category": "Web Enumeration",
+    "categories": ["Web Enumeration", "Web Security", "Web Reconnaissance"],
+    "importance": "Dirsearch أداة Python لاكتشاف الملفات والمجلدات والمسارات الشائعة في تطبيقات الويب.",
+    "description": "Dirsearch أداة Web Path Scanner تستخدم Wordlists لاختبار وجود ملفات ومجلدات ومسارات مختلفة. تساعد في مرحلة Enumeration على فهم بنية تطبيق الويب والعثور على موارد غير مرتبطة بشكل واضح بالواجهة.",
+    "use_cases": [
+      "اكتشاف المجلدات",
+      "اكتشاف الملفات",
+      "اختبار المسارات",
+      "فحص امتدادات الملفات",
+      "Web Enumeration"
+    ],
+    "installation": "sudo apt update && sudo apt install dirsearch",
+    "basic_usage": "dirsearch -u https://example.com",
+    "examples": [
+      "dirsearch -u https://example.com",
+      "dirsearch -u https://example.com -e php,html,txt",
+      "dirsearch -u https://example.com -w wordlist.txt"
+    ],
+    "requirements": [
+      "Python",
+      "Kali Linux",
+      "Wordlist اختيارية"
+    ],
+    "official_website": "https://github.com/maurosoria/dirsearch",
+    "kali_page": "https://www.kali.org/tools/dirsearch/",
+    "legal_note": "استخدم Dirsearch فقط ضد تطبيقات تملك تصريحًا لاختبارها."
+  },
+  {
+    "id": "arjun",
+    "name": "Arjun",
+    "category": "Web Enumeration",
+    "categories": ["Web Enumeration", "Web Security Testing", "Web Reconnaissance"],
+    "importance": "Arjun يساعد في اكتشاف HTTP Parameters المخفية أو غير المعروفة في تطبيقات الويب.",
+    "description": "Arjun أداة تساعد الباحثين في اكتشاف HTTP Parameters التي قد يقبلها Endpoint معين. يمكن أن تكون مفيدة أثناء اختبار APIs وتطبيقات الويب لفهم المدخلات التي يتعامل معها الخادم.",
+    "use_cases": [
+      "اكتشاف Parameters",
+      "اختبار APIs",
+      "تحليل HTTP Requests",
+      "اختبار مدخلات التطبيقات",
+      "Web Reconnaissance"
+    ],
+    "installation": "sudo apt update && sudo apt install arjun",
+    "basic_usage": "arjun -u https://example.com/api",
+    "examples": [
+      "arjun -u https://example.com/api",
+      "arjun -u https://example.com/api -m GET",
+      "arjun -u https://example.com/api -m POST"
+    ],
+    "requirements": [
+      "Python",
+      "Kali Linux",
+      "Endpoint مصرح باختباره"
+    ],
+    "official_website": "https://github.com/s0md3v/Arjun",
+    "kali_page": "https://www.kali.org/tools/arjun/",
+    "legal_note": "اختبر Parameters فقط على التطبيقات المصرح بها."
+  },
+  {
+    "id": "dalfox",
+    "name": "Dalfox",
+    "category": "Web Security Testing",
+    "categories": ["Web Security Testing", "Web Fuzzing", "Web Security"],
+    "importance": "Dalfox أداة تحليل واختبار متخصصة في اكتشاف مؤشرات Cross-Site Scripting داخل تطبيقات الويب.",
+    "description": "Dalfox أداة Web Security Testing مكتوبة بلغة Go، وتساعد في تحليل Parameters واكتشاف حالات قد تشير إلى XSS. توفر تقنيات للفحص والتحقق داخل بيئات الاختبار، وتستخدم في التدريب والبحث الأمني على تطبيقات مصرح بها.",
+    "use_cases": [
+      "اختبار XSS",
+      "تحليل Parameters",
+      "فحص تطبيقات الويب",
+      "اختبار المدخلات",
+      "التحقق الأمني"
+    ],
+    "installation": "sudo apt update && sudo apt install dalfox",
+    "basic_usage": "dalfox url https://example.com/?q=test",
+    "examples": [
+      "dalfox url https://example.com/?q=test",
+      "dalfox file urls.txt",
+      "dalfox pipe"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "اتصال شبكي عند اختبار مواقع حقيقية",
+      "أهداف مصرح بها"
+    ],
+    "official_website": "https://github.com/hahwul/dalfox",
+    "kali_page": "https://www.kali.org/tools/dalfox/",
+    "legal_note": "استخدم Dalfox في مختبرك أو على تطبيقات لديك تصريح باختبارها."
+  },
+  {
+    "id": "xsser",
+    "name": "XSSer",
+    "category": "Web Security Testing",
+    "categories": ["Web Security Testing", "Web Fuzzing", "Web Security"],
+    "importance": "XSSer إطار لاختبار مؤشرات Cross-Site Scripting في تطبيقات الويب.",
+    "description": "XSSer أداة مفتوحة المصدر موجهة لاختبار ثغرات XSS في تطبيقات الويب. توفر طرقًا مختلفة لتحليل واختبار المدخلات، وتستخدم بشكل أساسي في المختبرات التعليمية وأبحاث أمن التطبيقات.",
+    "use_cases": [
+      "اختبار XSS",
+      "تحليل مدخلات الويب",
+      "اختبار تطبيقات التدريب",
+      "دراسة آليات XSS",
+      "Security Testing"
+    ],
+    "installation": "sudo apt update && sudo apt install xsser",
+    "basic_usage": "xsser -u 'https://example.com/?q=test'",
+    "examples": [
+      "xsser -u 'https://example.com/?q=test'",
+      "xsser --url 'https://example.com/?q=test'"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Python",
+      "تطبيق مصرح باختباره"
+    ],
+    "official_website": "https://github.com/epsylon/xsser",
+    "kali_page": "https://www.kali.org/tools/xsser/",
+    "legal_note": "اختبار XSS يجب أن يتم على أنظمة مصرح بها فقط."
+  },
+  {
+    "id": "sqlninja",
+    "name": "SQLninja",
+    "category": "Web Security",
+    "categories": ["Web Security", "SQL Injection", "Security Testing"],
+    "importance": "SQLninja أداة بحثية لاختبار حالات SQL Injection في تطبيقات تعتمد على Microsoft SQL Server.",
+    "description": "SQLninja إطار متخصص في اختبار بعض سيناريوهات SQL Injection ضد تطبيقات تستخدم Microsoft SQL Server. يستخدم في المختبرات لفهم مخاطر SQL Injection وآليات التعامل الآمن مع استعلامات قواعد البيانات.",
+    "use_cases": [
+      "دراسة SQL Injection",
+      "اختبار تطبيقات تدريبية",
+      "تحليل Microsoft SQL Server",
+      "Security Research",
+      "تعلم حماية قواعد البيانات"
+    ],
+    "installation": "sudo apt update && sudo apt install sqlninja",
+    "basic_usage": "sqlninja -h",
+    "examples": [
+      "sqlninja -h",
+      "sqlninja -m test"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "بيئة تدريبية مناسبة",
+      "تصريح واضح"
+    ],
+    "official_website": "https://github.com/xxgrunge/sqlninja",
+    "kali_page": "https://www.kali.org/tools/sqlninja/",
+    "legal_note": "لا تستخدم الأداة ضد قواعد بيانات أو مواقع لا تملك تصريحًا باختبارها."
+  },
+  {
+    "id": "nosqlmap",
+    "name": "NoSQLMap",
+    "category": "Web Security",
+    "categories": ["Web Security", "Security Testing", "Database Security"],
+    "importance": "NoSQLMap أداة بحثية لاختبار بعض أنواع NoSQL Injection ومراجعة أمان تطبيقات NoSQL.",
+    "description": "NoSQLMap إطار مفتوح المصدر يساعد في تقييم تطبيقات تعتمد على قواعد بيانات NoSQL من منظور أمني. يستخدم لفهم بعض أنماط الحقن وسوء التعامل مع المدخلات داخل بيئات اختبارية.",
+    "use_cases": [
+      "دراسة NoSQL Injection",
+      "اختبار تطبيقات NoSQL",
+      "تحليل مدخلات API",
+      "Security Research",
+      "التدريب على أمن قواعد البيانات"
+    ],
+    "installation": "git clone https://github.com/codingo/NoSQLMap.git && cd NoSQLMap",
+    "basic_usage": "python3 nosqlmap.py",
+    "examples": [
+      "python3 nosqlmap.py",
+      "python3 nosqlmap.py -h"
+    ],
+    "requirements": [
+      "Python 3",
+      "Kali Linux",
+      "بيئة NoSQL اختبارية"
+    ],
+    "official_website": "https://github.com/codingo/NoSQLMap",
+    "kali_page": "https://www.kali.org/tools/nosqlmap/",
+    "legal_note": "استخدم NoSQLMap فقط على تطبيقات تملك تصريحًا لاختبارها."
+  },
+  {
+    "id": "patator",
+    "name": "Patator",
+    "category": "Credential Auditing",
+    "categories": ["Credential Auditing", "Password Auditing", "Security Testing"],
+    "importance": "Patator إطار مرن لتدقيق خدمات المصادقة واختبار سياسات كلمات المرور في بيئات مصرح بها.",
+    "description": "Patator أداة متعددة الاستخدامات لتدقيق آليات المصادقة في خدمات مختلفة. تعتمد على Modules تسمح باختبار سيناريوهات تسجيل الدخول ضمن مختبرات الأمن، وتساعد على قياس قوة سياسات كلمات المرور والحماية من المحاولات المتكررة.",
+    "use_cases": [
+      "تدقيق المصادقة",
+      "اختبار سياسات كلمات المرور",
+      "اختبار خدمات الشبكة",
+      "Security Auditing",
+      "مختبرات التدريب"
+    ],
+    "installation": "sudo apt update && sudo apt install patator",
+    "basic_usage": "patator -h",
+    "examples": [
+      "patator -h",
+      "patator ssh_login host=127.0.0.1 user=FILE0 password=FILE1 0=users.txt 1=passwords.txt"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "حسابات اختبارية",
+      "خدمة مصرح باختبارها"
+    ],
+    "official_website": "https://github.com/lanjelot/patator",
+    "kali_page": "https://www.kali.org/tools/patator/",
+    "legal_note": "اختبارات تسجيل الدخول يجب أن تكون على حسابات وخدمات مصرح بها."
+  },
+  {
+    "id": "hcxdumptool",
+    "name": "hcxdumptool",
+    "category": "Wireless Security",
+    "categories": ["Wireless Security", "Network Analysis", "Security Testing"],
+    "importance": "hcxdumptool أداة بحثية لجمع وتحليل بيانات من شبكات Wi-Fi ضمن مختبرات مصرح بها.",
+    "description": "hcxdumptool أداة منخفضة المستوى مرتبطة باختبارات شبكات IEEE 802.11، وتستخدم في أبحاث أمان Wi-Fi وجمع بعض أنواع البيانات اللازمة للتحليل. تتطلب فهمًا جيدًا للشبكات اللاسلكية واستخدامها بشكل قانوني.",
+    "use_cases": [
+      "أبحاث Wi-Fi",
+      "جمع بيانات لاسلكية للاختبار",
+      "تحليل 802.11",
+      "اختبار إعدادات الشبكات",
+      "التدريب على Wireless Security"
+    ],
+    "installation": "sudo apt update && sudo apt install hcxdumptool",
+    "basic_usage": "hcxdumptool --help",
+    "examples": [
+      "hcxdumptool --help",
+      "hcxdumptool -I"
+    ],
+    "requirements": [
+      "محول Wi-Fi متوافق",
+      "Kali Linux",
+      "صلاحيات مناسبة للواجهة اللاسلكية"
+    ],
+    "official_website": "https://github.com/ZerBea/hcxdumptool",
+    "kali_page": "https://www.kali.org/tools/hcxdumptool/",
+    "legal_note": "استخدم الأداة فقط على الشبكات اللاسلكية التي تملكها أو لديك تصريح باختبارها."
+  },
+  {
+    "id": "hcxtools",
+    "name": "hcxtools",
+    "category": "Wireless Security",
+    "categories": ["Wireless Security", "Network Analysis", "Security Testing"],
+    "importance": "hcxtools مجموعة أدوات لمعالجة وتحليل بيانات Wi-Fi المستخدمة في أبحاث أمن الشبكات اللاسلكية.",
+    "description": "hcxtools مجموعة من الأدوات التي تساعد في تحويل ومعالجة وتحليل ملفات مرتبطة بالتقاطات Wi-Fi. تستخدم مع أدوات لاسلكية أخرى داخل مختبرات اختبار الأمان لدراسة آليات المصادقة وحركة الشبكة.",
+    "use_cases": [
+      "معالجة Captures",
+      "تحليل بيانات Wi-Fi",
+      "أبحاث Wireless Security",
+      "تحويل صيغ البيانات",
+      "التدريب العملي"
+    ],
+    "installation": "sudo apt update && sudo apt install hcxtools",
+    "basic_usage": "hcxpcapngtool --help",
+    "examples": [
+      "hcxpcapngtool --help",
+      "hcxpcapngtool -o output.22000 capture.pcapng"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "ملفات Capture للاختبار",
+      "معرفة بأساسيات 802.11"
+    ],
+    "official_website": "https://github.com/ZerBea/hcxtools",
+    "kali_page": "https://www.kali.org/tools/hcxtools/",
+    "legal_note": "حلل Captures التي حصلت عليها بشكل قانوني فقط."
+  },
+  {
+    "id": "arp-scan",
+    "name": "ARP-SCAN",
+    "category": "Network Discovery",
+    "categories": ["Network Discovery", "Network Enumeration", "Network Utilities"],
+    "importance": "ARP-SCAN أداة قوية لاكتشاف الأجهزة الموجودة على الشبكات المحلية باستخدام ARP.",
+    "description": "ARP-SCAN أداة مخصصة لاكتشاف الأجهزة على الشبكات المحلية، وتستخدم ARP للحصول على استجابات من الأجهزة الموجودة في نفس نطاق الشبكة. تفيد مسؤولي الشبكات في الجرد واكتشاف الأجهزة غير المعروفة.",
+    "use_cases": [
+      "اكتشاف الأجهزة المحلية",
+      "Network Inventory",
+      "اكتشاف الأجهزة غير المعروفة",
+      "تشخيص الشبكات",
+      "Network Enumeration"
+    ],
+    "installation": "sudo apt update && sudo apt install arp-scan",
+    "basic_usage": "sudo arp-scan --localnet",
+    "examples": [
+      "sudo arp-scan --localnet",
+      "sudo arp-scan 192.168.1.0/24"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "واجهة شبكة نشطة",
+      "صلاحيات مناسبة"
+    ],
+    "official_website": "https://github.com/royhills/arp-scan",
+    "kali_page": "https://www.kali.org/tools/arp-scan/",
+    "legal_note": "استخدم ARP-SCAN على الشبكات التي تملك صلاحية إدارتها أو اختبارها."
+  },
+  {
+    "id": "nbtscan",
+    "name": "NBTScan",
+    "category": "Windows Enumeration",
+    "categories": ["Windows Enumeration", "Network Enumeration", "Network Discovery"],
+    "importance": "NBTScan أداة تساعد في اكتشاف معلومات NetBIOS داخل شبكات Windows.",
+    "description": "NBTScan أداة بسيطة لاستطلاع NetBIOS عبر الشبكات المحلية. يمكنها المساعدة في معرفة أسماء بعض الأجهزة والخدمات المرتبطة بـNetBIOS، ولذلك تستخدم في إدارة الشبكات وعمليات التدقيق الأمني.",
+    "use_cases": [
+      "اكتشاف أجهزة Windows",
+      "جمع أسماء NetBIOS",
+      "Network Enumeration",
+      "مراجعة الشبكات الداخلية",
+      "استطلاع بيئات Windows"
+    ],
+    "installation": "sudo apt update && sudo apt install nbtscan",
+    "basic_usage": "nbtscan 192.168.1.0/24",
+    "examples": [
+      "nbtscan 192.168.1.0/24",
+      "nbtscan 192.168.1.10"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "وصول للشبكة المحلية",
+      "نطاق مصرح به"
+    ],
+    "official_website": "https://github.com/resurrecting-open-source-projects/nbtscan",
+    "kali_page": "https://www.kali.org/tools/nbtscan/",
+    "legal_note": "استخدمه داخل الشبكات المصرح لك بفحصها."
+  },
+  {
+    "id": "ldapsearch",
+    "name": "ldapsearch",
+    "category": "Network Enumeration",
+    "categories": ["Network Enumeration", "Windows Enumeration", "Information Gathering"],
+    "importance": "ldapsearch أداة سطر أوامر للتعامل مع LDAP والاستعلام عن الدليل في البيئات المصرح بها.",
+    "description": "ldapsearch جزء من OpenLDAP client tools ويسمح بإرسال LDAP Queries واستعراض البيانات التي يسمح الخادم للمستخدم بالوصول إليها. تعتبر أداة مهمة لمسؤولي Active Directory وLDAP لفهم بنية الدليل ومراجعة الصلاحيات.",
+    "use_cases": [
+      "استعلام LDAP",
+      "فحص بنية Directory",
+      "إدارة Active Directory",
+      "مراجعة صلاحيات LDAP",
+      "Network Enumeration"
+    ],
+    "installation": "sudo apt update && sudo apt install ldap-utils",
+    "basic_usage": "ldapsearch -x -H ldap://127.0.0.1 -b 'dc=example,dc=com'",
+    "examples": [
+      "ldapsearch -x -H ldap://127.0.0.1 -b 'dc=example,dc=com'",
+      "ldapsearch -x -H ldap://127.0.0.1 -b 'dc=example,dc=com' '(objectClass=person)'"
+    ],
+    "requirements": [
+      "LDAP Server",
+      "صلاحيات مناسبة",
+      "Kali Linux أو Debian-based Linux"
+    ],
+    "official_website": "https://www.openldap.org/",
+    "kali_page": "https://www.kali.org/tools/openldap/",
+    "legal_note": "استعلم فقط من LDAP Servers التي لديك صلاحية الوصول إليها."
+  },
+  {
+    "id": "impacket",
+    "name": "Impacket",
+    "category": "Windows Enumeration",
+    "categories": ["Windows Enumeration", "Network Security", "Network Enumeration"],
+    "importance": "Impacket مجموعة Python قوية للتعامل مع بروتوكولات Windows والشبكات في أبحاث الأمن.",
+    "description": "Impacket مجموعة مكتبات وأدوات Python للتعامل مع بروتوكولات الشبكات مثل SMB وMSRPC وKerberos وLDAP وغيرها. تستخدم بكثرة في مختبرات Active Directory وأبحاث أمن Windows وفهم كيفية عمل البروتوكولات.",
+    "use_cases": [
+      "دراسة بروتوكولات Windows",
+      "Active Directory Labs",
+      "تحليل SMB",
+      "أبحاث Kerberos",
+      "Network Security Testing"
+    ],
+    "installation": "sudo apt update && sudo apt install python3-impacket",
+    "basic_usage": "impacket-GetNPUsers -h",
+    "examples": [
+      "impacket-GetNPUsers -h",
+      "impacket-GetUserSPNs -h",
+      "impacket-smbclient -h"
+    ],
+    "requirements": [
+      "Python 3",
+      "Kali Linux",
+      "بيئة Windows/AD اختبارية"
+    ],
+    "official_website": "https://github.com/fortra/impacket",
+    "kali_page": "https://www.kali.org/tools/impacket/",
+    "legal_note": "Impacket قوي جدًا ويجب استخدامه داخل مختبرات أو بيئات مصرح بها."
+  },
+  {
+    "id": "bloodhound",
+    "name": "BloodHound",
+    "category": "Windows Enumeration",
+    "categories": ["Windows Enumeration", "Active Directory", "Security Auditing"],
+    "importance": "BloodHound أداة لتحليل العلاقات والصلاحيات داخل بيئات Active Directory.",
+    "description": "BloodHound تستخدم الرسوم البيانية لعرض العلاقات بين المستخدمين والمجموعات والأجهزة والصلاحيات داخل Active Directory. تساعد فرق الأمن على اكتشاف مسارات الصلاحيات الزائدة ومراجعة تصميم بيئة Windows من منظور دفاعي.",
+    "use_cases": [
+      "تحليل Active Directory",
+      "مراجعة الصلاحيات",
+      "اكتشاف علاقات المجموعات",
+      "تحليل Attack Paths",
+      "Security Auditing"
+    ],
+    "installation": "sudo apt update && sudo apt install bloodhound",
+    "basic_usage": "bloodhound",
+    "examples": [
+      "bloodhound",
+      "bloodhound --help"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "بيئة Active Directory اختبارية",
+      "بيانات جمع مصرح بها"
+    ],
+    "official_website": "https://github.com/SpecterOps/BloodHound",
+    "kali_page": "https://www.kali.org/tools/bloodhound/",
+    "legal_note": "استخدم BloodHound لتحليل بيئات Active Directory التي تملك تصريحًا لتقييمها."
+  },
+  {
+    "id": "kerbrute",
+    "name": "Kerbrute",
+    "category": "Windows Enumeration",
+    "categories": ["Windows Enumeration", "Active Directory", "Network Enumeration"],
+    "importance": "Kerbrute أداة تستخدم في مختبرات Active Directory لدراسة Kerberos وتقييم بعض جوانب أسماء المستخدمين.",
+    "description": "Kerbrute أداة مبنية بلغة Go للتعامل مع Kerberos في بيئات Active Directory. تستخدم في الأبحاث والمختبرات لفهم كيفية استجابة خدمات Kerberos والتحقق من بعض المعلومات المتعلقة بالمستخدمين ضمن نطاق مصرح.",
+    "use_cases": [
+      "دراسة Kerberos",
+      "Active Directory Enumeration",
+      "اختبار بيئات التدريب",
+      "فهم المصادقة",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install kerbrute",
+    "basic_usage": "kerbrute -h",
+    "examples": [
+      "kerbrute -h",
+      "kerbrute userenum -d example.local users.txt"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Domain Controller اختباري",
+      "قائمة مستخدمين اختبارية"
+    ],
+    "official_website": "https://github.com/ropnop/kerbrute",
+    "kali_page": "https://www.kali.org/tools/kerbrute/",
+    "legal_note": "لا تستخدم Kerbrute على Active Directory خارجي بدون تصريح."
+  },
+  {
+    "id": "certipy",
+    "name": "Certipy",
+    "category": "Windows Enumeration",
+    "categories": ["Windows Enumeration", "Active Directory", "Security Auditing"],
+    "importance": "Certipy إطار بحثي لتقييم Active Directory Certificate Services وإعدادات الشهادات.",
+    "description": "Certipy أداة Python تساعد الباحثين ومسؤولي الأمن في تقييم Active Directory Certificate Services، واكتشاف بعض إعدادات الشهادات والصلاحيات التي قد تسبب مخاطر أمنية. تستخدم في مختبرات AD وأعمال التدقيق المصرح بها.",
+    "use_cases": [
+      "تدقيق AD CS",
+      "تحليل Certificate Templates",
+      "مراجعة الصلاحيات",
+      "Active Directory Security",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install certipy-ad",
+    "basic_usage": "certipy-ad -h",
+    "examples": [
+      "certipy-ad -h",
+      "certipy-ad find -u user@example.local -p 'Password' -dc-ip 192.168.1.10"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Active Directory Lab",
+      "حساب اختبار مصرح"
+    ],
+    "official_website": "https://github.com/ly4k/Certipy",
+    "kali_page": "https://www.kali.org/tools/certipy-ad/",
+    "legal_note": "AD CS testing يجب أن يتم داخل بيئة تملك صلاحية تدقيقها."
+  },
+  {
+    "id": "frida",
+    "name": "Frida",
+    "category": "Android Reverse Engineering",
+    "categories": ["Android Reverse Engineering", "Reverse Engineering", "Security Testing"],
+    "importance": "Frida إطار Dynamic Instrumentation قوي لتحليل التطبيقات والعمليات أثناء التشغيل.",
+    "description": "Frida منصة Dynamic Instrumentation تسمح للباحثين بمراقبة وتعديل سلوك البرامج أثناء تشغيلها باستخدام JavaScript وواجهات متعددة. تستخدم في تحليل تطبيقات Android وiOS وLinux وWindows وغيرها، وتعتبر من الأدوات المهمة في Mobile Security وReverse Engineering.",
+    "use_cases": [
+      "تحليل تطبيقات Android",
+      "Dynamic Analysis",
+      "مراقبة الدوال أثناء التشغيل",
+      "اختبار Mobile Security",
+      "Reverse Engineering"
+    ],
+    "installation": "python3 -m pip install frida-tools",
+    "basic_usage": "frida-ps -U",
+    "examples": [
+      "frida-ps -U",
+      "frida-ps -Uai",
+      "frida -U -f com.example.app"
+    ],
+    "requirements": [
+      "Python",
+      "جهاز أو Emulator للاختبار",
+      "USB Debugging عند استخدام Android"
+    ],
+    "official_website": "https://frida.re/",
+    "kali_page": "https://www.kali.org/tools/frida/",
+    "legal_note": "حلل التطبيقات التي تملكها أو لديك تصريح واضح لتحليلها."
+  },
+  {
+    "id": "objection",
+    "name": "Objection",
+    "category": "Android Reverse Engineering",
+    "categories": ["Android Reverse Engineering", "Android Security", "Mobile Security"],
+    "importance": "Objection إطار مبني فوق Frida لتسهيل Dynamic Exploration واختبار تطبيقات الهاتف.",
+    "description": "Objection أداة تساعد الباحثين في استكشاف تطبيقات الهاتف أثناء التشغيل دون الحاجة إلى كتابة الكثير من Frida Scripts من البداية. تستخدم في Mobile Application Security لاختبار التطبيقات وتحليل سلوكها داخل بيئات مصرح بها.",
+    "use_cases": [
+      "تحليل Android",
+      "اختبار Mobile Security",
+      "Dynamic Instrumentation",
+      "استكشاف التطبيق أثناء التشغيل",
+      "دراسة آليات الحماية"
+    ],
+    "installation": "python3 -m pip install objection",
+    "basic_usage": "objection --help",
+    "examples": [
+      "objection --help",
+      "objection -g com.example.app explore"
+    ],
+    "requirements": [
+      "Python",
+      "Frida",
+      "تطبيق Android اختباري"
+    ],
+    "official_website": "https://github.com/frida/objection",
+    "kali_page": "https://www.kali.org/tools/objection/",
+    "legal_note": "استخدم Objection فقط على تطبيقات مصرح لك بتحليلها."
+  },
+  {
+    "id": "mobsf",
+    "name": "MobSF",
+    "category": "Android Security",
+    "categories": ["Android Security", "Mobile Security", "Static Analysis", "Dynamic Analysis"],
+    "importance": "MobSF منصة متكاملة لتحليل أمان تطبيقات Android وiOS وWindows Mobile.",
+    "description": "Mobile Security Framework أو MobSF منصة مفتوحة المصدر لأتمتة Static Analysis وDynamic Analysis لتطبيقات الهاتف. تساعد الباحثين على اكتشاف إعدادات غير آمنة ومشكلات شائعة داخل APK وIPA وغيرها.",
+    "use_cases": [
+      "تحليل APK",
+      "Static Analysis",
+      "Dynamic Analysis",
+      "Mobile Security Testing",
+      "مراجعة إعدادات التطبيق"
+    ],
+    "installation": "git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git && cd Mobile-Security-Framework-MobSF && ./setup.sh",
+    "basic_usage": "./run.sh 127.0.0.1:8000",
+    "examples": [
+      "./run.sh",
+      "./run.sh 127.0.0.1:8000"
+    ],
+    "requirements": [
+      "Python",
+      "Java",
+      "Kali Linux",
+      "ملف APK أو بيئة اختبار"
+    ],
+    "official_website": "https://github.com/MobSF/Mobile-Security-Framework-MobSF",
+    "kali_page": "https://www.kali.org/tools/mobsf/",
+    "legal_note": "حلل التطبيقات التي تملكها أو لديك إذن لتحليلها."
+  },
+  {
+    "id": "apkid",
+    "name": "APKiD",
+    "category": "Android Reverse Engineering",
+    "categories": ["Android Reverse Engineering", "Android Security", "Malware Analysis"],
+    "importance": "APKiD يساعد في التعرف على أدوات وتقنيات الحماية والـObfuscation المستخدمة داخل تطبيقات Android.",
+    "description": "APKiD أداة تساعد في تحليل APKs من خلال التعرف على مؤشرات مرتبطة بالـCompilers والـPackers والـObfuscators وبعض تقنيات الحماية. تفيد الباحثين في تحديد طبيعة التطبيق قبل الانتقال إلى تحليل أعمق.",
+    "use_cases": [
+      "تحليل APK",
+      "التعرف على Obfuscation",
+      "Malware Analysis",
+      "Reverse Engineering",
+      "تحليل تطبيقات Android"
+    ],
+    "installation": "python3 -m pip install apkid",
+    "basic_usage": "apkid app.apk",
+    "examples": [
+      "apkid app.apk",
+      "apkid -r samples/"
+    ],
+    "requirements": [
+      "Python 3",
+      "APK للاختبار",
+      "Kali Linux"
+    ],
+    "official_website": "https://github.com/rednaga/APKiD",
+    "kali_page": "https://www.kali.org/tools/apkid/",
+    "legal_note": "استخدم APKiD لتحليل التطبيقات والملفات التي لديك صلاحية تحليلها."
+  },
+  {
+    "id": "capa",
+    "name": "Capa",
+    "category": "Malware Analysis",
+    "categories": ["Malware Analysis", "Reverse Engineering", "Security Research"],
+    "importance": "Capa يحلل الملفات التنفيذية ويحاول تحديد القدرات التي يمكن أن ينفذها البرنامج.",
+    "description": "Capa من Mandiant يساعد محللي البرمجيات الخبيثة في تحديد Capabilities داخل الملفات التنفيذية. يعتمد على قواعد تصف أنماطًا وسلوكيات مختلفة، ويمكن استخدامه كخطوة أولية لفهم وظيفة عينة قبل التحليل العميق.",
+    "use_cases": [
+      "Malware Analysis",
+      "تحليل الملفات التنفيذية",
+      "اكتشاف Capabilities",
+      "Threat Research",
+      "Reverse Engineering"
+    ],
+    "installation": "sudo apt update && sudo apt install capa",
+    "basic_usage": "capa sample.exe",
+    "examples": [
+      "capa sample.exe",
+      "capa --json sample.exe"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "عينة Malware أو ملف اختباري",
+      "بيئة تحليل آمنة"
+    ],
+    "official_website": "https://github.com/mandiant/capa",
+    "kali_page": "https://www.kali.org/tools/capa/",
+    "legal_note": "تحليل البرمجيات الخبيثة يفضل أن يتم داخل بيئة معزولة وآمنة."
+  },
+  {
+    "id": "volatility3",
+    "name": "Volatility 3",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Memory Forensics", "Malware Analysis"],
+    "importance": "Volatility 3 إطار متقدم للتحليل الجنائي لذاكرة RAM واستخراج معلومات من Memory Dumps.",
+    "description": "Volatility 3 إطار مفتوح المصدر للتحليل الجنائي للذاكرة. يسمح للباحث بفحص Memory Images واستخراج معلومات عن العمليات والملفات والاتصالات وغيرها، ويستخدم في التحقيقات الرقمية وتحليل الحوادث الأمنية.",
+    "use_cases": [
+      "Memory Forensics",
+      "تحليل RAM Dumps",
+      "Incident Response",
+      "Malware Analysis",
+      "Digital Forensics"
+    ],
+    "installation": "sudo apt update && sudo apt install volatility3",
+    "basic_usage": "vol -f memory.raw windows.info",
+    "examples": [
+      "vol -f memory.raw windows.info",
+      "vol -f memory.raw windows.pslist",
+      "vol -f memory.raw windows.netscan"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Memory Image",
+      "معرفة بأساسيات Forensics"
+    ],
+    "official_website": "https://github.com/volatilityfoundation/volatility3",
+    "kali_page": "https://www.kali.org/tools/volatility3/",
+    "legal_note": "حلل Memory Dumps التي تم الحصول عليها بطريقة قانونية ومصرح بها."
+  },
+  {
+    "id": "autopsy",
+    "name": "Autopsy",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Incident Response", "Disk Analysis"],
+    "importance": "Autopsy منصة رسومية للتحقيق الجنائي الرقمي وتحليل الأقراص والملفات.",
+    "description": "Autopsy منصة Digital Forensics تعتمد على The Sleuth Kit وتوفر واجهة رسومية للتحقيق في صور الأقراص والملفات. تساعد في تحليل الملفات والبيانات الوصفية وسجل النشاط الرقمي ضمن التحقيقات المصرح بها.",
+    "use_cases": [
+      "تحليل صور الأقراص",
+      "Digital Forensics",
+      "Incident Response",
+      "استعادة وتحليل البيانات",
+      "تحليل Metadata"
+    ],
+    "installation": "sudo apt update && sudo apt install autopsy",
+    "basic_usage": "autopsy",
+    "examples": [
+      "autopsy",
+      "sudo autopsy"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Disk Image عند إجراء تحقيق",
+      "مساحة تخزين مناسبة"
+    ],
+    "official_website": "https://www.autopsy.com/",
+    "kali_page": "https://www.kali.org/tools/autopsy/",
+    "legal_note": "استخدم Autopsy في التحقيقات والوسائط التي لديك صلاحية قانونية لتحليلها."
+  },
+  {
+    "id": "sleuthkit",
+    "name": "The Sleuth Kit",
+    "category": "Digital Forensics",
+    "categories": ["Digital Forensics", "Disk Analysis", "Incident Response"],
+    "importance": "The Sleuth Kit مجموعة أدوات command-line للتحليل الجنائي لأنظمة الملفات وصور الأقراص.",
+    "description": "The Sleuth Kit مجموعة أدوات مفتوحة المصدر للتحقيق الجنائي الرقمي وتحليل أنظمة الملفات. توفر أدوات لفحص Images واستخراج معلومات عن الملفات والـMetadata والبنية الداخلية لأنظمة الملفات، وتستخدم كأساس لعدد من منصات Forensics.",
+    "use_cases": [
+      "Disk Forensics",
+      "تحليل File Systems",
+      "تحليل Disk Images",
+      "Incident Response",
+      "File Metadata Analysis"
+    ],
+    "installation": "sudo apt update && sudo apt install sleuthkit",
+    "basic_usage": "fls -h",
+    "examples": [
+      "fls -h",
+      "fsstat image.dd",
+      "mmls image.dd"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Disk Image أو وسيط اختبار",
+      "معرفة بأساسيات Digital Forensics"
+    ],
+    "official_website": "https://www.sleuthkit.org/",
+    "kali_page": "https://www.kali.org/tools/sleuth-kit/",
+    "legal_note": "استخدم الأدوات الجنائية فقط على البيانات التي لديك تصريح بتحليلها."
+  },
+  {
+    "id": "exiftool",
+    "name": "ExifTool",
+    "category": "Document Analysis",
+    "categories": ["Document Analysis", "Digital Forensics", "OSINT"],
+    "importance": "ExifTool أداة شاملة لقراءة وكتابة وتحليل Metadata للصور والملفات.",
+    "description": "ExifTool أداة قوية للتعامل مع Metadata في مجموعة كبيرة من أنواع الملفات. يستطيع قراءة معلومات مثل نوع الكاميرا والتاريخ وبعض خصائص الملف عند توفرها، ولذلك يستخدم في OSINT والتحقيقات الرقمية وإدارة الأصول الرقمية.",
+    "use_cases": [
+      "تحليل Metadata",
+      "Digital Forensics",
+      "OSINT",
+      "تحليل الصور",
+      "فحص خصائص الملفات"
+    ],
+    "installation": "sudo apt update && sudo apt install libimage-exiftool-perl",
+    "basic_usage": "exiftool image.jpg",
+    "examples": [
+      "exiftool image.jpg",
+      "exiftool -a -u -g1 image.jpg",
+      "exiftool -r images/"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "ملف للتحليل"
+    ],
+    "official_website": "https://exiftool.org/",
+    "kali_page": "https://www.kali.org/tools/exiftool/",
+    "legal_note": "حلل الملفات التي تملكها أو لديك تصريح بفحصها."
+  },
+  {
+    "id": "strings",
+    "name": "Strings",
+    "category": "Reverse Engineering",
+    "categories": ["Reverse Engineering", "Malware Analysis", "Binary Analysis"],
+    "importance": "Strings أداة بسيطة لكنها مهمة لاستخراج النصوص القابلة للقراءة من الملفات الثنائية.",
+    "description": "Strings جزء من GNU Binutils وتستخدم لاستخراج سلاسل النصوص القابلة للطباعة من الملفات الثنائية. تساعد الباحث في الحصول على مؤشرات أولية مثل أسماء الملفات والنطاقات والرسائل والنصوص المضمنة قبل إجراء تحليل أعمق.",
+    "use_cases": [
+      "تحليل الملفات الثنائية",
+      "Malware Triage",
+      "Reverse Engineering",
+      "استخراج النصوص",
+      "البحث عن مؤشرات داخل الملفات"
+    ],
+    "installation": "sudo apt update && sudo apt install binutils",
+    "basic_usage": "strings sample.bin",
+    "examples": [
+      "strings sample.bin",
+      "strings -a sample.exe",
+      "strings -n 8 sample.bin"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "ملف Binary للتحليل"
+    ],
+    "official_website": "https://www.gnu.org/software/binutils/",
+    "kali_page": "https://www.kali.org/tools/binutils/",
+    "legal_note": "حلل الملفات التي تملك حق تحليلها."
+  },
+  {
+    "id": "objdump",
+    "name": "Objdump",
+    "category": "Reverse Engineering",
+    "categories": ["Reverse Engineering", "Binary Analysis", "Firmware Analysis"],
+    "importance": "Objdump أداة أساسية لفحص الملفات التنفيذية وعرض Assembly ومعلومات الأقسام والرموز.",
+    "description": "Objdump جزء من GNU Binutils وتوفر إمكانيات واسعة لفحص الملفات التنفيذية وObject Files. يمكن استخدامها لعرض Disassembly والأقسام والرموز ومعلومات Headers، وتعتبر من الأدوات الأساسية في تعلم Binary Analysis.",
+    "use_cases": [
+      "Disassembly",
+      "Binary Analysis",
+      "فحص ELF",
+      "تحليل الأقسام",
+      "Reverse Engineering"
+    ],
+    "installation": "sudo apt update && sudo apt install binutils",
+    "basic_usage": "objdump -d sample",
+    "examples": [
+      "objdump -d sample",
+      "objdump -h sample",
+      "objdump -x sample"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Binary أو ELF File"
+    ],
+    "official_website": "https://www.gnu.org/software/binutils/",
+    "kali_page": "https://www.kali.org/tools/binutils/",
+    "legal_note": "استخدم التحليل العكسي على الملفات المصرح لك بفحصها."
+  },
+  {
+    "id": "strace",
+    "name": "Strace",
+    "category": "System Auditing",
+    "categories": ["System Auditing", "System Security", "Malware Analysis"],
+    "importance": "Strace أداة لمراقبة System Calls والتفاعلات بين البرنامج ونظام التشغيل.",
+    "description": "Strace أداة تشخيص وتحليل لنظام Linux تعرض System Calls التي تنفذها البرامج والتعاملات مع الملفات والشبكة والعمليات. تستخدم في Debugging وMalware Analysis وفهم سلوك التطبيقات.",
+    "use_cases": [
+      "تحليل System Calls",
+      "Debugging",
+      "Malware Analysis",
+      "تحليل البرامج",
+      "System Auditing"
+    ],
+    "installation": "sudo apt update && sudo apt install strace",
+    "basic_usage": "strace ./program",
+    "examples": [
+      "strace ./program",
+      "strace -f ./program",
+      "strace -e trace=file ./program"
+    ],
+    "requirements": [
+      "Linux",
+      "Kali Linux",
+      "برنامج أو Process للاختبار"
+    ],
+    "official_website": "https://strace.io/",
+    "kali_page": "https://www.kali.org/tools/strace/",
+    "legal_note": "استخدم Strace على البرامج والعمليات التي لديك صلاحية مراقبتها."
+  },
+  {
+    "id": "ltrace",
+    "name": "Ltrace",
+    "category": "System Auditing",
+    "categories": ["System Auditing", "Reverse Engineering", "Malware Analysis"],
+    "importance": "Ltrace يساعد في مراقبة استدعاءات المكتبات الديناميكية التي يجريها البرنامج.",
+    "description": "Ltrace أداة تحليل لنظام Linux تعرض Library Calls التي يجريها البرنامج أثناء التشغيل. تعتبر مفيدة في Reverse Engineering وDebugging وتحليل سلوك البرامج وفهم كيفية تفاعلها مع المكتبات المختلفة.",
+    "use_cases": [
+      "تحليل Library Calls",
+      "Reverse Engineering",
+      "Debugging",
+      "Malware Analysis",
+      "دراسة سلوك البرامج"
+    ],
+    "installation": "sudo apt update && sudo apt install ltrace",
+    "basic_usage": "ltrace ./program",
+    "examples": [
+      "ltrace ./program",
+      "ltrace -f ./program"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "Linux Binary",
+      "بيئة تحليل مناسبة"
+    ],
+    "official_website": "https://ltrace.org/",
+    "kali_page": "https://www.kali.org/tools/ltrace/",
+    "legal_note": "استخدم Ltrace على البرامج التي تملك حق تحليلها."
+  },
+  {
+    "id": "yara-python",
+    "name": "YARA-Python",
+    "category": "Malware Analysis",
+    "categories": ["Malware Analysis", "Threat Hunting", "Security Research"],
+    "importance": "YARA-Python يسمح باستخدام قواعد YARA من داخل برامج Python وأدوات التحليل الآلي.",
+    "description": "YARA-Python هو Binding يتيح للباحثين استخدام محرك YARA داخل تطبيقات Python. يساعد في بناء أدوات مخصصة لتحليل الملفات والعينات ومطابقة القواعد الأمنية بصورة آلية.",
+    "use_cases": [
+      "أتمتة Malware Analysis",
+      "Threat Hunting",
+      "إنشاء أدوات تحليل",
+      "تطبيق YARA Rules",
+      "تحليل ملفات متعددة"
+    ],
+    "installation": "python3 -m pip install yara-python",
+    "basic_usage": "python3 -c \"import yara; print(yara.__version__)\"",
+    "examples": [
+      "python3 -c \"import yara; print(yara.__version__)\"",
+      "python3 -m pip show yara-python"
+    ],
+    "requirements": [
+      "Python 3",
+      "Kali Linux",
+      "YARA Rules عند الحاجة"
+    ],
+    "official_website": "https://github.com/VirusTotal/yara-python",
+    "kali_page": "https://www.kali.org/tools/yara-python/",
+    "legal_note": "استخدم القواعد والعينات ضمن بيئات التحليل المصرح بها."
+  },
+  {
+    "id": "maigret",
+    "name": "Maigret",
+    "category": "OSINT",
+    "categories": ["OSINT", "Information Gathering", "Digital Investigation"],
+    "importance": "Maigret أداة OSINT للبحث عن أسماء المستخدمين عبر عدد كبير من المواقع والخدمات العامة.",
+    "description": "Maigret تساعد الباحث في إجراء Username Enumeration عبر مواقع وخدمات عامة متعددة. يمكن استخدامها في التحقيقات الرقمية وOSINT لفهم وجود اسم مستخدم معين عبر الإنترنت، مع مراعاة أن النتائج تحتاج إلى تحقق يدوي.",
+    "use_cases": [
+      "Username OSINT",
+      "Digital Investigation",
+      "جمع المعلومات العامة",
+      "البحث عن الحسابات العامة",
+      "بناء البصمة الرقمية"
+    ],
+    "installation": "python3 -m pip install maigret",
+    "basic_usage": "maigret username",
+    "examples": [
+      "maigret username",
+      "maigret username --print-found"
+    ],
+    "requirements": [
+      "Python 3",
+      "اتصال بالإنترنت",
+      "اسم مستخدم عام للتحليل"
+    ],
+    "official_website": "https://github.com/soxoj/maigret",
+    "kali_page": "https://www.kali.org/tools/maigret/",
+    "legal_note": "استخدم OSINT بشكل قانوني واحترم الخصوصية وشروط الخدمات."
+  },
+  {
+    "id": "sherlock",
+    "name": "Sherlock",
+    "category": "OSINT",
+    "categories": ["OSINT", "Information Gathering", "Digital Investigation"],
+    "importance": "Sherlock يبحث عن أسماء المستخدمين عبر عدد كبير من مواقع التواصل والخدمات العامة.",
+    "description": "Sherlock أداة OSINT معروفة للبحث عن Username معين عبر مجموعة كبيرة من المواقع. تعتمد على التحقق من أنماط الروابط والاستجابات، وتستخدم في التحقيقات الرقمية والبحث عن البصمة العامة للحسابات.",
+    "use_cases": [
+      "Username Enumeration",
+      "OSINT",
+      "Digital Investigation",
+      "البحث عن الحسابات العامة",
+      "تحليل البصمة الرقمية"
+    ],
+    "installation": "sudo apt update && sudo apt install sherlock",
+    "basic_usage": "sherlock username",
+    "examples": [
+      "sherlock username",
+      "sherlock username --print-found",
+      "sherlock username --output results.txt"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "اتصال بالإنترنت",
+      "اسم مستخدم للتحليل"
+    ],
+    "official_website": "https://github.com/sherlock-project/sherlock",
+    "kali_page": "https://www.kali.org/tools/sherlock/",
+    "legal_note": "استخدم Sherlock في البحث عن المعلومات العامة مع احترام الخصوصية والقوانين."
+  },
+  {
+    "id": "uncover",
+    "name": "Uncover",
+    "category": "Information Gathering",
+    "categories": ["Information Gathering", "OSINT", "Security Research"],
+    "importance": "Uncover أداة من ProjectDiscovery تساعد في الاستفادة من محركات البحث ومصادر الإنترنت لاكتشاف أصول مرتبطة بأهداف مصرح بها.",
+    "description": "Uncover أداة command-line تساعد الباحث على البحث عبر محركات ومصادر مختلفة للوصول إلى أصول ومعلومات مرتبطة باستعلام معين. يمكن دمج نتائجها مع أدوات ProjectDiscovery الأخرى في سير عمل الاستطلاع.",
+    "use_cases": [
+      "OSINT",
+      "Asset Discovery",
+      "البحث عن الخدمات العامة",
+      "Reconnaissance",
+      "أتمتة جمع المعلومات"
+    ],
+    "installation": "sudo apt update && sudo apt install uncover",
+    "basic_usage": "uncover -q 'example.com'",
+    "examples": [
+      "uncover -q 'example.com'",
+      "uncover -q 'example.com' -e shodan",
+      "uncover -q 'apache' -e shodan,censys"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "API Keys لبعض المصادر",
+      "أهداف مصرح بها"
+    ],
+    "official_website": "https://github.com/projectdiscovery/uncover",
+    "kali_page": "https://www.kali.org/tools/uncover/",
+    "legal_note": "استخدم نتائج البحث لأغراض الاستطلاع المصرح بها فقط."
+  },
+  {
+    "id": "waybackurls",
+    "name": "Waybackurls",
+    "category": "Web Reconnaissance",
+    "categories": ["Web Reconnaissance", "OSINT", "Web Enumeration"],
+    "importance": "Waybackurls يستخرج الروابط التاريخية المرتبطة بالنطاقات من Internet Archive.",
+    "description": "Waybackurls أداة بسيطة تستفيد من بيانات Wayback Machine لاستخراج URLs تاريخية مرتبطة بنطاق معين. تساعد الباحث على اكتشاف مسارات وEndpoints قديمة يمكن مراجعتها في بيئة مصرح بها.",
+    "use_cases": [
+      "اكتشاف URLs قديمة",
+      "OSINT",
+      "Web Reconnaissance",
+      "اكتشاف Endpoints",
+      "تحليل التغييرات التاريخية"
+    ],
+    "installation": "go install github.com/tomnomnom/waybackurls@latest",
+    "basic_usage": "echo example.com | waybackurls",
+    "examples": [
+      "echo example.com | waybackurls",
+      "echo example.com | waybackurls > urls.txt"
+    ],
+    "requirements": [
+      "Go",
+      "اتصال بالإنترنت",
+      "نطاق مصرح به للتحليل"
+    ],
+    "official_website": "https://github.com/tomnomnom/waybackurls",
+    "kali_page": "https://www.kali.org/tools/waybackurls/",
+    "legal_note": "الروابط التاريخية قد تقود إلى أنظمة حقيقية؛ استخدمها ضمن نطاق مصرح به."
+  },
+  {
+    "id": "gau",
+    "name": "GAU",
+    "category": "Web Reconnaissance",
+    "categories": ["Web Reconnaissance", "OSINT", "Web Enumeration"],
+    "importance": "GAU يجمع URLs معروفة من مصادر أرشيفية وعامة متعددة.",
+    "description": "GetAllUrls أو GAU أداة مكتوبة بلغة Go لجمع الروابط المرتبطة بالنطاقات من مصادر أرشيفية ومعلومات عامة. تستخدم في Reconnaissance لاكتشاف Endpoints تاريخية أو منشورة يمكن تحليلها لاحقًا.",
+    "use_cases": [
+      "جمع URLs",
+      "OSINT",
+      "Endpoint Discovery",
+      "Reconnaissance",
+      "تحليل الروابط التاريخية"
+    ],
+    "installation": "go install github.com/lc/gau/v2/cmd/gau@latest",
+    "basic_usage": "gau example.com",
+    "examples": [
+      "gau example.com",
+      "gau example.com > urls.txt",
+      "gau --subs example.com"
+    ],
+    "requirements": [
+      "Go",
+      "اتصال بالإنترنت",
+      "نطاق مصرح به"
+    ],
+    "official_website": "https://github.com/lc/gau",
+    "kali_page": "https://www.kali.org/tools/gau/",
+    "legal_note": "استخدم الروابط الناتجة ضمن نطاق اختبار قانوني ومصرح."
+  },
+  {
+    "id": "hakrawler",
+    "name": "Hakrawler",
+    "category": "Web Enumeration",
+    "categories": ["Web Enumeration", "Web Reconnaissance", "Information Gathering"],
+    "importance": "Hakrawler Web Crawler بسيط لاكتشاف الروابط والـEndpoints داخل مواقع الويب.",
+    "description": "Hakrawler أداة Go خفيفة لجمع الروابط وForms وبعض الموارد التي تظهر أثناء الزحف إلى صفحات الويب. تفيد في إنشاء قائمة أولية من نقاط التطبيق قبل اختبارات أمنية أخرى.",
+    "use_cases": [
+      "Web Crawling",
+      "اكتشاف الروابط",
+      "اكتشاف Forms",
+      "جمع Endpoints",
+      "Reconnaissance"
+    ],
+    "installation": "go install github.com/hakluke/hakrawler@latest",
+    "basic_usage": "echo https://example.com | hakrawler",
+    "examples": [
+      "echo https://example.com | hakrawler",
+      "echo https://example.com | hakrawler -depth 2"
+    ],
+    "requirements": [
+      "Go",
+      "Kali Linux",
+      "تطبيق مصرح باختباره"
+    ],
+    "official_website": "https://github.com/hakluke/hakrawler",
+    "kali_page": "https://www.kali.org/tools/hakrawler/",
+    "legal_note": "استخدم Web Crawling على المواقع المصرح بها فقط."
+  },
+  {
+    "id": "arpwatch",
+    "name": "ARPWatch",
+    "category": "Network Security",
+    "categories": ["Network Security", "Network Monitoring", "Network Auditing"],
+    "importance": "ARPWatch أداة لمراقبة تغييرات ARP داخل الشبكات المحلية واكتشاف بعض التغييرات غير المتوقعة.",
+    "description": "ARPWatch تراقب علاقات IP وMAC داخل الشبكة وتسجل التغييرات التي تحدث عليها. يمكن لمسؤولي الشبكات استخدامها للمراقبة واكتشاف تغييرات في الأجهزة أو عناوين MAC قد تستحق التحقيق.",
+    "use_cases": [
+      "Network Monitoring",
+      "مراقبة ARP",
+      "اكتشاف تغييرات MAC",
+      "Network Auditing",
+      "المساعدة في اكتشاف مشاكل الشبكة"
+    ],
+    "installation": "sudo apt update && sudo apt install arpwatch",
+    "basic_usage": "sudo arpwatch -i eth0",
+    "examples": [
+      "sudo arpwatch -i eth0",
+      "sudo systemctl status arpwatch"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "واجهة شبكة",
+      "صلاحيات إدارية"
+    ],
+    "official_website": "https://github.com/deepin-community/arpwatch",
+    "kali_page": "https://www.kali.org/tools/arpwatch/",
+    "legal_note": "شغّل ARPWatch على الشبكات التي تديرها أو لديك تصريح بمراقبتها."
+  },
+  {
+    "id": "enum4linux",
+    "name": "Enum4linux",
+    "category": "Windows Enumeration",
+    "categories": ["Windows Enumeration", "Network Enumeration", "SMB Security"],
+    "importance": "Enum4linux أداة كلاسيكية لجمع المعلومات من خدمات SMB وWindows داخل البيئات المصرح بها.",
+    "description": "Enum4linux أداة تساعد في جمع معلومات من خدمات SMB وNetBIOS وWindows. يمكن أن تعرض معلومات عن المشاركات والمستخدمين والمجموعات وبعض إعدادات النظام حسب ما تسمح به الخدمة.",
+    "use_cases": [
+      "SMB Enumeration",
+      "Windows Enumeration",
+      "جمع معلومات الشبكة",
+      "تدقيق Samba",
+      "مختبرات Active Directory"
+    ],
+    "installation": "sudo apt update && sudo apt install enum4linux",
+    "basic_usage": "enum4linux -a 192.168.1.10",
+    "examples": [
+      "enum4linux -a 192.168.1.10",
+      "enum4linux -U 192.168.1.10",
+      "enum4linux -S 192.168.1.10"
+    ],
+    "requirements": [
+      "Kali Linux",
+      "خدمة SMB اختبارية",
+      "هدف مصرح به"
+    ],
+    "official_website": "https://github.com/CiscoCXSecurity/enum4linux",
+    "kali_page": "https://www.kali.org/tools/enum4linux/",
+    "legal_note": "استخدم Enum4linux فقط على أنظمة Windows/Samba المصرح باختبارها."
+  },
+  {
+    "id": "unix-privesc-check",
+    "name": "Unix-Privesc-Check",
+    "category": "Security Auditing",
+    "categories": ["Security Auditing", "System Auditing", "System Security"],
+    "importance": "Unix-Privesc-Check يساعد في البحث عن إعدادات قد تؤدي إلى مخاطر صلاحيات زائدة في أنظمة Unix/Linux.",
+    "description": "Unix-Privesc-Check مجموعة فحوصات تساعد في اكتشاف بعض إعدادات النظام والملفات والصلاحيات التي قد تكون غير آمنة. يستخدم في التدقيق الأمني لفهم نقاط الضعف في إعدادات Linux وUnix وتحسين Hardening.",
+    "use_cases": [
+      "System Auditing",
+      "Privilege Configuration Review",
+      "Linux Hardening",
+      "Security Assessment",
+      "اكتشاف إعدادات غير آمنة"
+    ],
+    "installation": "sudo apt update && sudo apt install unix-privesc-check",
+    "basic_usage": "unix-privesc-check standard",
+    "examples": [
+      "unix-privesc-check standard",
+      "unix-privesc-check detailed"
+    ],
+    "requirements": [
+      "Linux/Unix",
+      "Kali Linux",
+      "صلاحيات مناسبة لإجراء التدقيق"
+    ],
+    "official_website": "https://pentestmonkey.net/tools/audit/unix-privesc-check",
+    "kali_page": "https://www.kali.org/tools/unix-privesc-check/",
+    "legal_note": "نفذ عمليات التدقيق على الأنظمة التي تملك صلاحية اختبارها فقط."
+  }
+    ]
