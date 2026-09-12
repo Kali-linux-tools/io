@@ -1,0 +1,81 @@
+[
+  {
+    "id": "nmap",
+    "name": "Nmap",
+    "category": "Network Scanning",
+    "categories": [
+      "Network Scanning",
+      "Information Gathering",
+      "Vulnerability"
+    ],
+    "importance": "من أشهر أدوات استكشاف الشبكات والتدقيق الأمني، وتستخدم لاكتشاف الأجهزة والمنافذ والخدمات وإصداراتها وبعض خصائص نظام التشغيل.",
+    "description": "Nmap أو Network Mapper أداة مفتوحة المصدر لاستكشاف الشبكات والتدقيق الأمني. توفر طرقًا متعددة لاكتشاف المضيفين والمنافذ المفتوحة والخدمات وإصداراتها، كما تدعم تقنيات للتعرف على أنظمة التشغيل واستخدام Nmap Scripting Engine في مهام الفحص المؤتمت.",
+    "use_cases": [
+      "اكتشاف الأجهزة المتاحة",
+      "فحص المنافذ المفتوحة",
+      "اكتشاف الخدمات وإصداراتها",
+      "التعرف على نظام التشغيل",
+      "استكشاف الشبكات",
+      "التدقيق الأمني",
+      "استخدام Nmap Scripting Engine"
+    ],
+    "installation": "sudo apt install nmap",
+    "basic_usage": "nmap 192.168.1.1",
+    "examples": [
+      "nmap 192.168.1.1",
+      "nmap -sV 192.168.1.1",
+      "nmap -p- 192.168.1.1",
+      "nmap -O 192.168.1.1"
+    ],
+    "requirements": [
+      "Kali Linux أو نظام Linux متوافق",
+      "صلاحيات مناسبة لبعض أنواع الفحص",
+      "تصريح بفحص الهدف"
+    ],
+    "official_website": "https://nmap.org/",
+    "kali_page": "https://www.kali.org/tools/nmap/",
+    "legal_note": "استخدم Nmap فقط على الأجهزة والشبكات التي تملكها أو لديك تصريح صريح باختبارها.",
+    "img": [
+      "https://nmap.org/images/nmap-logo-256x256.png"
+    ]
+  },
+
+  {
+    "id": "wireshark",
+    "name": "Wireshark",
+    "category": "Network Sniffing",
+    "categories": [
+      "Network Sniffing",
+      "Forensics",
+      "Information Gathering"
+    ],
+    "importance": "أداة متقدمة لالتقاط وتحليل حزم الشبكة وفهم الاتصالات والبروتوكولات وتشخيص مشاكل الشبكات.",
+    "description": "Wireshark هو محلل لحركة الشبكة يستطيع التقاط الحزم وتحليلها وعرض تفاصيل البروتوكولات والاتصالات. يتوفر أيضًا TShark للتحليل من خلال سطر الأوامر.",
+    "use_cases": [
+      "التقاط حزم الشبكة",
+      "تحليل حركة المرور",
+      "تحليل البروتوكولات",
+      "استكشاف مشاكل الشبكات",
+      "التحليل الجنائي للشبكات",
+      "فحص الاتصالات",
+      "التعلم عن بروتوكولات الشبكات"
+    ],
+    "installation": "sudo apt install wireshark",
+    "basic_usage": "wireshark",
+    "examples": [
+      "wireshark",
+      "tshark -f \"tcp port 80\" -i eth0"
+    ],
+    "requirements": [
+      "Kali Linux أو نظام Linux متوافق",
+      "واجهة شبكة مناسبة لالتقاط الحزم",
+      "صلاحيات مناسبة لالتقاط حركة المرور"
+    ],
+    "official_website": "https://www.wireshark.org/",
+    "kali_page": "https://www.kali.org/tools/wireshark/",
+    "legal_note": "التقط وحلل حركة المرور التي تملك الحق في الوصول إليها فقط.",
+    "img": [
+      "https://www.wireshark.org/assets/img/wireshark-logo.png"
+    ]
+  }
+]
