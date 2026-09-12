@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>جاري تحميل الأداة...</title>
+
+<meta
+name="description"
+content="شرح أداة Kali Linux واستخداماتها وتثبيتها وأوامرها.">
+
+<meta
+name="robots"
+content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<link
+rel="icon"
+type="image/jpeg"
+href="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg">
+
+<link
+rel="stylesheet"
+href="style.css">
+
+<style>
+
+.tool-page {
+
+    padding: 55px 0 80px;
+
+}
+
+.tool-container {
+
+    max-width: 950px;
+
+    margin: auto;
+
+}
+
+.back-btn {
+
+    display: inline-block;
+
+    color: var(--green);
+
+    background: var(--green-light);
+
+    padding: 8px 14px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+}
+
+.tool-header {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 25px;
+
+}
+
+.tool-main-image {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    background: #080b09;
+
+}
+
+.tool-category {
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+.tool-title {
+
+    font-size: clamp(32px, 5vw, 50px);
+
+    line-height: 1.2;
+
+    margin: 5px 0 10px;
+
+}
+
+.tool-importance {
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+}
+
+.tool-box {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    margin-top: 18px;
+
+}
+
+.tool-box h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 14px;
+
+}
+
+.tool-box p {
+
+    color: var(--muted);
+
+    line-height: 2;
+
+}
+
+.info-list {
+
+    display: grid;
+
+    gap: 10px;
+
+}
+
+.info-item {
+
+    padding: 12px 14px;
+
+    background: #0b100c;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    color: #b5beb7;
+
+    font-size: 13px;
+
+}
+
+.code-box {
+
+    direction: ltr;
+
+    text-align: left;
+
+    background: #030503;
+
+    border: 1px solid #1d261f;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    overflow-x: auto;
+
+    color: #baff72;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    margin-top: 10px;
+
+}
+
+.tool-link {
+
+    color: var(--green);
+
+    word-break: break-all;
+
+}
+
+@media (max-width: 650px) {
+
+    .tool-header {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .tool-main-image {
+
+        height: 220px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+<div class="nav-container">
+
+<a href="./" class="brand">
+
+<img
+src="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"
+class="brand-logo"
+alt="Kali Tools">
+
+<div class="brand-text">
+
+<strong>Kali Tools</strong>
+
+<span>دليل أدوات الأمن السيبراني</span>
+
+</div>
+
+</a>
+
+</div>
+
+</header>
+
+
+<main class="tool-page">
+
+<div class="container tool-container">
+
+<a href="./" class="back-btn">
+← العودة إلى الأدوات
+</a>
+
+
+<div id="toolContent">
+
+<div class="loading-state">
+
+<div class="loader"></div>
+
+<p>
+جاري تحميل الأداة...
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+
+<footer class="footer">
+
+<div class="container footer-content">
+
+<div class="footer-brand">
+
+<img
+src="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"
+alt="Kali Tools">
+
+<div>
+
+<strong>Kali Tools بالعربي</strong>
+
+<span>
+دليل تعليمي مستقل
+</span>
+
+</div>
+
+</div>
+
+
+<div class="footer-copy">
+
+© <span id="year"></span>
+
+Kali Tools
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+"use strict";
+
+
+const FALLBACK_IMAGE =
+"https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg";
+
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+
+const toolId =
+params.get("id");
+
+
+const content =
+document.getElementById(
+"toolContent"
+);
+
+
+document.getElementById(
+"year"
+).textContent =
+new Date().getFullYear();
+
+
+function escapeHtml(value) {
+
+    return String(
+        value || ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+async function loadTool() {
+
+    try {
+
+        const response =
+            await fetch(
+                "tools/tools.json",
+                {
+                    cache: "no-cache"
+                }
+            );
+
+
+        const tools =
+            await response.json();
+
+
+        const tool =
+            tools.find(
+                item =>
+                    String(item.id) ===
+                    String(toolId)
+            );
+
+
+        if (!tool) {
+
+            showNotFound();
+
+            return;
+
+        }
+
+
+        renderTool(tool);
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        showNotFound();
+
+    }
+
+}
+
+
+function renderTool(tool) {
+
+    const image =
+        Array.isArray(tool.img) &&
+        tool.img.length &&
+        tool.img[0]
+
+        ? tool.img[0]
+
+        : FALLBACK_IMAGE;
+
+
+    document.title =
+        `${tool.name} | شرح واستخدام أداة Kali Linux`;
+
+
+    setMeta(
+        "description",
+        `${tool.name}: ${tool.importance || tool.description || "شرح أداة من أدوات Kali Linux واستخداماتها وتثبيتها وأوامرها."}`
+    );
+
+
+    setCanonical();
+
+
+    const useCases =
+        Array.isArray(tool.use_cases)
+        ? tool.use_cases
+        : [];
+
+
+    const examples =
+        Array.isArray(tool.examples)
+        ? tool.examples
+        : [];
+
+
+    const requirements =
+        Array.isArray(tool.requirements)
+        ? tool.requirements
+        : [];
+
+
+    const categories =
+        Array.isArray(tool.categories)
+        ? tool.categories
+        : [tool.category || "Kali Linux"];
+
+
+    content.innerHTML = `
+
+        <article>
+
+            <header class="tool-header">
+
+                <img
+                    class="tool-main-image"
+                    src="${escapeHtml(image)}"
+                    alt="${escapeHtml(tool.name)} - Kali Linux"
+                    onerror="this.src='${FALLBACK_IMAGE}'"
+                >
+
+                <div>
+
+                    <div class="tool-category">
+                        ${escapeHtml(categories.join(" · "))}
+                    </div>
+
+                    <h1 class="tool-title">
+                        ${escapeHtml(tool.name)}
+                    </h1>
+
+                    <p class="tool-importance">
+                        ${escapeHtml(
+                            tool.importance ||
+                            tool.description
+                        )}
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <section class="tool-box">
+
+                <h2>
+                    ما هي ${escapeHtml(tool.name)}؟
+                </h2>
+
+                <p>
+                    ${escapeHtml(
+                        tool.description ||
+                        tool.importance ||
+                        "أداة من أدوات Kali Linux."
+                    )}
+                </p>
+
+            </section>
+
+
+            ${
+                useCases.length
+                ? `
+
+                <section class="tool-box">
+
+                    <h2>
+                        أهم الاستخدامات
+                    </h2>
+
+                    <div class="info-list">
+
+                        ${useCases.map(
+                            item =>
+                            `<div class="info-item">
+                                ${escapeHtml(item)}
+                            </div>`
+                        ).join("")}
+
+                    </div>
+
+                </section>
+
+                `
+                : ""
+            }
+
+
+            ${
+                tool.installation
+                ? `
+
+                <section class="tool-box">
+
+                    <h2>
+                        التثبيت
+                    </h2>
+
+                    <div class="code-box">
+                        ${escapeHtml(
+                            tool.installation
+                        )}
+                    </div>
+
+                </section>
+
+                `
+                : ""
+            }
+
+
+            ${
+                tool.basic_usage
+                ? `
+
+                <section class="tool-box">
+
+                    <h2>
+                        الاستخدام الأساسي
+                    </h2>
+
+                    <div class="code-box">
+                        ${escapeHtml(
+                            tool.basic_usage
+                        )}
+                    </div>
+
+                </section>
+
+                `
+                : ""
+            }
+
+
+            ${
+                examples.length
+                ? `
+
+                <section class="tool-box">
+
+                    <h2>
+                        أمثلة
+                    </h2>
+
+                    ${examples.map(
+                        item =>
+                        `<div class="code-box">
+                            ${escapeHtml(item)}
+                        </div>`
+                    ).join("")}
+
+                </section>
+
+                `
+                : ""
+            }
+
+
+            ${
+                requirements.length
+                ? `
+
+                <section class="tool-box">
+
+                    <h2>
+                        المتطلبات
+                    </h2>
+
+                    <div class="info-list">
+
+                        ${requirements.map(
+                            item =>
+                            `<div class="info-item">
+                                ${escapeHtml(item)}
+                            </div>`
+                        ).join("")}
+
+                    </div>
+
+                </section>
+
+                `
+                : ""
+            }
+
+
+            ${
+                tool.official_website
+                ? `
+
+                <section class="tool-box">
+
+                    <h2>
+                        الموقع الرسمي
+                    </h2>
+
+                    <a
+                        class="tool-link"
+                        href="${escapeHtml(tool.official_website)}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        ${escapeHtml(tool.official_website)}
+                    </a>
+
+                </section>
+
+                `
+                : ""
+            }
+
+
+            ${
+                tool.kali_page
+                ? `
+
+                <section class="tool-box">
+
+                    <h2>
+                        صفحة الأداة في Kali
+                    </h2>
+
+                    <a
+                        class="tool-link"
+                        href="${escapeHtml(tool.kali_page)}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        ${escapeHtml(tool.kali_page)}
+                    </a>
+
+                </section>
+
+                `
+                : ""
+            }
+
+
+            ${
+                tool.legal_note
+                ? `
+
+                <section class="tool-box">
+
+                    <h2>
+                        الاستخدام القانوني
+                    </h2>
+
+                    <p>
+                        ${escapeHtml(
+                            tool.legal_note
+                        )}
+                    </p>
+
+                </section>
+
+                `
+                : ""
+            }
+
+        </article>
+
+    `;
+
+
+    addSchema(tool);
+
+}
+
+
+function setMeta(
+    name,
+    contentValue
+) {
+
+    let meta =
+        document.querySelector(
+            `meta[name="${name}"]`
+        );
+
+
+    if (!meta) {
+
+        meta =
+            document.createElement(
+                "meta"
+            );
+
+        meta.name =
+            name;
+
+        document.head.appendChild(
+            meta
+        );
+
+    }
+
+
+    meta.content =
+        contentValue;
+
+}
+
+
+function setCanonical() {
+
+    const url =
+        window.location.href;
+
+
+    let canonical =
+        document.querySelector(
+            'link[rel="canonical"]'
+        );
+
+
+    if (!canonical) {
+
+        canonical =
+            document.createElement(
+                "link"
+            );
+
+        canonical.rel =
+            "canonical";
+
+        document.head.appendChild(
+            canonical
+        );
+
+    }
+
+
+    canonical.href =
+        url;
+
+}
+
+
+function addSchema(tool) {
+
+    const schema =
+    {
+
+        "@context":
+            "https://schema.org",
+
+        "@type":
+            "TechArticle",
+
+        "headline":
+            `${tool.name} - شرح واستخدام أداة Kali Linux`,
+
+        "description":
+            tool.description ||
+            tool.importance ||
+            "",
+
+        "inLanguage":
+            "ar",
+
+        "about":
+            tool.name,
+
+        "url":
+            window.location.href
+
+    };
+
+
+    const script =
+        document.createElement(
+            "script"
+        );
+
+
+    script.type =
+        "application/ld+json";
+
+
+    script.textContent =
+        JSON.stringify(
+            schema
+        );
+
+
+    document.head.appendChild(
+        script
+    );
+
+}
+
+
+function showNotFound() {
+
+    document.title =
+        "الأداة غير موجودة | Kali Tools";
+
+
+    content.innerHTML = `
+
+        <div class="empty-state">
+
+            <h1>
+                الأداة غير موجودة
+            </h1>
+
+            <p>
+                تأكد من رابط الأداة أو أضفها إلى tools.json.
+            </p>
+
+            <a
+                href="./"
+                class="back-btn">
+                العودة للرئيسية
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+loadTool();
+
+</script>
+
+</body>
+
+  </html>
