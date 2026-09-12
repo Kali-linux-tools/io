@@ -66,56 +66,225 @@ async function init() {
 
     try {
 
-        const response =
-            await fetch(
-                "tools/tools.json",
-                {
-                    cache: "no-cache"
+        /*
+         * ملفات الأدوات
+         *
+         * تقدر تضيف عدد لا نهائي عمليًا:
+         *
+         * tools.json
+         * tools2.json
+         * tools3.json
+         * tools4.json
+         * ...
+         */
+
+        const files = [
+
+            "tools/tools.json",
+
+            "tools/tools2.json",
+
+            "tools/tools3.json",
+
+            "tools/tools4.json",
+
+            "tools/tools5.json",
+
+            "tools/tools6.json",
+
+            "tools/tools7.json",
+
+            "tools/tools8.json",
+
+            "tools/tools9.json",
+
+            "tools/tools10.json"
+
+        ];
+
+
+        const allTools = [];
+
+
+        /*
+         * تحميل كل الملفات
+         *
+         * لو ملف غير موجود:
+         * الموقع يتجاهله ويكمل باقي الملفات
+         */
+
+        for (const file of files) {
+
+            try {
+
+                const response =
+                    await fetch(
+                        file,
+                        {
+                            cache: "no-cache"
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    console.warn(
+                        `تعذر تحميل الملف: ${file}`
+                    );
+
+                    continue;
+
                 }
-            );
 
 
-        if (!response.ok) {
+                const data =
+                    await response.json();
 
-            throw new Error(
-                "tools.json not found"
-            );
+
+                if (!Array.isArray(data)) {
+
+                    console.warn(
+                        `الملف ليس JSON Array صالح: ${file}`
+                    );
+
+                    continue;
+
+                }
+
+
+                /*
+                 * إضافة أدوات الملف
+                 * إلى القائمة الرئيسية
+                 */
+
+                allTools.push(
+                    ...data
+                );
+
+
+            } catch (error) {
+
+                console.warn(
+                    `خطأ في تحميل ${file}:`,
+                    error
+                );
+
+            }
 
         }
 
 
-        const data =
-            await response.json();
+        /*
+         * كل ملفات JSON أصبحت
+         * Array واحدة
+         */
+
+        state.tools =
+            allTools;
 
 
-        if (!Array.isArray(data)) {
+        /*
+         * إزالة أي ID مكرر
+         * إذا حدث بالخطأ
+         */
 
-            throw new Error(
-                "Invalid tools.json"
-            );
+        const uniqueTools =
+            [];
 
-        }
+        const usedIds =
+            new Set();
 
 
-        state.tools = data;
+        state.tools.forEach(
+            tool => {
 
+                const toolId =
+                    String(
+                        tool.id ||
+                        ""
+                    ).trim();
+
+
+                /*
+                 * لو الأداة ليس لها ID
+                 * نضيفها عادي
+                 */
+
+                if (!toolId) {
+
+                    uniqueTools.push(
+                        tool
+                    );
+
+                    return;
+
+                }
+
+
+                /*
+                 * منع التكرار
+                 */
+
+                if (
+                    !usedIds.has(
+                        toolId
+                    )
+                ) {
+
+                    usedIds.add(
+                        toolId
+                    );
+
+                    uniqueTools.push(
+                        tool
+                    );
+
+                }
+
+            }
+        );
+
+
+        state.tools =
+            uniqueTools;
+
+
+        /*
+         * تحديث الإحصائيات
+         */
 
         updateStats();
 
+
+        /*
+         * إنشاء الأقسام
+         */
+
         buildCategories();
+
+
+        /*
+         * عرض الأدوات
+         */
 
         render();
 
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            error
+        );
 
-        state.tools = [];
+
+        state.tools =
+            [];
+
 
         elements.loading.classList.add(
             "hidden"
         );
+
 
         showError();
 
@@ -151,15 +320,21 @@ function setupEvents() {
         "click",
         () => {
 
-            elements.search.value = "";
+            elements.search.value =
+                "";
 
-            state.search = "";
+
+            state.search =
+                "";
+
 
             elements.clearSearch.classList.remove(
                 "visible"
             );
 
+
             elements.search.focus();
+
 
             render();
 
@@ -192,31 +367,35 @@ function setupEvents() {
 
 
     document
-        .querySelectorAll("[data-category]")
-        .forEach(button => {
+        .querySelectorAll(
+            "[data-category]"
+        )
+        .forEach(
+            button => {
 
-            button.addEventListener(
-                "click",
-                () => {
+                button.addEventListener(
+                    "click",
+                    () => {
 
-                    state.category =
-                        button.dataset.category;
-
-
-                    updateCategoryUI();
-
-
-                    elements.mobileNav.classList.remove(
-                        "open"
-                    );
+                        state.category =
+                            button.dataset.category;
 
 
-                    render();
+                        updateCategoryUI();
 
-                }
-            );
 
-        });
+                        elements.mobileNav.classList.remove(
+                            "open"
+                        );
+
+
+                        render();
+
+                    }
+                );
+
+            }
+        );
 
 }
 
@@ -225,6 +404,21 @@ function buildCategories() {
 
     const categories =
         new Set();
+
+
+    /*
+     * منع تكرار إنشاء الأقسام
+     * لو buildCategories اتنفذت أكثر من مرة
+     */
+
+    elements.categoryScroll
+        .querySelectorAll(
+            ".dynamic-category"
+        )
+        .forEach(
+            button =>
+                button.remove()
+        );
 
 
     state.tools.forEach(
@@ -237,10 +431,19 @@ function buildCategories() {
             ) {
 
                 tool.categories.forEach(
-                    category =>
-                        categories.add(
+                    category => {
+
+                        if (
                             category
-                        )
+                        ) {
+
+                            categories.add(
+                                category
+                            );
+
+                        }
+
+                    }
                 );
 
             }
@@ -264,7 +467,7 @@ function buildCategories() {
             (a, b) =>
                 String(a).localeCompare(
                     String(b),
-                    "en"
+                    "ar"
                 )
         );
 
@@ -279,7 +482,7 @@ function buildCategories() {
 
 
             button.className =
-                "category-chip";
+                "category-chip dynamic-category";
 
 
             button.dataset.category =
@@ -300,6 +503,7 @@ function buildCategories() {
 
                     updateCategoryUI();
 
+
                     render();
 
                 }
@@ -313,6 +517,9 @@ function buildCategories() {
         }
     );
 
+
+    updateCategoryUI();
+
 }
 
 
@@ -322,15 +529,17 @@ function updateCategoryUI() {
         .querySelectorAll(
             "[data-category]"
         )
-        .forEach(button => {
+        .forEach(
+            button => {
 
-            button.classList.toggle(
-                "active",
-                button.dataset.category ===
-                state.category
-            );
+                button.classList.toggle(
+                    "active",
+                    button.dataset.category ===
+                    state.category
+                );
 
-        });
+            }
+        );
 
 }
 
@@ -338,38 +547,53 @@ function updateCategoryUI() {
 function getFilteredTools() {
 
     let result =
-        [...state.tools];
+        [
+            ...state.tools
+        ];
 
+
+    /*
+     * فلترة حسب القسم
+     */
 
     if (
-        state.category !== "الكل"
+        state.category !==
+        "الكل"
     ) {
 
         result =
-            result.filter(tool => {
+            result.filter(
+                tool => {
 
-                if (
-                    Array.isArray(
-                        tool.categories
-                    )
-                ) {
+                    if (
+                        Array.isArray(
+                            tool.categories
+                        )
+                    ) {
 
-                    return tool.categories.includes(
-                        state.category
-                    );
+                        return tool.categories.includes(
+                            state.category
+                        );
+
+                    }
+
+
+                    return tool.category ===
+                        state.category;
 
                 }
-
-
-                return tool.category ===
-                    state.category;
-
-            });
+            );
 
     }
 
 
-    if (state.search) {
+    /*
+     * البحث
+     */
+
+    if (
+        state.search
+    ) {
 
         const search =
             normalize(
@@ -378,41 +602,59 @@ function getFilteredTools() {
 
 
         result =
-            result.filter(tool => {
+            result.filter(
+                tool => {
 
-                const content = [
+                    const content = [
 
-                    tool.name,
+                        tool.name,
 
-                    tool.id,
+                        tool.id,
 
-                    tool.description,
+                        tool.description,
 
-                    tool.importance,
+                        tool.importance,
 
-                    tool.category,
+                        tool.category,
 
-                    ...(tool.categories || []),
+                        ...(tool.categories || []),
 
-                    ...(tool.use_cases || []),
+                        ...(tool.use_cases || []),
 
-                    ...(tool.examples || [])
+                        ...(tool.examples || []),
 
-                ]
-                .filter(Boolean)
-                .join(" ");
+                        ...(tool.installation || []),
+
+                        ...(tool.basic_usage || []),
+
+                        ...(tool.legal_note || []),
+
+                        ...(tool.tags || [])
+
+                    ]
+                    .filter(
+                        Boolean
+                    )
+                    .join(
+                        " "
+                    );
 
 
-                return normalize(
-                    content
-                ).includes(
-                    search
-                );
+                    return normalize(
+                        content
+                    ).includes(
+                        search
+                    );
 
-            });
+                }
+            );
 
     }
 
+
+    /*
+     * الترتيب
+     */
 
     if (
         elements.sort.value ===
@@ -422,10 +664,12 @@ function getFilteredTools() {
         result.sort(
             (a, b) =>
                 String(
-                    a.name || ""
+                    a.name ||
+                    ""
                 ).localeCompare(
                     String(
-                        b.name || ""
+                        b.name ||
+                        ""
                     ),
                     "ar"
                 )
@@ -450,10 +694,13 @@ function render() {
     );
 
 
-    elements.grid.innerHTML = "";
+    elements.grid.innerHTML =
+        "";
 
 
-    if (!tools.length) {
+    if (
+        !tools.length
+    ) {
 
         elements.empty.classList.remove(
             "hidden"
@@ -486,7 +733,9 @@ function render() {
         tool => {
 
             fragment.appendChild(
-                createCard(tool)
+                createCard(
+                    tool
+                )
             );
 
         }
@@ -500,7 +749,9 @@ function render() {
 }
 
 
-function createCard(tool) {
+function createCard(
+    tool
+) {
 
     const article =
         document.createElement(
@@ -544,19 +795,53 @@ function createCard(tool) {
         `${tool.name || "أداة"} - Kali Linux`;
 
 
-    const imageUrl =
-        Array.isArray(tool.img) &&
+    /*
+     * دعم الصور سواء كانت:
+     *
+     * img: ["url"]
+     *
+     * أو:
+     *
+     * img: "url"
+     */
+
+    let imageUrl =
+        FALLBACK_IMAGE;
+
+
+    if (
+        Array.isArray(
+            tool.img
+        ) &&
         tool.img.length &&
         tool.img[0]
+    ) {
 
-        ? tool.img[0]
+        imageUrl =
+            tool.img[0];
 
-        : FALLBACK_IMAGE;
+    }
+
+    else if (
+        typeof tool.img ===
+        "string" &&
+        tool.img.trim()
+    ) {
+
+        imageUrl =
+            tool.img.trim();
+
+    }
 
 
     image.src =
         imageUrl;
 
+
+    /*
+     * صورة بديلة لو الصورة الأصلية
+     * غير موجودة أو الرابط مكسور
+     */
 
     image.onerror =
         () => {
@@ -586,6 +871,12 @@ function createCard(tool) {
 
     category.textContent =
         tool.category ||
+        (
+            Array.isArray(
+                tool.categories
+            ) &&
+            tool.categories[0]
+        ) ||
         "Kali Tool";
 
 
@@ -681,7 +972,7 @@ function createCard(tool) {
 
     open.href =
         `tool.html?id=${encodeURIComponent(
-            tool.id
+            tool.id || ""
         )}`;
 
 
@@ -745,10 +1036,19 @@ function updateStats() {
             ) {
 
                 tool.categories.forEach(
-                    category =>
-                        categories.add(
+                    category => {
+
+                        if (
                             category
-                        )
+                        ) {
+
+                            categories.add(
+                                category
+                            );
+
+                        }
+
+                    }
                 );
 
             }
@@ -773,7 +1073,9 @@ function updateStats() {
 }
 
 
-function normalize(value) {
+function normalize(
+    value
+) {
 
     return String(
         value || ""
@@ -821,6 +1123,7 @@ function resetFilters() {
 
     updateCategoryUI();
 
+
     render();
 
 }
@@ -842,6 +1145,6 @@ function showError() {
     elements.empty.querySelector(
         "p"
     ).textContent =
-        "تأكد من وجود الملف tools/tools.json.";
+        "تأكد من وجود ملفات الأدوات داخل مجلد tools.";
 
-}
+            }
