@@ -2,921 +2,1057 @@
   {
     "id": "nmap",
     "name": "Nmap",
-    "category": "جمع المعلومات",
-    "importance": "أداة أساسية لاستكشاف الشبكات واكتشاف الأجهزة والمنافذ والخدمات وإصداراتها. تُستخدم بكثرة في اختبار أمن الشبكات وإدارة البنية التحتية.",
+    "category": "Network Discovery",
+    "importance": "Nmap من أشهر وأقوى أدوات اكتشاف الشبكات وفحص الخدمات والمنافذ. تُستخدم لفهم الأجهزة الموجودة داخل شبكة مصرح لك باختبارها، ومعرفة المنافذ المفتوحة والخدمات التي تستمع عليها، والمساعدة في تقييم سطح الهجوم. تتميز بمرونتها الكبيرة وإمكانية استخدامها في الاستكشاف، إدارة الشبكات، التدقيق الأمني، والتحقق من إعدادات الجدران النارية.",
     "use_cases": [
-      "اكتشاف الأجهزة داخل شبكة اختبار",
-      "فحص المنافذ المفتوحة",
-      "التعرف على الخدمات وإصداراتها",
-      "جمع معلومات أولية عن الشبكة"
+      "اكتشاف الأجهزة الموجودة في شبكة اختبارية",
+      "معرفة المنافذ المفتوحة على جهاز مصرح بفحصه",
+      "التعرف على الخدمات والإصدارات",
+      "مراجعة إعدادات الشبكة",
+      "التحقق من تعرض خدمة معينة للإنترنت",
+      "استخدام نتائج الفحص كمرحلة أولى في اختبار أمني مصرح"
     ],
-    "installation": "sudo apt install nmap",
-    "basic_usage": "nmap 127.0.0.1",
+    "installation": "sudo apt update && sudo apt install nmap",
+    "basic_usage": "nmap TARGET",
     "examples": [
-      "nmap 127.0.0.1 — فحص الجهاز المحلي",
-      "nmap -sV 127.0.0.1 — محاولة تحديد إصدارات الخدمات"
+      "nmap 192.168.1.10",
+      "nmap -sV 192.168.1.10",
+      "nmap -p 80,443 192.168.1.10"
     ],
-    "legal_note": "استخدم Nmap فقط على الأنظمة والشبكات التي تملكها أو لديك تصريح صريح لاختبارها.",
-    "img": "https://www.kali.org/tools/nmap/images/nmap-logo.svg"
+    "legal_note": "استخدم Nmap فقط على الأجهزة والشبكات التي تملكها أو لديك تصريح صريح لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/nmap/images/nmap-logo.svg"
+    ]
   },
   {
     "id": "wireshark",
     "name": "Wireshark",
-    "category": "تحليل الشبكات",
-    "importance": "محلل لحزم الشبكة يسمح بمشاهدة وتحليل حركة البيانات والبروتوكولات للمساعدة في استكشاف مشاكل الشبكات وتحليلها أمنياً.",
+    "category": "Network Analysis",
+    "importance": "Wireshark محلل بروتوكولات شبكات متقدم يسمح برؤية وتحليل حركة البيانات التي تمر عبر واجهة شبكة يملك المستخدم صلاحية مراقبتها. يوفر أدوات قوية لفهم بروتوكولات TCP وUDP وDNS وHTTP وTLS وغيرها، ويساعد في اكتشاف مشاكل الاتصال والأخطاء وتحليل أداء الشبكات والتحقيقات الأمنية.",
     "use_cases": [
-      "تحليل حزم الشبكة",
-      "استكشاف مشاكل الاتصال",
-      "دراسة بروتوكولات الشبكات",
-      "تحليل حركة المرور داخل مختبر"
+      "تحليل حركة الشبكة",
+      "تشخيص مشاكل الاتصال",
+      "فهم البروتوكولات",
+      "تحليل DNS وTCP وHTTP",
+      "التحقيق في حوادث أمنية داخل شبكة مصرح بمراقبتها",
+      "التعليم العملي لبروتوكولات الشبكات"
     ],
-    "installation": "sudo apt install wireshark",
-    "basic_usage": "wireshark",
+    "installation": "sudo apt update && sudo apt install wireshark",
+    "basic_usage": "sudo wireshark",
     "examples": [
-      "تشغيل Wireshark واختيار واجهة الشبكة المناسبة",
-      "استخدام مرشحات العرض لدراسة نوع معين من الحزم"
+      "فتح Wireshark واختيار واجهة الشبكة الخاصة ببيئة الاختبار",
+      "استخدام display filter مثل: dns",
+      "استخدام display filter مثل: tcp"
     ],
-    "legal_note": "التقط وحلل حركة المرور على الشبكات التي تملكها أو لديك تصريح لمراقبتها فقط.",
-    "img": "https://www.kali.org/tools/wireshark/images/wireshark-logo.svg"
+    "legal_note": "التقاط وتحليل حركة شبكة لا تملك حق مراقبتها قد يمثل انتهاكًا للخصوصية والقانون.",
+    "img": [
+      "https://www.kali.org/tools/wireshark/images/wireshark-logo.svg"
+    ]
   },
   {
     "id": "burpsuite",
     "name": "Burp Suite",
-    "category": "أمن تطبيقات الويب",
-    "importance": "منصة متخصصة في اختبار أمان تطبيقات الويب وتحليل الطلبات والاستجابات واكتشاف مشكلات الأمان أثناء الاختبارات المصرح بها.",
+    "category": "Web Security",
+    "importance": "Burp Suite منصة متخصصة في اختبار أمان تطبيقات الويب. توفر Proxy لاعتراض الطلبات والاستجابات، وأدوات لفحص وتحليل HTTP وHTTPS، وإعادة إرسال الطلبات واختبار المدخلات وفهم آلية عمل التطبيقات. تُستخدم على نطاق واسع في مختبرات الأمن السيبراني واختبارات الاختراق المصرح بها.",
     "use_cases": [
       "اختبار تطبيقات الويب",
-      "تحليل HTTP وHTTPS",
-      "فحص الطلبات والاستجابات",
-      "اختبار تطبيقات الويب داخل المختبر"
+      "تحليل طلبات HTTP",
+      "فحص الكوكيز والجلسات",
+      "اختبار المدخلات في بيئة مصرح بها",
+      "تحليل REST APIs",
+      "التعلم على ثغرات تطبيقات الويب"
     ],
-    "installation": "sudo apt install burpsuite",
+    "installation": "sudo apt update && sudo apt install burpsuite",
     "basic_usage": "burpsuite",
     "examples": [
-      "تشغيل Burp Suite وإنشاء مشروع اختبار",
-      "استخدام Proxy لمراقبة طلبات تطبيق تجريبي"
+      "تشغيل Proxy داخل مختبر محلي",
+      "اعتراض طلب HTTP من تطبيق تجريبي",
+      "إرسال الطلب إلى Repeater لتحليله"
     ],
-    "legal_note": "اختبر فقط التطبيقات التي تملكها أو لديك تصريح لاختبارها.",
-    "img": "https://www.kali.org/tools/burpsuite/images/burpsuite-logo.svg"
+    "legal_note": "اختبر فقط المواقع والتطبيقات التي تملكها أو حصلت على تصريح مكتوب لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/burpsuite/images/burpsuite-logo.svg"
+    ]
   },
   {
     "id": "metasploit",
     "name": "Metasploit Framework",
-    "category": "اختبار الاختراق",
-    "importance": "إطار عمل واسع لاختبار الثغرات الأمنية وأبحاث الاستغلال وبناء واختبار أدوات أمنية داخل بيئات مصرح بها.",
+    "category": "Security Testing",
+    "importance": "Metasploit Framework منصة ضخمة لاختبار الأمان والتحقق من وجود ثغرات في بيئات اختبار مصرح بها. تحتوي على وحدات للاستطلاع، التحقق من الثغرات، إنشاء جلسات اختبارية، وأدوات مساعدة عديدة. تُستخدم بشكل كبير في التدريب العملي وفهم دورة اختبار الاختراق.",
     "use_cases": [
-      "أبحاث الثغرات",
-      "اختبار الأنظمة داخل المختبر",
-      "التدريب على أمن المعلومات",
-      "اختبار الحماية الأمنية"
+      "التدريب على اختبار الاختراق",
+      "التحقق من ثغرات داخل مختبر",
+      "اختبار أنظمة تملكها",
+      "التعلم عن مراحل الاختراق الأخلاقي",
+      "تقييم دفاعات الأنظمة"
     ],
-    "installation": "sudo apt install metasploit-framework",
+    "installation": "sudo apt update && sudo apt install metasploit-framework",
     "basic_usage": "msfconsole",
     "examples": [
-      "تشغيل وحدة التحكم داخل مختبر أمني",
-      "استعراض الوحدات المتاحة باستخدام help"
+      "msfconsole",
+      "help",
+      "search type:auxiliary"
     ],
-    "legal_note": "استخدم Metasploit على أنظمة اختبار مملوكة لك أو ضمن بيئة مصرح بها فقط.",
-    "img": "https://www.kali.org/tools/metasploit-framework/images/metasploit-framework-logo.svg"
+    "legal_note": "Metasploit أداة قوية جدًا. استخدمها حصريًا داخل مختبراتك أو على أنظمة لديك تصريح باختبارها.",
+    "img": [
+      "https://www.kali.org/tools/metasploit-framework/images/metasploit-framework-logo.svg"
+    ]
   },
   {
     "id": "hydra",
     "name": "Hydra",
-    "category": "هجمات كلمات المرور",
-    "importance": "أداة لاختبار قوة أنظمة المصادقة من خلال محاولات تسجيل دخول آلية ضمن اختبارات أمنية مصرح بها.",
+    "category": "Credential Auditing",
+    "importance": "Hydra أداة لتدقيق قوة بيانات تسجيل الدخول في الخدمات الشبكية داخل بيئات مصرح بها. تدعم العديد من البروتوكولات والخدمات، ويمكن استخدامها في المختبرات لمعرفة مدى مقاومة الحسابات لسياسات كلمات المرور الضعيفة. أهميتها التعليمية أنها توضح لماذا يجب استخدام كلمات مرور قوية ومعدلات محاولات محدودة وحماية مناسبة لتسجيل الدخول.",
     "use_cases": [
-      "اختبار قوة كلمات المرور",
-      "تقييم أنظمة المصادقة",
-      "التدريب داخل مختبرات الأمن السيبراني"
+      "اختبار سياسات كلمات المرور",
+      "تدقيق حسابات مختبرية",
+      "التدريب على حماية خدمات تسجيل الدخول",
+      "اختبار آليات rate limiting",
+      "التأكد من فعالية سياسات المصادقة"
     ],
-    "installation": "sudo apt install hydra",
+    "installation": "sudo apt update && sudo apt install hydra",
     "basic_usage": "hydra -h",
     "examples": [
-      "عرض خيارات الأداة باستخدام hydra -h",
-      "استخدامها داخل مختبر مصادقة تجريبي فقط"
+      "hydra -h",
+      "قراءة خيارات البروتوكولات المتاحة",
+      "اختبار حسابات تجريبية داخل مختبر معزول"
     ],
-    "legal_note": "لا تستخدم محاولات تسجيل الدخول الآلية ضد حسابات أو خدمات لا تملك تصريحاً لاختبارها.",
-    "img": "https://www.kali.org/tools/hydra/images/hydra-logo.svg"
+    "legal_note": "لا تستخدم Hydra لتخمين بيانات دخول حسابات حقيقية أو خدمات لا تملك تصريحًا باختبارها.",
+    "img": [
+      "https://www.kali.org/tools/hydra/images/hydra-logo.svg"
+    ]
   },
   {
     "id": "john",
     "name": "John the Ripper",
-    "category": "هجمات كلمات المرور",
-    "importance": "أداة شهيرة لاختبار قوة كلمات المرور واستعادة كلمات المرور من التجزئات في سياقات التدقيق الأمني المصرح به.",
+    "category": "Password Auditing",
+    "importance": "John the Ripper أداة معروفة لتدقيق قوة كلمات المرور من خلال تحليل hashes في بيئات مصرح بها. تساعد مسؤولي الأنظمة والباحثين على اكتشاف كلمات المرور الضعيفة الموجودة ضمن ملفات hash اختبارية، وبالتالي تحسين سياسات كلمات المرور واستخدام hashing وsalting بصورة صحيحة.",
     "use_cases": [
       "تدقيق كلمات المرور",
-      "اختبار قوة التجزئات",
-      "التدريب على حماية كلمات المرور"
+      "اختبار قوة hashes",
+      "التدريب على password security",
+      "مراجعة سياسات المصادقة",
+      "اختبار ملفات hash خاصة بمختبر"
     ],
-    "installation": "sudo apt install john",
+    "installation": "sudo apt update && sudo apt install john",
     "basic_usage": "john --help",
     "examples": [
-      "عرض خيارات الأداة",
-      "اختبار تجزئات تم إنشاؤها داخل مختبرك"
+      "john --help",
+      "john --format=raw-md5 hashes.txt",
+      "john --show hashes.txt"
     ],
-    "legal_note": "استخدمها فقط مع بيانات اعتماد أو تجزئات تملكها أو لديك تصريح رسمي لاختبارها.",
-    "img": "https://www.kali.org/tools/john/images/john-logo.svg"
+    "legal_note": "استخدم الأداة فقط على hashes حصلت عليها بصورة قانونية ولديك صلاحية اختبارها.",
+    "img": [
+      "https://www.kali.org/tools/john/images/john-logo.svg"
+    ]
   },
   {
     "id": "aircrack-ng",
     "name": "Aircrack-ng",
-    "category": "الشبكات اللاسلكية",
-    "importance": "مجموعة أدوات لتحليل واختبار شبكات Wi-Fi ومراقبة الحزم وتقييم إعدادات الأمان اللاسلكي.",
+    "category": "Wireless Security",
+    "importance": "Aircrack-ng مجموعة أدوات متخصصة في تقييم أمان شبكات Wi-Fi. تحتوي على أدوات لمراقبة الشبكات اللاسلكية وتحليل الإطارات واختبار إعدادات الشبكات ضمن بيئات مصرح بها. تُستخدم في التعليم والتدقيق الأمني لمعرفة نقاط ضعف إعدادات الشبكات اللاسلكية وتحسينها.",
     "use_cases": [
       "تدقيق أمان Wi-Fi",
       "تحليل الشبكات اللاسلكية",
-      "التدريب على أمن الشبكات"
+      "التعلم عن 802.11",
+      "اختبار إعدادات الشبكات",
+      "تحليل ملفات الالتقاط داخل مختبر"
     ],
-    "installation": "sudo apt install aircrack-ng",
+    "installation": "sudo apt update && sudo apt install aircrack-ng",
     "basic_usage": "aircrack-ng --help",
     "examples": [
-      "عرض أدوات Aircrack-ng المتاحة",
-      "تحليل شبكة لاسلكية داخل مختبر مصرح به"
+      "aircrack-ng --help",
+      "airmon-ng",
+      "airodump-ng --help"
     ],
-    "legal_note": "لا تختبر شبكات Wi-Fi لا تملكها أو ليس لديك تصريح لاختبارها.",
-    "img": "https://www.kali.org/tools/aircrack-ng/images/aircrack-ng-logo.svg"
+    "legal_note": "لا تستخدم أدوات Aircrack-ng على شبكات Wi-Fi لا تملكها أو بدون تصريح صريح.",
+    "img": [
+      "https://www.kali.org/tools/aircrack-ng/images/aircrack-ng-logo.svg"
+    ]
   },
   {
     "id": "sqlmap",
     "name": "SQLmap",
-    "category": "أمن تطبيقات الويب",
-    "importance": "أداة مفتوحة المصدر لأتمتة اكتشاف واختبار بعض أنواع ثغرات حقن SQL في التطبيقات المصرح باختبارها.",
+    "category": "Web Security",
+    "importance": "SQLmap أداة مفتوحة المصدر لاختبار تطبيقات الويب وقواعد البيانات بحثًا عن مشاكل SQL Injection في البيئات المصرح بها. تقوم بأتمتة أجزاء كثيرة من عملية التحقق، وتدعم مجموعة كبيرة من أنظمة قواعد البيانات. تُستخدم في التدريب واختبارات الاختراق المهنية للتحقق من صحة المدخلات وحماية التطبيقات.",
     "use_cases": [
-      "اختبار قواعد بيانات تطبيقات الويب",
-      "البحث عن مؤشرات SQL Injection",
-      "التدريب الأمني"
+      "اختبار SQL Injection",
+      "تدقيق تطبيقات الويب",
+      "اختبار APIs",
+      "التعلم على أمن قواعد البيانات",
+      "التحقق من صحة المدخلات"
     ],
-    "installation": "sudo apt install sqlmap",
+    "installation": "sudo apt update && sudo apt install sqlmap",
     "basic_usage": "sqlmap --help",
     "examples": [
-      "sqlmap --help — عرض خيارات الأداة",
-      "استخدام SQLmap على تطبيق تدريبي محلي"
+      "sqlmap --help",
+      "sqlmap -u 'http://127.0.0.1/test?id=1' --batch",
+      "استخدام SQLmap داخل تطبيق مختبري محلي"
     ],
-    "legal_note": "اختبر فقط تطبيقات الويب التي تملكها أو لديك تصريح رسمي لاختبارها.",
-    "img": "https://www.kali.org/tools/sqlmap/images/sqlmap-logo.svg"
+    "legal_note": "يجب استخدام SQLmap على تطبيقات تملكها أو لديك تصريح باختبارها فقط.",
+    "img": [
+      "https://www.kali.org/tools/sqlmap/images/sqlmap-logo.svg"
+    ]
   },
   {
     "id": "netexec",
     "name": "NetExec",
-    "category": "أمن الشبكات",
-    "importance": "أداة تساعد في تقييم بيئات الشبكات وخدمات Windows وActive Directory أثناء اختبارات الاختراق المصرح بها.",
+    "category": "Network Security",
+    "importance": "NetExec أداة تساعد مختبري الاختراق ومسؤولي الشبكات على تقييم بيئات الشبكات، خصوصًا البيئات التي تعتمد على بروتوكولات وخدمات Microsoft Windows. يمكن استخدامها في الجرد الأمني والتحقق من إعدادات الأنظمة والحسابات والخدمات داخل بيئة مصرح بها.",
     "use_cases": [
-      "تقييم بيئات Windows",
-      "اختبارات Active Directory",
-      "جمع معلومات داخل مختبرات الشبكات"
+      "تقييم شبكات Windows",
+      "جرد الخدمات",
+      "اختبار إعدادات SMB",
+      "التدريب على Active Directory",
+      "تقييم بيئات المختبر"
     ],
-    "installation": "sudo apt install netexec",
+    "installation": "sudo apt update && sudo apt install netexec",
     "basic_usage": "nxc --help",
     "examples": [
-      "عرض خيارات NetExec",
-      "استخدامه داخل مختبر Active Directory"
+      "nxc --help",
+      "nxc smb --help",
+      "استخدامه ضد أجهزة مختبرية فقط"
     ],
-    "legal_note": "يجب استخدام NetExec فقط داخل بيئات مصرح باختبارها.",
-    "img": "https://www.kali.org/tools/netexec/images/netexec-logo.svg"
+    "legal_note": "لا تستخدم NetExec على شبكات أو أجهزة خارج نطاق التصريح.",
+    "img": [
+      "https://www.kali.org/tools/netexec/images/netexec-logo.svg"
+    ]
   },
   {
     "id": "responder",
     "name": "Responder",
-    "category": "التنصت والانتحال",
-    "importance": "أداة بحث واختبار لتقييم بعض بروتوكولات المصادقة وخدمات تسمية الشبكات في بيئات Windows.",
+    "category": "Network Security",
+    "importance": "Responder أداة بحثية تُستخدم في تقييم بروتوكولات name resolution والمصادقة داخل شبكات Windows. تساعد فرق الأمن على فهم مخاطر بعض آليات اكتشاف الأجهزة والمصادقة القديمة، وبالتالي تحسين إعدادات الشبكة وتعطيل البروتوكولات غير الضرورية.",
     "use_cases": [
-      "اختبار أمان الشبكات المحلية",
-      "دراسة بروتوكولات المصادقة",
-      "التدريب على أمن Windows"
+      "تقييم Windows Network",
+      "دراسة name resolution",
+      "التدريب على أمن الشبكات",
+      "اختبار إعدادات المصادقة",
+      "بناء مختبرات Active Directory"
     ],
-    "installation": "sudo apt install responder",
-    "basic_usage": "responder -h",
+    "installation": "sudo apt update && sudo apt install responder",
+    "basic_usage": "responder --help",
     "examples": [
-      "عرض خيارات الأداة",
-      "استخدامها في شبكة مختبر معزولة"
+      "responder --help",
+      "قراءة خيارات الواجهات المتاحة",
+      "استخدامه داخل مختبر معزول"
     ],
-    "legal_note": "استخدم Responder فقط في مختبر أو شبكة لديك تصريح صريح لاختبارها.",
-    "img": "https://www.kali.org/tools/responder/images/responder-logo.svg"
+    "legal_note": "Responder قد يتعامل مع حركة مصادقة حساسة؛ استخدمه فقط في شبكة مختبر أو ضمن تصريح أمني واضح.",
+    "img": [
+      "https://www.kali.org/tools/responder/images/responder-logo.svg"
+    ]
   },
   {
     "id": "nikto",
     "name": "Nikto",
-    "category": "أمن تطبيقات الويب",
-    "importance": "ماسح لخوادم الويب يبحث عن إعدادات ومكونات ومشكلات أمنية معروفة يمكن أن تستحق المراجعة.",
+    "category": "Web Security",
+    "importance": "Nikto ماسح لخوادم الويب يساعد في اكتشاف إعدادات ومكونات قد تكون غير آمنة، مثل الملفات الشائعة والإصدارات القديمة وبعض مشكلات إعداد الخادم. يعتبر مفيدًا كأداة استطلاع أولية ضمن اختبار أمني مصرح به، لكنه لا يغني عن الاختبارات اليدوية المتقدمة.",
     "use_cases": [
       "فحص خوادم الويب",
+      "اكتشاف ملفات شائعة",
       "مراجعة إعدادات الخادم",
-      "اكتشاف المكونات القديمة",
-      "التدقيق الأمني"
+      "التعرف على إصدارات بعض المكونات",
+      "التدريب على Web Security"
     ],
-    "installation": "sudo apt install nikto",
+    "installation": "sudo apt update && sudo apt install nikto",
     "basic_usage": "nikto -h http://127.0.0.1",
     "examples": [
-      "فحص خادم ويب محلي داخل المختبر",
-      "مراجعة نتائج الفحص يدوياً"
+      "nikto -h http://127.0.0.1",
+      "nikto -h https://example.test"
     ],
-    "legal_note": "استخدم Nikto على خوادم تملكها أو لديك تصريح بفحصها فقط.",
-    "img": "https://www.kali.org/tools/nikto/images/nikto-logo.svg"
+    "legal_note": "نفذ الفحص على خادم تملكه أو لديك تصريح باختباره.",
+    "img": [
+      "https://www.kali.org/tools/nikto/images/nikto-logo.svg"
+    ]
   },
   {
     "id": "gobuster",
     "name": "Gobuster",
-    "category": "جمع المعلومات",
-    "importance": "أداة سريعة مكتوبة بلغة Go تساعد في اكتشاف الموارد والمسارات والخدمات ضمن عمليات الاستطلاع المصرح بها.",
+    "category": "Web Enumeration",
+    "importance": "Gobuster أداة سريعة للاستكشاف القائم على القوائم في خدمات الويب وDNS وبعض الاستخدامات الأخرى. تُستخدم في المختبرات لاكتشاف مسارات وموارد موجودة على تطبيقات مصرح باختبارها، وتساعد في فهم سطح التطبيق قبل إجراء اختبارات أمنية أعمق.",
     "use_cases": [
-      "استكشاف بنية مواقع الاختبار",
-      "اكتشاف المسارات المتاحة",
-      "التدريب على Web Enumeration"
+      "اكتشاف المسارات",
+      "اختبار تطبيقات الويب",
+      "DNS enumeration",
+      "اكتشاف موارد مخفية في مختبر",
+      "التعلم على Web Enumeration"
     ],
-    "installation": "sudo apt install gobuster",
+    "installation": "sudo apt update && sudo apt install gobuster",
     "basic_usage": "gobuster --help",
     "examples": [
-      "عرض خيارات Gobuster",
-      "استخدامه على خادم ويب محلي تجريبي"
+      "gobuster --help",
+      "gobuster dir --help",
+      "استخدامه على تطبيق محلي تجريبي"
     ],
-    "legal_note": "نفذ عمليات الاستطلاع على أهداف مصرح بها فقط.",
-    "img": "https://www.kali.org/tools/gobuster/images/gobuster-logo.svg"
+    "legal_note": "لا تستخدم enumeration ضد مواقع أو خوادم لا تملك تصريحًا باختبارها.",
+    "img": [
+      "https://www.kali.org/tools/gobuster/images/gobuster-logo.svg"
+    ]
   },
   {
     "id": "ffuf",
     "name": "FFUF",
-    "category": "أمن تطبيقات الويب",
-    "importance": "أداة Web Fuzzing سريعة لاكتشاف المسارات والموارد ونقاط الإدخال أثناء اختبار تطبيقات الويب.",
+    "category": "Web Enumeration",
+    "importance": "FFUF أداة Web Fuzzing سريعة ومرنة تُستخدم لاختبار كيفية استجابة تطبيقات الويب لمدخلات مختلفة. يمكن استخدامها في اكتشاف المسارات والبارامترات والموارد داخل بيئات الاختبار، وهي من الأدوات المهمة في تعلم منهجيات فحص تطبيقات الويب.",
     "use_cases": [
-      "Web Fuzzing",
+      "Web fuzzing",
       "اكتشاف المسارات",
-      "اختبار تطبيقات الويب",
-      "التدريب الأمني"
+      "اختبار parameters",
+      "اختبار APIs",
+      "التدريب على Web Security"
     ],
-    "installation": "sudo apt install ffuf",
+    "installation": "sudo apt update && sudo apt install ffuf",
     "basic_usage": "ffuf -h",
     "examples": [
-      "عرض خيارات FFUF",
-      "اختبار تطبيق ويب محلي داخل مختبر"
+      "ffuf -h",
+      "اختبار تطبيق localhost داخل مختبر",
+      "استخدام wordlist خاصة ببيئة الاختبار"
     ],
-    "legal_note": "استخدم FFUF على تطبيقات تملكها أو لديك تصريح لاختبارها.",
-    "img": "https://www.kali.org/tools/ffuf/images/ffuf-logo.svg"
+    "legal_note": "Fuzzing قد يرسل عددًا كبيرًا من الطلبات؛ لا تستخدمه إلا على أهداف مصرح بها.",
+    "img": [
+      "https://www.kali.org/tools/ffuf/images/ffuf-logo.svg"
+    ]
   },
   {
     "id": "searchsploit",
     "name": "SearchSploit",
-    "category": "تحليل الثغرات",
-    "importance": "واجهة سطر أوامر للبحث في قاعدة Exploit Database عن معلومات مرتبطة بالثغرات والبرمجيات.",
+    "category": "Vulnerability Research",
+    "importance": "SearchSploit واجهة سطر أوامر لقاعدة بيانات Exploit Database، وتساعد الباحث الأمني على البحث عن معلومات وأبحاث واختبارات مرتبطة بإصدارات برمجيات معينة. فائدتها الأساسية في مرحلة البحث والتحقق من وجود معلومات عامة عن ثغرات معروفة.",
     "use_cases": [
-      "البحث عن معلومات الثغرات",
-      "دراسة الإصدارات المتأثرة",
-      "البحث الأمني",
-      "التدريب"
+      "البحث عن ثغرات معروفة",
+      "دراسة Exploit Database",
+      "البحث أثناء اختبار أمني مصرح",
+      "التعلم عن CVEs",
+      "البحث في بيئات CTF"
     ],
-    "installation": "sudo apt install exploitdb",
+    "installation": "sudo apt update && sudo apt install exploitdb",
     "basic_usage": "searchsploit --help",
     "examples": [
-      "searchsploit --help — عرض الخيارات",
-      "البحث عن معلومات مرتبطة ببرنامج داخل مختبر"
+      "searchsploit --help",
+      "searchsploit apache",
+      "searchsploit openssh"
     ],
-    "legal_note": "استخدم المعلومات التي تحصل عليها في إطار البحث والتدقيق الأمني المصرح به.",
-    "img": "https://www.kali.org/tools/exploitdb/images/exploitdb-logo.svg"
+    "legal_note": "وجود كود استغلال في قاعدة بيانات لا يعني أن استخدامه على نظام حقيقي مسموح. استخدمه في مختبر أو ضمن تصريح.",
+    "img": [
+      "https://www.kali.org/tools/exploitdb/images/exploitdb-logo.svg"
+    ]
   },
   {
     "id": "enum4linux-ng",
     "name": "enum4linux-ng",
-    "category": "جمع المعلومات",
-    "importance": "أداة حديثة لجمع معلومات من بيئات Windows وSMB أثناء اختبارات الشبكات المصرح بها.",
+    "category": "Windows Enumeration",
+    "importance": "enum4linux-ng أداة حديثة لجمع معلومات من خدمات SMB وWindows داخل بيئات مصرح بها. تساعد في فهم إعدادات الشبكة وأسماء المشاركات وبعض المعلومات المتعلقة بخدمات Windows، ولذلك تُستخدم كثيرًا في مختبرات Active Directory وCTF.",
     "use_cases": [
-      "جمع معلومات SMB",
-      "تقييم بيئات Windows",
-      "التدريب على Network Enumeration"
+      "تقييم SMB",
+      "جمع معلومات Windows",
+      "التدريب على Active Directory",
+      "اختبارات الشبكات الداخلية",
+      "CTF"
     ],
-    "installation": "sudo apt install enum4linux-ng",
+    "installation": "sudo apt update && sudo apt install enum4linux-ng",
     "basic_usage": "enum4linux-ng --help",
     "examples": [
-      "عرض خيارات الأداة",
-      "استخدامها داخل مختبر Windows/SMB"
+      "enum4linux-ng --help",
+      "اختباره على Windows VM داخل مختبر"
     ],
-    "legal_note": "استخدمها فقط على الأنظمة والشبكات المصرح لك باختبارها.",
-    "img": "https://www.kali.org/tools/enum4linux-ng/images/enum4linux-ng-logo.svg"
+    "legal_note": "اجمع المعلومات فقط من الأنظمة المصرح لك بفحصها.",
+    "img": [
+      "https://www.kali.org/tools/enum4linux-ng/images/enum4linux-ng-logo.svg"
+    ]
   },
   {
     "id": "theharvester",
     "name": "theHarvester",
-    "category": "جمع المعلومات",
-    "importance": "أداة OSINT لجمع المعلومات العامة المتاحة عن نطاق أو مؤسسة من مصادر مختلفة أثناء عمليات الاستطلاع الأمني.",
+    "category": "OSINT",
+    "importance": "theHarvester أداة OSINT لجمع المعلومات العامة المتعلقة بنطاق أو مؤسسة من مصادر عامة متاحة. يمكن استخدامها في مرحلة الاستطلاع الأمني لمعرفة البصمة الرقمية العامة للمؤسسة، مثل أسماء النطاقات الفرعية أو عناوين البريد المنشورة في المصادر العامة، وفقًا للمصادر التي تدعمها الأداة.",
     "use_cases": [
       "OSINT",
-      "جمع معلومات النطاقات",
-      "البحث الأمني",
-      "الاستطلاع الأولي"
+      "جمع المعلومات العامة",
+      "تحليل البصمة الرقمية",
+      "اختبارات الاختراق المصرح بها",
+      "التدريب على الاستطلاع"
     ],
-    "installation": "sudo apt install theharvester",
+    "installation": "sudo apt update && sudo apt install theharvester",
     "basic_usage": "theHarvester --help",
     "examples": [
-      "عرض خيارات الأداة",
-      "استخدامها لجمع معلومات عامة عن نطاق تملكه"
+      "theHarvester --help",
+      "استخدامه على نطاق تملكه",
+      "مراجعة المعلومات المنشورة عن نطاقك"
     ],
-    "legal_note": "التزم بالقوانين وشروط استخدام مصادر البيانات، واستخدم الأداة في الأبحاث المصرح بها.",
-    "img": "https://www.kali.org/tools/theharvester/images/theharvester-logo.svg"
+    "legal_note": "استخدم المعلومات المجمعة في إطار قانوني واحترم شروط استخدام مصادر البيانات وخصوصية الأفراد.",
+    "img": [
+      "https://www.kali.org/tools/theharvester/images/theharvester-logo.svg"
+    ]
   },
   {
     "id": "dnsrecon",
     "name": "DNSRecon",
-    "category": "جمع المعلومات",
-    "importance": "أداة لاستطلاع سجلات DNS ومعلومات النطاقات ضمن عمليات جمع المعلومات الأمنية.",
+    "category": "DNS Enumeration",
+    "importance": "DNSRecon أداة متخصصة في استطلاع DNS وجمع المعلومات المرتبطة بالنطاقات. تساعد مسؤولي الأنظمة والباحثين الأمنيين على مراجعة سجلات DNS واكتشاف أخطاء الإعداد ومتابعة البنية التحتية الخاصة بنطاق يملكونه أو يختبرونه.",
     "use_cases": [
-      "استطلاع DNS",
+      "تدقيق DNS",
       "مراجعة سجلات النطاق",
-      "جمع المعلومات عن البنية التحتية"
+      "اكتشاف أخطاء DNS",
+      "التدريب على الاستطلاع",
+      "اختبار بنية النطاق"
     ],
-    "installation": "sudo apt install dnsrecon",
+    "installation": "sudo apt update && sudo apt install dnsrecon",
     "basic_usage": "dnsrecon --help",
     "examples": [
-      "عرض خيارات DNSRecon",
-      "مراجعة نطاق تملكه داخل اختبار مصرح"
+      "dnsrecon --help",
+      "فحص نطاق تملكه",
+      "مراجعة سجلات DNS في مختبر"
     ],
-    "legal_note": "استخدم عمليات الاستطلاع على النطاقات المصرح لك بفحصها.",
-    "img": "https://www.kali.org/tools/dnsrecon/images/dnsrecon-logo.svg"
+    "legal_note": "استخدم DNSRecon فقط ضمن نطاقات مصرح لك بفحصها.",
+    "img": [
+      "https://www.kali.org/tools/dnsrecon/images/dnsrecon-logo.svg"
+    ]
   },
   {
     "id": "whatweb",
     "name": "WhatWeb",
-    "category": "جمع المعلومات",
-    "importance": "أداة للتعرف على تقنيات وخدمات ومكونات مواقع الويب من خلال تحليل استجاباتها وبصماتها التقنية.",
+    "category": "Web Reconnaissance",
+    "importance": "WhatWeb أداة للتعرف على التقنيات المستخدمة في مواقع الويب، مثل بعض الخوادم والأطر وأنظمة إدارة المحتوى والمكتبات التي يمكن التعرف عليها من الاستجابات العامة. تستخدم في مرحلة جمع المعلومات لتكوين صورة أولية عن بنية تطبيق الويب.",
     "use_cases": [
-      "التعرف على تقنيات المواقع",
-      "جمع المعلومات",
-      "Web Fingerprinting",
-      "التدقيق الأمني"
+      "التعرف على تقنيات الموقع",
+      "Web reconnaissance",
+      "اكتشاف CMS",
+      "التدقيق الأمني",
+      "التعلم على بصمة تطبيقات الويب"
     ],
-    "installation": "sudo apt install whatweb",
-    "basic_usage": "whatweb http://127.0.0.1",
+    "installation": "sudo apt update && sudo apt install whatweb",
+    "basic_usage": "whatweb --help",
     "examples": [
-      "فحص موقع محلي تجريبي",
-      "التعرف على التقنيات المستخدمة"
+      "whatweb --help",
+      "whatweb http://127.0.0.1"
     ],
-    "legal_note": "استخدم WhatWeb على المواقع التي تملكها أو لديك تصريح لفحصها.",
-    "img": "https://www.kali.org/tools/whatweb/images/whatweb-logo.svg"
+    "legal_note": "نفذ الفحص على المواقع المصرح لك بفحصها.",
+    "img": [
+      "https://www.kali.org/tools/whatweb/images/whatweb-logo.svg"
+    ]
   },
   {
     "id": "amass",
     "name": "Amass",
-    "category": "جمع المعلومات",
-    "importance": "أداة متخصصة في اكتشاف الأصول والنطاقات الفرعية وجمع معلومات البنية التحتية من مصادر متعددة لأغراض الأمن السيبراني.",
+    "category": "OSINT",
+    "importance": "OWASP Amass إطار قوي لاكتشاف الأصول المتعلقة بالنطاقات باستخدام تقنيات OSINT والاستطلاع السلبي وبعض طرق الاستكشاف النشطة. يفيد فرق الأمن في بناء خريطة للأصول الرقمية التابعة لمؤسسة، واكتشاف النطاقات الفرعية ومكونات البنية التحتية ضمن نطاق مصرح.",
     "use_cases": [
-      "اكتشاف النطاقات الفرعية",
-      "رسم خريطة البنية التحتية",
+      "Asset Discovery",
+      "Subdomain Enumeration",
       "OSINT",
-      "Attack Surface Discovery"
+      "Attack Surface Management",
+      "التدقيق الأمني"
     ],
-    "installation": "sudo apt install amass",
-    "basic_usage": "amass enum -h",
+    "installation": "sudo apt update && sudo apt install amass",
+    "basic_usage": "amass --help",
     "examples": [
-      "عرض خيارات الاستطلاع",
-      "استخدام Amass على نطاق مملوك لك"
+      "amass --help",
+      "amass enum -passive -d example.test",
+      "استخدامه على نطاق تملكه"
     ],
-    "legal_note": "استخدم عمليات اكتشاف الأصول على النطاقات والبنى التحتية التي تملك تصريحاً باختبارها.",
-    "img": "https://www.kali.org/tools/amass/images/amass-logo.svg"
+    "legal_note": "استخدم Amass فقط ضمن نطاقات وأصول لديك صلاحية اختبارها.",
+    "img": [
+      "https://www.kali.org/tools/amass/images/amass-logo.svg"
+    ]
   },
   {
     "id": "hashcat",
     "name": "Hashcat",
-    "category": "هجمات كلمات المرور",
-    "importance": "أداة متقدمة لاختبار قوة كلمات المرور من خلال تحليل التجزئات والاستفادة من قدرات المعالجة المتاحة.",
+    "category": "Password Auditing",
+    "importance": "Hashcat أداة متقدمة لتدقيق hashes واختبار قوة كلمات المرور، وتستفيد من قدرات المعالجة المتوازية للأجهزة المتوافقة. تستخدم في المختبرات وعمليات التدقيق المصرح بها لمعرفة مدى قوة سياسات كلمات المرور والخوارزميات وإعدادات hashing.",
     "use_cases": [
       "تدقيق كلمات المرور",
-      "اختبار قوة التجزئات",
-      "أبحاث أمن كلمات المرور",
-      "التدريب الأمني"
+      "اختبار hashes",
+      "دراسة خوارزميات hashing",
+      "اختبار سياسات كلمات المرور",
+      "أبحاث أمنية"
     ],
-    "installation": "sudo apt install hashcat",
+    "installation": "sudo apt update && sudo apt install hashcat",
     "basic_usage": "hashcat --help",
     "examples": [
-      "عرض خيارات Hashcat",
-      "اختبار تجزئات أنشأتها بنفسك داخل مختبر"
+      "hashcat --help",
+      "hashcat -I",
+      "اختبار hash تجريبي داخل مختبر"
     ],
-    "legal_note": "استخدم Hashcat فقط مع التجزئات والبيانات التي تملكها أو لديك تصريح رسمي لاختبارها.",
-    "img": "https://www.kali.org/tools/hashcat/images/hashcat-logo.svg"
-  }, 
-
+    "legal_note": "لا تستخدم Hashcat على hashes ليست ملكك أو ليس لديك تصريح واضح لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/hashcat/images/hashcat-logo.svg"
+    ]
+  },
   {
-  "id": "masscan",
-  "name": "Masscan",
-  "category": "جمع المعلومات",
-  "importance": "ماسح منافذ عالي السرعة يستخدم لاكتشاف المنافذ المفتوحة على نطاقات شبكية كبيرة أثناء الاختبارات المصرح بها.",
-  "use_cases": ["اكتشاف المنافذ", "جرد الشبكات", "اختبارات البنية التحتية"],
-  "installation": "sudo apt install masscan",
-  "basic_usage": "masscan --help",
-  "examples": ["عرض خيارات الأداة", "اختبار شبكة مختبرية مملوكة لك"],
-  "legal_note": "استخدمها فقط على الشبكات المصرح لك بفحصها.",
-  "img": "https://www.kali.org/tools/masscan/images/masscan-logo.svg"
-},
-{
-  "id": "netcat",
-  "name": "Netcat",
-  "category": "أدوات الشبكات",
-  "importance": "أداة متعددة الاستخدامات للتعامل مع اتصالات TCP وUDP واختبار خدمات الشبكة ونقل البيانات داخل البيئات المصرح بها.",
-  "use_cases": ["اختبار الاتصالات", "فحص الخدمات", "استكشاف الشبكات"],
-  "installation": "sudo apt install netcat-traditional",
-  "basic_usage": "nc -h",
-  "examples": ["عرض خيارات Netcat", "اختبار اتصال بين جهازين في مختبر"],
-  "legal_note": "استخدم الاتصالات والاختبارات على الأنظمة المملوكة لك أو المصرح بها.",
-  "img": "https://www.kali.org/tools/netcat/images/netcat-logo.svg"
-},
-{
-  "id": "socat",
-  "name": "Socat",
-  "category": "أدوات الشبكات",
-  "importance": "أداة متقدمة لإنشاء وربط قنوات الاتصال بين أنواع مختلفة من مصادر البيانات والبروتوكولات.",
-  "use_cases": ["اختبار الشبكات", "ربط الاتصالات", "تصحيح مشاكل الشبكة"],
-  "installation": "sudo apt install socat",
-  "basic_usage": "socat -h",
-  "examples": ["عرض المساعدة", "اختبار قناة اتصال داخل مختبر"],
-  "legal_note": "استخدم Socat في بيئات اختبار مصرح بها.",
-  "img": "https://www.kali.org/tools/socat/images/socat-logo.svg"
-},
-{
-  "id": "tcpdump",
-  "name": "Tcpdump",
-  "category": "تحليل الشبكات",
-  "importance": "أداة سطر أوامر لالتقاط وتحليل حزم الشبكة وتشخيص الاتصالات والمشكلات الأمنية.",
-  "use_cases": ["التقاط الحزم", "تحليل الشبكة", "استكشاف مشاكل الاتصال"],
-  "installation": "sudo apt install tcpdump",
-  "basic_usage": "tcpdump --help",
-  "examples": ["عرض الخيارات", "التقاط حركة مرور داخل جهازك أو مختبرك"],
-  "legal_note": "لا تلتقط حركة مرور شبكات لا تملك تصريحًا بمراقبتها.",
-  "img": "https://www.kali.org/tools/tcpdump/images/tcpdump-logo.svg"
-},
-{
-  "id": "ettercap",
-  "name": "Ettercap",
-  "category": "التنصت والانتحال",
-  "importance": "أداة لتحليل واختبار بروتوكولات الشبكات المحلية وتقييم بعض سيناريوهات أمان الاتصال.",
-  "use_cases": ["تحليل الشبكات المحلية", "اختبار البروتوكولات", "التدريب الأمني"],
-  "installation": "sudo apt install ettercap-graphical",
-  "basic_usage": "ettercap --help",
-  "examples": ["عرض خيارات الأداة", "استخدامها في شبكة مختبر معزولة"],
-  "legal_note": "استخدمها فقط داخل شبكات اختبار مصرح بها.",
-  "img": "https://www.kali.org/tools/ettercap/images/ettercap-logo.svg"
-},
-{
-  "id": "bettercap",
-  "name": "Bettercap",
-  "category": "التنصت والانتحال",
-  "importance": "إطار عمل لاستكشاف واختبار شبكات Ethernet وWi-Fi وBluetooth وواجهات الشبكة في المختبرات الأمنية.",
-  "use_cases": ["اختبار الشبكات", "تحليل البروتوكولات", "التدريب الأمني"],
-  "installation": "sudo apt install bettercap",
-  "basic_usage": "bettercap --help",
-  "examples": ["عرض المساعدة", "اختبار شبكة مختبرية"],
-  "legal_note": "استخدم Bettercap فقط على شبكات تملكها أو لديك تصريح لاختبارها.",
-  "img": "https://www.kali.org/tools/bettercap/images/bettercap-logo.svg"
-},
-{
-  "id": "mitmproxy",
-  "name": "mitmproxy",
-  "category": "أمن تطبيقات الويب",
-  "importance": "Proxy تفاعلي لاعتراض وتحليل وتعديل طلبات HTTP وHTTPS أثناء اختبار التطبيقات المصرح بها.",
-  "use_cases": ["تحليل HTTP", "اختبار تطبيقات الويب", "تصحيح الاتصالات"],
-  "installation": "sudo apt install mitmproxy",
-  "basic_usage": "mitmproxy",
-  "examples": ["تشغيل Proxy داخل مختبر", "تحليل طلبات تطبيق تجريبي"],
-  "legal_note": "اعترض فقط حركة المرور التي تملك حق اختبارها.",
-  "img": "https://www.kali.org/tools/mitmproxy/images/mitmproxy-logo.svg"
-},
-{
-  "id": "zaproxy",
-  "name": "OWASP ZAP",
-  "category": "أمن تطبيقات الويب",
-  "importance": "ماسح أمان مجاني ومفتوح المصدر لتطبيقات الويب، مناسب للتعلم والاختبارات الأمنية المصرح بها.",
-  "use_cases": ["اختبار الويب", "فحص الثغرات", "تحليل HTTP"],
-  "installation": "sudo apt install zaproxy",
-  "basic_usage": "zaproxy",
-  "examples": ["تشغيل ZAP", "اختبار تطبيق ويب محلي"],
-  "legal_note": "استخدم ZAP فقط على تطبيقات مصرح لك باختبارها.",
-  "img": "https://www.kali.org/tools/zaproxy/images/zaproxy-logo.svg"
-},
-{
-  "id": "wapiti",
-  "name": "Wapiti",
-  "category": "أمن تطبيقات الويب",
-  "importance": "ماسح Web Application يساعد في اكتشاف مؤشرات لبعض الثغرات الشائعة من خلال اختبار مدخلات التطبيق.",
-  "use_cases": ["فحص تطبيقات الويب", "اختبارات أمنية", "التدريب"],
-  "installation": "sudo apt install wapiti",
-  "basic_usage": "wapiti --help",
-  "examples": ["عرض الخيارات", "اختبار تطبيق محلي"],
-  "legal_note": "افحص التطبيقات التي تملكها أو لديك تصريح باختبارها فقط.",
-  "img": "https://www.kali.org/tools/wapiti/images/wapiti-logo.svg"
-},
-{
-  "id": "commix",
-  "name": "Commix",
-  "category": "أمن تطبيقات الويب",
-  "importance": "أداة بحث واختبار تساعد في تقييم مؤشرات ثغرات Command Injection داخل التطبيقات المصرح بها.",
-  "use_cases": ["اختبار تطبيقات الويب", "دراسة Command Injection", "التدريب"],
-  "installation": "sudo apt install commix",
-  "basic_usage": "commix --help",
-  "examples": ["عرض الخيارات", "استخدامه في تطبيق تدريبي محلي"],
-  "legal_note": "يجب أن تكون جميع الاختبارات مصرحًا بها.",
-  "img": "https://www.kali.org/tools/commix/images/commix-logo.svg"
-},
-{
-  "id": "wpscan",
-  "name": "WPScan",
-  "category": "أمن تطبيقات الويب",
-  "importance": "ماسح متخصص في تقييم أمان مواقع WordPress ومكوناتها وإصداراتها.",
-  "use_cases": ["تدقيق WordPress", "اكتشاف المكونات", "مراجعة الإصدارات"],
-  "installation": "sudo apt install wpscan",
-  "basic_usage": "wpscan --help",
-  "examples": ["عرض الخيارات", "تدقيق موقع WordPress تجريبي"],
-  "legal_note": "استخدم WPScan على مواقع WordPress المملوكة لك أو المصرح باختبارها.",
-  "img": "https://www.kali.org/tools/wpscan/images/wpscan-logo.svg"
-},
-{
-  "id": "joomscan",
-  "name": "JoomScan",
-  "category": "أمن تطبيقات الويب",
-  "importance": "أداة مخصصة لجمع معلومات وتقييم بعض جوانب أمان مواقع Joomla.",
-  "use_cases": ["تدقيق Joomla", "جمع المعلومات", "اختبار CMS"],
-  "installation": "sudo apt install joomscan",
-  "basic_usage": "joomscan --help",
-  "examples": ["عرض خيارات الأداة", "اختبار Joomla داخل مختبر"],
-  "legal_note": "اختبر مواقع Joomla المصرح لك بفحصها فقط.",
-  "img": "https://www.kali.org/tools/joomscan/images/joomscan-logo.svg"
-},
-{
-  "id": "davtest",
-  "name": "DAVTest",
-  "category": "أمن تطبيقات الويب",
-  "importance": "أداة لاختبار خوادم WebDAV ومعرفة أنواع الملفات التي يمكن للخادم التعامل معها.",
-  "use_cases": ["اختبار WebDAV", "تقييم إعدادات الخادم", "التدقيق الأمني"],
-  "installation": "sudo apt install davtest",
-  "basic_usage": "davtest --help",
-  "examples": ["عرض المساعدة", "اختبار WebDAV في مختبر"],
-  "legal_note": "استخدمها على الخوادم المصرح لك باختبارها.",
-  "img": "https://www.kali.org/tools/davtest/images/davtest-logo.svg"
-},
-{
-  "id": "cewl",
-  "name": "CeWL",
-  "category": "هجمات كلمات المرور",
-  "importance": "أداة تنشئ قوائم كلمات من محتوى مواقع الويب لاستخدامها في اختبارات تدقيق كلمات المرور المصرح بها.",
-  "use_cases": ["تدقيق كلمات المرور", "أبحاث كلمات المرور", "اختبارات أمنية"],
-  "installation": "sudo apt install cewl",
-  "basic_usage": "cewl --help",
-  "examples": ["عرض خيارات الأداة", "إنشاء بيانات اختبار من موقع مختبري"],
-  "legal_note": "استخدم النتائج في اختبارات مصرح بها فقط.",
-  "img": "https://www.kali.org/tools/cewl/images/cewl-logo.svg"
-},
-{
-  "id": "medusa",
-  "name": "Medusa",
-  "category": "هجمات كلمات المرور",
-  "importance": "أداة لتقييم قوة المصادقة على خدمات الشبكة ضمن اختبارات أمنية مصرح بها.",
-  "use_cases": ["تدقيق المصادقة", "اختبار كلمات المرور", "التدريب"],
-  "installation": "sudo apt install medusa",
-  "basic_usage": "medusa -h",
-  "examples": ["عرض الخيارات", "استخدامها على خدمة اختبارية"],
-  "legal_note": "لا تختبر حسابات أو خدمات خارج نطاق تصريحك.",
-  "img": "https://www.kali.org/tools/medusa/images/medusa-logo.svg"
-},
-{
-  "id": "crunch",
-  "name": "Crunch",
-  "category": "هجمات كلمات المرور",
-  "importance": "مولد لقوائم كلمات يمكن استخدامه في أبحاث وتدقيق كلمات المرور داخل البيئات المصرح بها.",
-  "use_cases": ["توليد قوائم اختبار", "أبحاث كلمات المرور", "التدريب"],
-  "installation": "sudo apt install crunch",
-  "basic_usage": "crunch --help",
-  "examples": ["عرض خيارات الأداة", "إنشاء قائمة اختبار صغيرة في مختبر"],
-  "legal_note": "استخدم القوائم في اختبارات مصرح بها فقط.",
-  "img": "https://www.kali.org/tools/crunch/images/crunch-logo.svg"
-},
-{
-  "id": "hashid",
-  "name": "HashID",
-  "category": "تحليل كلمات المرور",
-  "importance": "أداة تساعد في التعرف على أنواع خوارزميات التجزئة المحتملة من شكل قيمة Hash.",
-  "use_cases": ["تحليل التجزئات", "التدريب", "أبحاث كلمات المرور"],
-  "installation": "sudo apt install hashid",
-  "basic_usage": "hashid --help",
-  "examples": ["عرض الخيارات", "تحليل Hash تجريبي"],
-  "legal_note": "استخدم البيانات التي تملكها أو لديك تصريح بتحليلها.",
-  "img": "https://www.kali.org/tools/hashid/images/hashid-logo.svg"
-},
-{
-  "id": "hash-identifier",
-  "name": "Hash Identifier",
-  "category": "تحليل كلمات المرور",
-  "importance": "أداة مساعدة لتحديد نوع Hash محتمل اعتمادًا على بنيته.",
-  "use_cases": ["التعرف على Hash", "التدريب", "تحليل بيانات اختبارية"],
-  "installation": "sudo apt install hash-identifier",
-  "basic_usage": "hash-identifier",
-  "examples": ["تشغيل الأداة", "إدخال Hash تجريبي لتحليله"],
-  "legal_note": "استخدم بيانات اختبارية أو بيانات تملك تصريحًا بتحليلها.",
-  "img": "https://www.kali.org/tools/hash-identifier/images/hash-identifier-logo.svg"
-},
-{
-  "id": "reaver",
-  "name": "Reaver",
-  "category": "الشبكات اللاسلكية",
-  "importance": "أداة بحثية لتقييم أمان بعض إعدادات WPS في شبكات Wi-Fi المصرح باختبارها.",
-  "use_cases": ["تدقيق WPS", "اختبار Wi-Fi", "التدريب"],
-  "installation": "sudo apt install reaver",
-  "basic_usage": "reaver --help",
-  "examples": ["عرض الخيارات", "اختبار شبكة مختبرية خاصة"],
-  "legal_note": "لا تستخدمها على شبكات Wi-Fi لا تملك تصريحًا لاختبارها.",
-  "img": "https://www.kali.org/tools/reaver/images/reaver-logo.svg"
-},
-{
-  "id": "kismet",
-  "name": "Kismet",
-  "category": "الشبكات اللاسلكية",
-  "importance": "نظام لمراقبة واكتشاف وتحليل شبكات Wi-Fi وبعض التقنيات اللاسلكية.",
-  "use_cases": ["اكتشاف الشبكات", "تحليل Wi-Fi", "مراقبة الشبكات"],
-  "installation": "sudo apt install kismet",
-  "basic_usage": "kismet --help",
-  "examples": ["عرض خيارات Kismet", "مراقبة شبكة مختبرية"],
-  "legal_note": "راقب الشبكات التي تملكها أو لديك تصريح بمراقبتها.",
-  "img": "https://www.kali.org/tools/kismet/images/kismet-logo.svg"
-},
-{
-  "id": "wifite",
-  "name": "Wifite",
-  "category": "الشبكات اللاسلكية",
-  "importance": "أداة لأتمتة بعض مهام تدقيق أمان شبكات Wi-Fi في البيئات التعليمية والمصرح بها.",
-  "use_cases": ["تدقيق Wi-Fi", "التدريب", "اختبار إعدادات الشبكات اللاسلكية"],
-  "installation": "sudo apt install wifite",
-  "basic_usage": "wifite --help",
-  "examples": ["عرض الخيارات", "اختبار شبكة لاسلكية مختبرية"],
-  "legal_note": "استخدم Wifite فقط على شبكات تملكها أو لديك تصريح باختبارها.",
-  "img": "https://www.kali.org/tools/wifite/images/wifite-logo.svg"
-},
-{
-  "id": "bully",
-  "name": "Bully",
-  "category": "الشبكات اللاسلكية",
-  "importance": "أداة لتقييم بعض جوانب أمان WPS في شبكات Wi-Fi ضمن اختبارات مصرح بها.",
-  "use_cases": ["تدقيق WPS", "اختبار Wi-Fi", "البحث الأمني"],
-  "installation": "sudo apt install bully",
-  "basic_usage": "bully --help",
-  "examples": ["عرض خيارات الأداة", "استخدامها في مختبر لاسلكي"],
-  "legal_note": "لا تختبر شبكات الغير.",
-  "img": "https://www.kali.org/tools/bully/images/bully-logo.svg"
-},
-{
-  "id": "hcxdumptool",
-  "name": "hcxdumptool",
-  "category": "الشبكات اللاسلكية",
-  "importance": "أداة متخصصة في التعامل مع بيانات التقاط Wi-Fi لأغراض البحث والتدقيق الأمني.",
-  "use_cases": ["أبحاث Wi-Fi", "التقاط بيانات الشبكة", "اختبارات أمنية"],
-  "installation": "sudo apt install hcxdumptool",
-  "basic_usage": "hcxdumptool --help",
-  "examples": ["عرض خيارات الأداة", "استخدامها في مختبر لاسلكي"],
-  "legal_note": "التقاط بيانات الشبكات يجب أن يكون مصرحًا به.",
-  "img": "https://www.kali.org/tools/hcxdumptool/images/hcxdumptool-logo.svg"
-},
-{
-  "id": "radare2",
-  "name": "Radare2",
-  "category": "الهندسة العكسية",
-  "importance": "إطار عمل مفتوح المصدر لتحليل الملفات الثنائية والهندسة العكسية وتصحيح البرامج.",
-  "use_cases": ["Reverse Engineering", "تحليل الملفات الثنائية", "تصحيح البرامج"],
-  "installation": "sudo apt install radare2",
-  "basic_usage": "r2 -h",
-  "examples": ["عرض المساعدة", "تحليل ملف تجريبي تملكه"],
-  "legal_note": "حلل البرامج والملفات التي تملكها أو لديك تصريح بتحليلها.",
-  "img": "https://www.kali.org/tools/radare2/images/radare2-logo.svg"
-},
-{
-  "id": "ghidra",
-  "name": "Ghidra",
-  "category": "الهندسة العكسية",
-  "importance": "منصة متقدمة للهندسة العكسية وتحليل البرمجيات والملفات الثنائية.",
-  "use_cases": ["تحليل البرامج", "Reverse Engineering", "البحث الأمني"],
-  "installation": "sudo apt install ghidra",
-  "basic_usage": "ghidra",
-  "examples": ["فتح مشروع تحليل", "تحليل ملف Binary تجريبي"],
-  "legal_note": "استخدم Ghidra لتحليل البرامج التي تملك الحق في تحليلها.",
-  "img": "https://www.kali.org/tools/ghidra/images/ghidra-logo.svg"
-},
-{
-  "id": "binwalk",
-  "name": "Binwalk",
-  "category": "الهندسة العكسية",
-  "importance": "أداة لتحليل Firmware والملفات الثنائية واكتشاف الملفات والبيانات المضمنة بداخلها.",
-  "use_cases": ["تحليل Firmware", "البحث في الملفات الثنائية", "أبحاث الأجهزة"],
-  "installation": "sudo apt install binwalk",
-  "basic_usage": "binwalk --help",
-  "examples": ["عرض الخيارات", "تحليل Firmware تجريبي"],
-  "legal_note": "حلل Firmware والملفات التي تملكها أو لديك تصريح بفحصها.",
-  "img": "https://www.kali.org/tools/binwalk/images/binwalk-logo.svg"
-},
-{
-  "id": "strings",
-  "name": "Strings",
-  "category": "الهندسة العكسية",
-  "importance": "أداة Unix لاستخراج النصوص القابلة للقراءة من الملفات الثنائية والملفات المختلفة.",
-  "use_cases": ["تحليل الملفات", "الهندسة العكسية", "البحث عن نصوص داخل Binary"],
-  "installation": "sudo apt install binutils",
-  "basic_usage": "strings --help",
-  "examples": ["استخراج النصوص من ملف تجريبي", "فحص Binary مملوك لك"],
-  "legal_note": "استخدمها لتحليل الملفات التي تملكها أو لديك تصريح بتحليلها.",
-  "img": "https://www.kali.org/tools/binutils/images/binutils-logo.svg"
-},
-{
-  "id": "foremost",
-  "name": "Foremost",
-  "category": "التحليل الجنائي الرقمي",
-  "importance": "أداة لاستعادة الملفات من صور الأقراص والبيانات الخام اعتمادًا على تواقيع الملفات.",
-  "use_cases": ["استعادة الملفات", "Digital Forensics", "تحليل صور الأقراص"],
-  "installation": "sudo apt install foremost",
-  "basic_usage": "foremost -h",
-  "examples": ["عرض الخيارات", "تحليل صورة قرص اختبارية"],
-  "legal_note": "لا تحلل أجهزة أو بيانات لا تملك تصريحًا قانونيًا للوصول إليها.",
-  "img": "https://www.kali.org/tools/foremost/images/foremost-logo.svg"
-},
-{
-  "id": "binwalk",
-  "name": "Binwalk",
-  "category": "التحليل الجنائي الرقمي",
-  "importance": "أداة لفحص وتحليل محتويات الملفات الثنائية وFirmware واكتشاف البيانات المضمنة.",
-  "use_cases": ["تحليل Firmware", "فحص الملفات الثنائية", "البحث الجنائي"],
-  "installation": "sudo apt install binwalk",
-  "basic_usage": "binwalk --help",
-  "examples": ["فحص ملف Firmware تجريبي", "استعراض النتائج"],
-  "legal_note": "استخدمها فقط مع الملفات التي تملك حق تحليلها.",
-  "img": "https://www.kali.org/tools/binwalk/images/binwalk-logo.svg"
-},
-{
-  "id": "sleuthkit",
-  "name": "The Sleuth Kit",
-  "category": "التحليل الجنائي الرقمي",
-  "importance": "مجموعة أدوات للتحقيق الجنائي الرقمي وتحليل أنظمة الملفات وصور الأقراص.",
-  "use_cases": ["Digital Forensics", "تحليل الأقراص", "تحليل أنظمة الملفات"],
-  "installation": "sudo apt install sleuthkit",
-  "basic_usage": "fls -h",
-  "examples": ["عرض المساعدة", "تحليل صورة قرص تدريبية"],
-  "legal_note": "استخدمها في التحقيقات والبيانات التي تملك تصريحًا قانونيًا لتحليلها.",
-  "img": "https://www.kali.org/tools/sleuthkit/images/sleuthkit-logo.svg"
-},
-{
-  "id": "autopsy",
-  "name": "Autopsy",
-  "category": "التحليل الجنائي الرقمي",
-  "importance": "منصة رسومية للتحقيق الجنائي الرقمي وتحليل الأقراص والملفات والبيانات.",
-  "use_cases": ["Digital Forensics", "تحليل الأقراص", "التحقيق الرقمي"],
-  "installation": "sudo apt install autopsy",
-  "basic_usage": "autopsy",
-  "examples": ["إنشاء قضية تدريبية", "تحليل صورة قرص اختبارية"],
-  "legal_note": "استخدمها فقط ضمن تحقيق أو تحليل مصرح به.",
-  "img": "https://www.kali.org/tools/autopsy/images/autopsy-logo.svg"
-},
-{
-  "id": "exiftool",
-  "name": "ExifTool",
-  "category": "التحليل الجنائي الرقمي",
-  "importance": "أداة قوية لقراءة وتعديل Metadata للصور والملفات وأنواع متعددة من الوسائط.",
-  "use_cases": ["تحليل Metadata", "التحقيق الرقمي", "فحص الملفات"],
-  "installation": "sudo apt install libimage-exiftool-perl",
-  "basic_usage": "exiftool --help",
-  "examples": ["قراءة Metadata من صورة تملكها", "تحليل خصائص ملف"],
-  "legal_note": "استخدمها مع الملفات التي تملكها أو لديك تصريح بتحليلها.",
-  "img": "https://www.kali.org/tools/exiftool/images/exiftool-logo.svg"
-},
-{
-  "id": "steghide",
-  "name": "Steghide",
-  "category": "التشفير وإخفاء المعلومات",
-  "importance": "أداة لإخفاء بيانات داخل ملفات وسائط تدعم تقنيات Steganography.",
-  "use_cases": ["دراسة Steganography", "تحليل الوسائط", "التدريب الأمني"],
-  "installation": "sudo apt install steghide",
-  "basic_usage": "steghide --help",
-  "examples": ["عرض خيارات الأداة", "إنشاء تجربة Steganography على ملفاتك"],
-  "legal_note": "استخدمها لأغراض تعليمية واختبارية على بيانات تملكها.",
-  "img": "https://www.kali.org/tools/steghide/images/steghide-logo.svg"
-},
-{
-  "id": "stegseek",
-  "name": "Stegseek",
-  "category": "التشفير وإخفاء المعلومات",
-  "importance": "أداة متخصصة في التعامل مع ملفات Steghide واختبار الحماية المستخدمة معها في بيئات مصرح بها.",
-  "use_cases": ["تحليل Steganography", "اختبار ملفات Steghide", "التدريب"],
-  "installation": "sudo apt install stegseek",
-  "basic_usage": "stegseek --help",
-  "examples": ["عرض الخيارات", "تحليل ملف Steghide تجريبي"],
-  "legal_note": "استخدمها فقط مع الملفات التي تملكها أو لديك تصريح بتحليلها.",
-  "img": "https://www.kali.org/tools/stegseek/images/stegseek-logo.svg"
-},
-{
-  "id": "scapy",
-  "name": "Scapy",
-  "category": "أدوات الشبكات",
-  "importance": "إطار عمل Python متقدم لإنشاء وتحليل ومعالجة حزم الشبكة، ويستخدم في أبحاث الشبكات والأمن السيبراني.",
-  "use_cases": ["تحليل الحزم", "أبحاث الشبكات", "بناء أدوات اختبار"],
-  "installation": "sudo apt install python3-scapy",
-  "basic_usage": "scapy",
-  "examples": ["تشغيل بيئة Scapy", "تحليل حزم داخل مختبر"],
-  "legal_note": "استخدم Scapy لإرسال أو تحليل الحزم ضمن بيئات مصرح بها فقط.",
-  "img": "https://www.kali.org/tools/scapy/images/scapy-logo.svg"
-},
-{
-  "id": "proxychains4",
-  "name": "ProxyChains",
-  "category": "أدوات الشبكات",
-  "importance": "أداة لتمرير اتصالات بعض البرامج عبر Proxy محدد، وتستخدم في اختبارات الشبكات والخصوصية داخل بيئات مشروعة.",
-  "use_cases": ["اختبار Proxy", "تحليل الاتصالات", "اختبارات الشبكات"],
-  "installation": "sudo apt install proxychains4",
-  "basic_usage": "proxychains4 --help",
-  "examples": ["عرض خيارات الأداة", "اختبار اتصال عبر Proxy تملكه"],
-  "legal_note": "لا تستخدمها لإخفاء نشاط غير قانوني أو تجاوز أنظمة الحماية.",
-  "img": "https://www.kali.org/tools/proxychains/images/proxychains-logo.svg"
-},
-{
-  "id": "smbmap",
-  "name": "SMBMap",
-  "category": "أمن الشبكات",
-  "importance": "أداة لاستكشاف ومراجعة مشاركات SMB والصلاحيات في بيئات Windows المصرح باختبارها.",
-  "use_cases": ["تدقيق SMB", "تقييم Windows", "مراجعة الصلاحيات"],
-  "installation": "sudo apt install smbmap",
-  "basic_usage": "smbmap --help",
-  "examples": ["عرض الخيارات", "استخدامها داخل مختبر Windows"],
-  "legal_note": "اختبر بيئات SMB التي تملك تصريحًا للوصول إليها فقط.",
-  "img": "https://www.kali.org/tools/smbmap/images/smbmap-logo.svg"
-},
-{
-  "id": "enum4linux",
-  "name": "Enum4linux",
-  "category": "جمع المعلومات",
-  "importance": "أداة لجمع معلومات من خدمات SMB وWindows أثناء تقييم الشبكات المصرح بها.",
-  "use_cases": ["استطلاع SMB", "جمع معلومات Windows", "التدريب"],
-  "installation": "sudo apt install enum4linux",
-  "basic_usage": "enum4linux -h",
-  "examples": ["عرض الخيارات", "اختبار بيئة Windows مختبرية"],
-  "legal_note": "استخدمها فقط على الأنظمة المصرح لك بفحصها.",
-  "img": "https://www.kali.org/tools/enum4linux/images/enum4linux-logo.svg"
-},
-{
-  "id": "onesixtyone",
-  "name": "onesixtyone",
-  "category": "جمع المعلومات",
-  "importance": "أداة بسيطة لاكتشاف أجهزة وخدمات SNMP ضمن عمليات تقييم الشبكات.",
-  "use_cases": ["استكشاف SNMP", "جرد الشبكات", "جمع المعلومات"],
-  "installation": "sudo apt install onesixtyone",
-  "basic_usage": "onesixtyone -h",
-  "examples": ["عرض خيارات الأداة", "اختبار أجهزة SNMP في مختبر"],
-  "legal_note": "استخدمها على أجهزة وشبكات مصرح لك بفحصها.",
-  "img": "https://www.kali.org/tools/onesixtyone/images/onesixtyone-logo.svg"
-},
-{
-  "id": "snmpcheck",
-  "name": "SNMPcheck",
-  "category": "جمع المعلومات",
-  "importance": "أداة تساعد في جمع معلومات متاحة عبر SNMP أثناء اختبارات الشبكات المصرح بها.",
-  "use_cases": ["تقييم SNMP", "جمع معلومات الشبكة", "التدقيق الأمني"],
-  "installation": "sudo apt install snmpcheck",
-  "basic_usage": "snmpcheck --help",
-  "examples": ["عرض الخيارات", "اختبار جهاز SNMP في مختبر"],
-  "legal_note": "لا تفحص أجهزة SNMP خارج نطاق تصريحك.",
-  "img": "https://www.kali.org/tools/snmpcheck/images/snmpcheck-logo.svg"
-},
-{
-  "id": "ike-scan",
-  "name": "Ike-scan",
-  "category": "جمع المعلومات",
-  "importance": "أداة لاستكشاف وتحليل خوادم IKE المستخدمة في بعض تطبيقات VPN.",
-  "use_cases": ["استطلاع VPN", "تحليل IKE", "تقييم الشبكات"],
-  "installation": "sudo apt install ike-scan",
-  "basic_usage": "ike-scan --help",
-  "examples": ["عرض الخيارات", "تحليل جهاز VPN في مختبر"],
-  "legal_note": "استخدمها على أنظمة VPN التي تملك تصريحًا لاختبارها.",
-  "img": "https://www.kali.org/tools/ike-scan/images/ike-scan-logo.svg"
-},
-{
-  "id": "sslscan",
-  "name": "SSLScan",
-  "category": "تحليل الشبكات",
-  "importance": "أداة لفحص إعدادات SSL/TLS والخوارزميات والبروتوكولات المدعومة من خوادم الاختبار.",
-  "use_cases": ["تدقيق TLS", "مراجعة شهادات SSL", "تقييم إعدادات الخادم"],
-  "installation": "sudo apt install sslscan",
-  "basic_usage": "sslscan --help",
-  "examples": ["عرض الخيارات", "فحص خادم HTTPS مملوك لك"],
-  "legal_note": "استخدمها ضمن نطاقات وخوادم مصرح لك بتقييمها.",
-  "img": "https://www.kali.org/tools/sslscan/images/sslscan-logo.svg"
-},
-{
-  "id": "testssl",
-  "name": "testssl.sh",
-  "category": "تحليل الشبكات",
-  "importance": "أداة شاملة لفحص خوادم TLS/SSL واكتشاف الإعدادات والبروتوكولات الضعيفة.",
-  "use_cases": ["تدقيق HTTPS", "اختبار TLS", "مراجعة إعدادات الخوادم"],
-  "installation": "sudo apt install testssl.sh",
-  "basic_usage": "testssl --help",
-  "examples": ["عرض الخيارات", "فحص خادم HTTPS داخل بيئة اختبار"],
-  "legal_note": "افحص الخوادم المصرح لك بتقييمها فقط.",
-  "img": "https://www.kali.org/tools/testssl.sh/images/testssl.sh-logo.svg"
-},
-{
-  "id": "openvpn",
-  "name": "OpenVPN",
-  "category": "الشبكات",
-  "importance": "أداة VPN مفتوحة المصدر لإنشاء اتصالات شبكية مشفرة واستخدامها في بيئات الشبكات الآمنة.",
-  "use_cases": ["إنشاء VPN", "الاتصالات الآمنة", "مختبرات الشبكات"],
-  "installation": "sudo apt install openvpn",
-  "basic_usage": "openvpn --help",
-  "examples": ["عرض الخيارات", "الاتصال بخادم VPN تملكه"],
-  "legal_note": "استخدم ملفات إعداد VPN والحسابات التي تملكها أو لديك تصريح باستخدامها.",
-  "img": "https://www.kali.org/tools/openvpn/images/openvpn-logo.svg"
+    "id": "masscan",
+    "name": "Masscan",
+    "category": "Network Discovery",
+    "importance": "Masscan ماسح منافذ عالي السرعة مصمم للتعامل مع نطاقات كبيرة من عناوين IP. يوفر سرعة كبيرة جدًا مقارنة بالماسحات التقليدية، ولذلك يجب استخدامه بحذر شديد داخل نطاق مصرح به. يمكن أن يكون مفيدًا لمسؤولي الشبكات في اكتشاف الخدمات المكشوفة على بنية تحتية يملكونها.",
+    "use_cases": [
+      "جرد المنافذ",
+      "اكتشاف الخدمات",
+      "مراجعة بنية تحتية كبيرة",
+      "Asset Discovery",
+      "اختبارات الشبكات"
+    ],
+    "installation": "sudo apt update && sudo apt install masscan",
+    "basic_usage": "masscan --help",
+    "examples": [
+      "masscan --help",
+      "فحص جهاز مختبري واحد",
+      "استخدام معدل منخفض داخل شبكة اختبار"
+    ],
+    "legal_note": "Masscan قد يولد عددًا هائلًا من الحزم؛ لا تستخدمه على شبكات خارج نطاق تصريحك.",
+    "img": [
+      "https://www.kali.org/tools/masscan/images/masscan-logo.svg"
+    ]
+  },
+  {
+    "id": "netcat",
+    "name": "Netcat",
+    "category": "Network Utilities",
+    "importance": "Netcat أداة شبكات خفيفة ومرنة للتعامل مع اتصالات TCP وUDP. يمكن استخدامها في الاختبارات الشبكية، تشخيص الخدمات، نقل البيانات داخل مختبر، وإنشاء اتصالات بسيطة بين أجهزة اختبارية. بسبب بساطتها فهي أداة تعليمية ممتازة لفهم أساسيات الاتصالات الشبكية.",
+    "use_cases": [
+      "تشخيص الشبكات",
+      "اختبار المنافذ",
+      "اختبار TCP وUDP",
+      "التدريب على sockets",
+      "التواصل بين أجهزة مختبرية"
+    ],
+    "installation": "sudo apt update && sudo apt install netcat-openbsd",
+    "basic_usage": "nc -h",
+    "examples": [
+      "nc -h",
+      "nc 127.0.0.1 8080",
+      "اختبار اتصال TCP بين جهازين داخل مختبر"
+    ],
+    "legal_note": "استخدم Netcat فقط في الأنظمة والشبكات التي تملكها أو تملك تصريحًا لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/netcat/images/netcat-logo.svg"
+    ]
+  },
+  {
+    "id": "socat",
+    "name": "Socat",
+    "category": "Network Utilities",
+    "importance": "Socat أداة قوية لإنشاء وتمرير الاتصالات بين أنواع مختلفة من القنوات، مثل TCP وUDP وUnix sockets والملفات. تستخدم في هندسة الشبكات والاختبارات البرمجية وتصحيح الخدمات وربط مكونات الأنظمة داخل المختبرات.",
+    "use_cases": [
+      "اختبار الشبكات",
+      "ربط sockets",
+      "تشخيص الخدمات",
+      "اختبار TCP وUDP",
+      "التطوير واختبار التطبيقات"
+    ],
+    "installation": "sudo apt update && sudo apt install socat",
+    "basic_usage": "socat -h",
+    "examples": [
+      "socat -h",
+      "اختبار TCP داخل localhost",
+      "ربط خدمتين داخل مختبر"
+    ],
+    "legal_note": "تأكد من أن الاتصالات التي تنشئها تقع ضمن بيئة تملك صلاحية التحكم بها.",
+    "img": [
+      "https://www.kali.org/tools/socat/images/socat-logo.svg"
+    ]
+  },
+  {
+    "id": "tcpdump",
+    "name": "Tcpdump",
+    "category": "Network Analysis",
+    "importance": "Tcpdump محلل حزم يعمل من سطر الأوامر، ويعتبر من الأدوات الأساسية لمسؤولي الشبكات والباحثين الأمنيين. يسمح بالتقاط وتحليل الحزم وفق فلاتر متعددة، ويساعد في تشخيص مشكلات الاتصال ومراقبة بروتوكولات الشبكة داخل بيئة مصرح بها.",
+    "use_cases": [
+      "التقاط الحزم",
+      "تحليل TCP وUDP",
+      "تشخيص مشاكل الشبكة",
+      "تحليل DNS",
+      "التحقيقات الشبكية"
+    ],
+    "installation": "sudo apt update && sudo apt install tcpdump",
+    "basic_usage": "sudo tcpdump -i any",
+    "examples": [
+      "sudo tcpdump -i any",
+      "sudo tcpdump -i any port 53",
+      "sudo tcpdump -r capture.pcap"
+    ],
+    "legal_note": "لا تلتقط حركة بيانات شبكات أو مستخدمين بدون تصريح.",
+    "img": [
+      "https://www.kali.org/tools/tcpdump/images/tcpdump-logo.svg"
+    ]
+  },
+  {
+    "id": "ettercap",
+    "name": "Ettercap",
+    "category": "Network Security",
+    "importance": "Ettercap مجموعة أدوات لتحليل واختبار حركة الشبكات المحلية، وتحتوي على وظائف متقدمة لدراسة بروتوكولات الشبكة وبعض سيناريوهات Man-in-the-Middle داخل المختبرات. تُستخدم في التعليم والتدقيق الأمني لفهم مخاطر الشبكات المحلية غير الآمنة.",
+    "use_cases": [
+      "التدريب على Network Security",
+      "تحليل الشبكات المحلية",
+      "دراسة MITM داخل مختبر",
+      "اختبار إعدادات الشبكة",
+      "التعليم العملي"
+    ],
+    "installation": "sudo apt update && sudo apt install ettercap-graphical",
+    "basic_usage": "ettercap --help",
+    "examples": [
+      "ettercap --help",
+      "تشغيله داخل شبكة مختبرية",
+      "تحليل حركة اختبارية"
+    ],
+    "legal_note": "استخدام تقنيات MITM ضد مستخدمين أو أجهزة بدون تصريح غير قانوني وقد يعرض البيانات للخطر.",
+    "img": [
+      "https://www.kali.org/tools/ettercap/images/ettercap-logo.svg"
+    ]
+  },
+  {
+    "id": "bettercap",
+    "name": "Bettercap",
+    "category": "Network Security",
+    "importance": "Bettercap إطار متقدم لتقييم أمن الشبكات والأجهزة المتصلة بها. يدعم العديد من تقنيات الاستطلاع وتحليل الشبكات والتعامل مع بروتوكولات مختلفة، ويستخدم في مختبرات الأمن السيبراني لاختبار البنية الشبكية وفهم التهديدات المحتملة.",
+    "use_cases": [
+      "Network reconnaissance",
+      "تقييم الشبكات المحلية",
+      "تحليل البروتوكولات",
+      "التدريب على أمن الشبكات",
+      "اختبارات مصرح بها"
+    ],
+    "installation": "sudo apt update && sudo apt install bettercap",
+    "basic_usage": "bettercap --help",
+    "examples": [
+      "bettercap --help",
+      "تشغيله داخل مختبر",
+      "استعراض الوحدات المتاحة"
+    ],
+    "legal_note": "Bettercap يحتوي على وظائف قد تؤثر على أجهزة أخرى؛ استخدمه فقط في بيئة اختبار مصرح بها.",
+    "img": [
+      "https://www.kali.org/tools/bettercap/images/bettercap-logo.svg"
+    ]
+  },
+  {
+    "id": "mitmproxy",
+    "name": "mitmproxy",
+    "category": "Web Proxy",
+    "importance": "mitmproxy Proxy تفاعلي متخصص في HTTP وHTTPS، ويساعد المطورين والباحثين الأمنيين على فحص الطلبات والاستجابات وتعديلها داخل بيئة اختبار. يعتبر مفيدًا جدًا في اختبار APIs وتطبيقات الويب وتطبيقات الهاتف التي تتصل بخدمات HTTP.",
+    "use_cases": [
+      "اختبار APIs",
+      "تحليل HTTP وHTTPS",
+      "تصحيح التطبيقات",
+      "اختبار تطبيقات الهاتف",
+      "Web Security"
+    ],
+    "installation": "sudo apt update && sudo apt install mitmproxy",
+    "basic_usage": "mitmproxy --help",
+    "examples": [
+      "mitmproxy --help",
+      "تشغيل Proxy داخل مختبر",
+      "تحليل طلبات تطبيق تجريبي"
+    ],
+    "legal_note": "اعتراض HTTPS أو تعديل الاتصالات يجب أن يتم فقط على تطبيقات وأجهزة تملك صلاحية اختبارها.",
+    "img": [
+      "https://www.kali.org/tools/mitmproxy/images/mitmproxy-logo.svg"
+    ]
+  },
+  {
+    "id": "owasp-zap",
+    "name": "OWASP ZAP",
+    "category": "Web Security",
+    "importance": "OWASP ZAP منصة مجانية ومفتوحة المصدر لاختبار أمان تطبيقات الويب. تحتوي على Proxy وأدوات Spider وPassive Scanner وActive Scanner وغيرها، وتناسب المبتدئين والمحترفين في تعلم واختبار أمان تطبيقات الويب.",
+    "use_cases": [
+      "Web Application Security",
+      "Passive Scanning",
+      "اختبار APIs",
+      "التعلم على OWASP Top 10",
+      "اختبارات أمنية مصرح بها"
+    ],
+    "installation": "sudo apt update && sudo apt install zaproxy",
+    "basic_usage": "zaproxy",
+    "examples": [
+      "تشغيل ZAP",
+      "إضافة تطبيق محلي إلى سياق الاختبار",
+      "تحليل الطلبات من Proxy"
+    ],
+    "legal_note": "لا تستخدم Active Scanning على مواقع حقيقية دون تصريح لأنها قد تؤثر على التطبيق.",
+    "img": [
+      "https://www.kali.org/tools/zaproxy/images/zaproxy-logo.svg"
+    ]
+  },
+  {
+    "id": "wapiti",
+    "name": "Wapiti",
+    "category": "Web Security",
+    "importance": "Wapiti ماسح أمان لتطبيقات الويب يعمل بطريقة Black-box، ويبحث عن مجموعة من المشاكل المحتملة في تطبيقات الويب من خلال تحليل الاستجابات وإرسال مدخلات اختبارية. مفيد في المختبرات التعليمية واختبارات التطبيقات المصرح بها.",
+    "use_cases": [
+      "Web Security",
+      "Black-box testing",
+      "اختبار تطبيقات الويب",
+      "التدريب على الثغرات",
+      "مراجعة APIs"
+    ],
+    "installation": "sudo apt update && sudo apt install wapiti",
+    "basic_usage": "wapiti --help",
+    "examples": [
+      "wapiti --help",
+      "اختباره على تطبيق localhost",
+      "تحليل تقرير اختبار مختبري"
+    ],
+    "legal_note": "استخدم Wapiti فقط ضد تطبيقات مصرح لك باختبارها.",
+    "img": [
+      "https://www.kali.org/tools/wapiti/images/wapiti-logo.svg"
+    ]
+  },
+  {
+    "id": "commix",
+    "name": "Commix",
+    "category": "Web Security",
+    "importance": "Commix أداة بحث واختبار متخصصة في تقييم احتمالية وجود Command Injection في تطبيقات الويب. تستخدم في مختبرات تعليمية وتطبيقات مصرح بها لفهم كيفية حدوث أخطاء التعامل مع مدخلات المستخدم وكيفية منعها.",
+    "use_cases": [
+      "اختبار Command Injection",
+      "Web Security",
+      "التدريب على Input Validation",
+      "اختبار تطبيقات الويب",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install commix",
+    "basic_usage": "commix --help",
+    "examples": [
+      "commix --help",
+      "اختبار تطبيق محلي تجريبي",
+      "دراسة نتائج أداة الاختبار"
+    ],
+    "legal_note": "Command Injection من الفئات الخطيرة؛ استخدم الأداة فقط في بيئة اختبار تملكها أو لديك تصريح عليها.",
+    "img": [
+      "https://www.kali.org/tools/commix/images/commix-logo.svg"
+    ]
+  },
+  {
+    "id": "wpscan",
+    "name": "WPScan",
+    "category": "WordPress Security",
+    "importance": "WPScan أداة متخصصة في تقييم أمان مواقع WordPress. تساعد في التعرف على إصدارات WordPress وبعض الإضافات والقوالب والمكونات التي قد تحتاج إلى تحديث، وتستخدم ضمن عمليات التدقيق الأمني للمواقع التي يملكها المستخدم.",
+    "use_cases": [
+      "تدقيق WordPress",
+      "اكتشاف الإضافات",
+      "مراجعة الإصدارات",
+      "البحث عن مشاكل معروفة",
+      "تحسين أمان WordPress"
+    ],
+    "installation": "sudo apt update && sudo apt install wpscan",
+    "basic_usage": "wpscan --help",
+    "examples": [
+      "wpscan --help",
+      "فحص WordPress محلي",
+      "مراجعة إصدار الإضافات داخل مختبر"
+    ],
+    "legal_note": "استخدم WPScan فقط على مواقع WordPress التي تملكها أو لديك تصريح كتابي لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/wpscan/images/wpscan-logo.svg"
+    ]
+  },
+  {
+    "id": "joomscan",
+    "name": "JoomScan",
+    "category": "CMS Security",
+    "importance": "JoomScan أداة موجهة لفحص أنظمة Joomla وجمع معلومات عنها، وتساعد في التعرف على الإصدارات وبعض المكونات والمسارات التي يمكن أن تكون ذات أهمية في عملية التدقيق الأمني. تستخدم كجزء من تقييم أمان مواقع Joomla المصرح بها.",
+    "use_cases": [
+      "تدقيق Joomla",
+      "التعرف على الإصدار",
+      "جمع معلومات CMS",
+      "مراجعة المكونات",
+      "اختبارات أمنية"
+    ],
+    "installation": "sudo apt update && sudo apt install joomscan",
+    "basic_usage": "joomscan --help",
+    "examples": [
+      "joomscan --help",
+      "اختباره على Joomla محلي",
+      "تحليل نتائج الفحص"
+    ],
+    "legal_note": "لا تفحص مواقع Joomla لا تملك تصريحًا لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/joomscan/images/joomscan-logo.svg"
+    ]
+  },
+  {
+    "id": "davtest",
+    "name": "DAVTest",
+    "category": "Web Security",
+    "importance": "DAVTest أداة تساعد في اختبار WebDAV وتقييم كيفية تعامل خادم الويب مع أنواع الملفات المختلفة داخل بيئة اختبار. فائدتها الأساسية في مراجعة إعدادات WebDAV والتأكد من أن الخادم لا يسمح بعمليات غير مرغوبة.",
+    "use_cases": [
+      "اختبار WebDAV",
+      "مراجعة إعدادات الخادم",
+      "Web Security",
+      "اختبارات مختبرية",
+      "التدريب"
+    ],
+    "installation": "sudo apt update && sudo apt install davtest",
+    "basic_usage": "davtest --help",
+    "examples": [
+      "davtest --help",
+      "اختبار خادم WebDAV محلي",
+      "مراجعة أنواع الملفات المسموحة"
+    ],
+    "legal_note": "استخدم DAVTest فقط على خوادم تملك تصريحًا لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/davtest/images/davtest-logo.svg"
+    ]
+  },
+  {
+    "id": "cewl",
+    "name": "CeWL",
+    "category": "Security Auditing",
+    "importance": "CeWL أداة تقوم بإنشاء قوائم كلمات من محتوى موقع ويب، وتستخدم في عمليات التدقيق المصرح بها لفهم الكلمات والمصطلحات التي قد تظهر في بيئة مؤسسة. يمكن استخدامها في مختبرات التدريب لفهم كيفية بناء wordlists مخصصة من معلومات عامة.",
+    "use_cases": [
+      "إنشاء wordlists",
+      "Security Auditing",
+      "OSINT",
+      "اختبار سياسات كلمات المرور",
+      "التدريب"
+    ],
+    "installation": "sudo apt update && sudo apt install cewl",
+    "basic_usage": "cewl --help",
+    "examples": [
+      "cewl --help",
+      "إنشاء قائمة كلمات من موقع مختبري",
+      "تحليل الكلمات المتكررة في محتوى تجريبي"
+    ],
+    "legal_note": "اجمع المحتوى فقط من مواقع يسمح لك باستخدامها واختبارها.",
+    "img": [
+      "https://www.kali.org/tools/cewl/images/cewl-logo.svg"
+    ]
+  },
+  {
+    "id": "medusa",
+    "name": "Medusa",
+    "category": "Credential Auditing",
+    "importance": "Medusa أداة لتدقيق خدمات المصادقة ودراسة قوة كلمات المرور في البيئات المصرح بها. تشبه بعض وظائفها أدوات تدقيق أخرى وتدعم عددًا من البروتوكولات. تستخدم في المختبرات لتقييم سياسات كلمات المرور وآليات الحماية من المحاولات المتكررة.",
+    "use_cases": [
+      "تدقيق المصادقة",
+      "اختبار كلمات المرور",
+      "اختبار rate limiting",
+      "التدريب على Authentication Security",
+      "اختبارات مختبرية"
+    ],
+    "installation": "sudo apt update && sudo apt install medusa",
+    "basic_usage": "medusa -h",
+    "examples": [
+      "medusa -h",
+      "قراءة الوحدات المدعومة",
+      "اختبار خدمة داخل مختبر"
+    ],
+    "legal_note": "لا تستخدم Medusa ضد حسابات أو خدمات حقيقية خارج نطاق التصريح.",
+    "img": [
+      "https://www.kali.org/tools/medusa/images/medusa-logo.svg"
+    ]
+  },
+  {
+    "id": "crunch",
+    "name": "Crunch",
+    "category": "Password Auditing",
+    "importance": "Crunch أداة لإنشاء wordlists وفق أنماط وأطوال محددة. تستخدم في مختبرات الأمن السيبراني لتوليد بيانات اختبارية ودراسة سياسات كلمات المرور، كما تساعد في فهم تأثير طول وتعقيد كلمة المرور على مساحة البحث.",
+    "use_cases": [
+      "إنشاء wordlists",
+      "اختبار سياسات كلمات المرور",
+      "التدريب على Password Security",
+      "توليد بيانات اختبارية",
+      "CTF"
+    ],
+    "installation": "sudo apt update && sudo apt install crunch",
+    "basic_usage": "crunch --help",
+    "examples": [
+      "crunch --help",
+      "إنشاء قائمة صغيرة لأغراض اختبارية",
+      "دراسة تأثير طول كلمة المرور"
+    ],
+    "legal_note": "استخدم القوائم في اختبارات مصرح بها فقط، ولا تستخدمها لمحاولات دخول غير مصرح بها.",
+    "img": [
+      "https://www.kali.org/tools/crunch/images/crunch-logo.svg"
+    ]
+  },
+  {
+    "id": "hashid",
+    "name": "HashID",
+    "category": "Hash Analysis",
+    "importance": "HashID أداة بسيطة تساعد في التعرف على أنواع hashes المحتملة من شكلها، وتفيد في التعليم وتحليل ملفات اختبارية. معرفة نوع hash خطوة أساسية عند دراسة أمن كلمات المرور والخوارزميات المستخدمة في تخزينها.",
+    "use_cases": [
+      "التعرف على نوع hash",
+      "تحليل ملفات اختبارية",
+      "التعلم عن hashing",
+      "Password Security",
+      "CTF"
+    ],
+    "installation": "sudo apt update && sudo apt install hashid",
+    "basic_usage": "hashid --help",
+    "examples": [
+      "hashid --help",
+      "تحليل hash تجريبي",
+      "مقارنة أنواع hashing المختلفة"
+    ],
+    "legal_note": "تحليل hash لا يمنحك حق استخدامه للوصول إلى حسابات أو أنظمة.",
+    "img": [
+      "https://www.kali.org/tools/hashid/images/hashid-logo.svg"
+    ]
+  },
+  {
+    "id": "reaver",
+    "name": "Reaver",
+    "category": "Wireless Security",
+    "importance": "Reaver أداة بحثية مرتبطة باختبار آليات WPS في شبكات Wi-Fi. تستخدم في مختبرات الشبكات اللاسلكية لفهم مخاطر إعداد WPS القديمة أو الضعيفة، ومساعدة مسؤولي الشبكات على معرفة سبب تعطيل أو تقوية بعض آليات الإعداد.",
+    "use_cases": [
+      "تدقيق WPS",
+      "Wireless Security",
+      "التعلم عن Wi-Fi",
+      "اختبارات مختبرية",
+      "مراجعة إعدادات الراوتر"
+    ],
+    "installation": "sudo apt update && sudo apt install reaver",
+    "basic_usage": "reaver --help",
+    "examples": [
+      "reaver --help",
+      "قراءة الخيارات المتاحة",
+      "اختباره على راوتر مختبري تملكه"
+    ],
+    "legal_note": "لا تستخدم Reaver ضد شبكات Wi-Fi لا تملكها أو لا تملك تصريحًا باختبارها.",
+    "img": [
+      "https://www.kali.org/tools/reaver/images/reaver-logo.svg"
+    ]
+  },
+  {
+    "id": "kismet",
+    "name": "Kismet",
+    "category": "Wireless Security",
+    "importance": "Kismet نظام لمراقبة وتحليل الشبكات اللاسلكية، ويستطيع اكتشاف الشبكات والأجهزة ومعلومات مرتبطة بها ضمن نطاق المراقبة المسموح به. يستخدم في إدارة الشبكات وتحليل البيئة اللاسلكية واكتشاف الأجهزة غير المعروفة داخل بيئة المؤسسة.",
+    "use_cases": [
+      "Wireless Monitoring",
+      "اكتشاف الشبكات",
+      "مراقبة بيئة Wi-Fi",
+      "اكتشاف الأجهزة",
+      "التدقيق الأمني"
+    ],
+    "installation": "sudo apt update && sudo apt install kismet",
+    "basic_usage": "kismet --help",
+    "examples": [
+      "kismet --help",
+      "تشغيل Kismet على شبكة اختبارية",
+      "مراقبة بيئة لاسلكية تملك صلاحية إدارتها"
+    ],
+    "legal_note": "احترم قوانين الخصوصية واعتراض الاتصالات عند استخدام أدوات المراقبة اللاسلكية.",
+    "img": [
+      "https://www.kali.org/tools/kismet/images/kismet-logo.svg"
+    ]
+  },
+  {
+    "id": "wifite",
+    "name": "Wifite",
+    "category": "Wireless Security",
+    "importance": "Wifite أداة لأتمتة بعض مهام تقييم أمان الشبكات اللاسلكية باستخدام مجموعة من الأدوات المعروفة. تستخدم في المختبرات التعليمية لتقييم إعدادات Wi-Fi وفهم نقاط ضعف البروتوكولات أو الإعدادات القديمة.",
+    "use_cases": [
+      "تدقيق Wi-Fi",
+      "التدريب على Wireless Security",
+      "اختبار الشبكات الخاصة",
+      "تحليل إعدادات الحماية",
+      "مختبرات الأمن"
+    ],
+    "installation": "sudo apt update && sudo apt install wifite",
+    "basic_usage": "wifite --help",
+    "examples": [
+      "wifite --help",
+      "تشغيله داخل مختبر لاسلكي",
+      "مراجعة الشبكات التي تملكها فقط"
+    ],
+    "legal_note": "لا تستخدم Wifite ضد شبكات الآخرين.",
+    "img": [
+      "https://www.kali.org/tools/wifite/images/wifite-logo.svg"
+    ]
+  },
+  {
+    "id": "radare2",
+    "name": "Radare2",
+    "category": "Reverse Engineering",
+    "importance": "Radare2 إطار مفتوح المصدر للتحليل العكسي والـBinary Analysis. يوفر أدوات لفحص الملفات التنفيذية، تحليل التعليمات، اكتشاف الدوال، دراسة الذاكرة والـassembly، وهو مفيد جدًا في تحليل البرمجيات والـCTF والبحث الأمني.",
+    "use_cases": [
+      "Reverse Engineering",
+      "Binary Analysis",
+      "تحليل البرامج",
+      "CTF",
+      "Malware Analysis داخل مختبر"
+    ],
+    "installation": "sudo apt update && sudo apt install radare2",
+    "basic_usage": "r2 -h",
+    "examples": [
+      "r2 -h",
+      "r2 ./sample",
+      "تحليل ملف تنفيذي تجريبي"
+    ],
+    "legal_note": "حلل فقط البرامج والملفات التي لديك الحق في تحليلها.",
+    "img": [
+      "https://www.kali.org/tools/radare2/images/radare2-logo.svg"
+    ]
+  },
+  {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "category": "Reverse Engineering",
+    "importance": "Ghidra منصة قوية للتحليل العكسي طورتها NSA، وتوفر Disassembler وDecompiler وأدوات لتحليل الملفات التنفيذية والبرمجيات. تعتبر من أهم الأدوات التعليمية والمهنية في Reverse Engineering وتحليل البرمجيات والـCTF.",
+    "use_cases": [
+      "Reverse Engineering",
+      "تحليل الملفات التنفيذية",
+      "Decompiler",
+      "Malware Analysis داخل مختبر",
+      "CTF"
+    ],
+    "installation": "sudo apt update && sudo apt install ghidra",
+    "basic_usage": "ghidraRun",
+    "examples": [
+      "تشغيل Ghidra",
+      "إنشاء Project جديد",
+      "تحليل برنامج تجريبي تملكه"
+    ],
+    "legal_note": "استخدم Ghidra لتحليل البرامج والملفات التي تملك حق تحليلها فقط.",
+    "img": [
+      "https://www.kali.org/tools/ghidra/images/ghidra-logo.svg"
+    ]
+  },
+  {
+    "id": "binwalk",
+    "name": "Binwalk",
+    "category": "Firmware Analysis",
+    "importance": "Binwalk أداة لتحليل Firmware والملفات الثنائية واكتشاف الملفات أو البيانات المضمنة داخلها. تستخدم في أبحاث أمن الأجهزة والـIoT وتحليل الصور الثابتة للأنظمة المضمنة واستخراج مكونات الملفات عندما يكون ذلك مناسبًا.",
+    "use_cases": [
+      "Firmware Analysis",
+      "IoT Security",
+      "تحليل الملفات الثنائية",
+      "اكتشاف البيانات المضمنة",
+      "Reverse Engineering"
+    ],
+    "installation": "sudo apt update && sudo apt install binwalk",
+    "basic_usage": "binwalk --help",
+    "examples": [
+      "binwalk --help",
+      "binwalk firmware.bin",
+      "تحليل Firmware تجريبي"
+    ],
+    "legal_note": "حلل Firmware الذي تملكه أو لديك تصريح لتحليله.",
+    "img": [
+      "https://www.kali.org/tools/binwalk/images/binwalk-logo.svg"
+    ]
+  },
+  {
+    "id": "foremost",
+    "name": "Foremost",
+    "category": "Digital Forensics",
+    "importance": "Foremost أداة لاستعادة الملفات اعتمادًا على تواقيع الملفات، وتستخدم في التحليل الجنائي الرقمي واستعادة البيانات من صور الأقراص ووسائط التخزين في الحالات التي يسمح فيها بذلك. تفيد في فهم File Carving وكيفية التعرف على أنواع الملفات من محتواها.",
+    "use_cases": [
+      "Digital Forensics",
+      "File Carving",
+      "استعادة الملفات",
+      "تحليل صور الأقراص",
+      "التدريب الجنائي الرقمي"
+    ],
+    "installation": "sudo apt update && sudo apt install foremost",
+    "basic_usage": "foremost -h",
+    "examples": [
+      "foremost -h",
+      "تحليل disk image مختبري",
+      "استخراج ملفات من صورة اختبارية"
+    ],
+    "legal_note": "التحليل الجنائي يجب أن يتم على وسائط لديك صلاحية قانونية لفحصها.",
+    "img": [
+      "https://www.kali.org/tools/foremost/images/foremost-logo.svg"
+    ]
   }
     ]
