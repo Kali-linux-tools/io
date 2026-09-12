@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "airgeddon",
+    "name": "Airgeddon",
+    "category": "Wireless Security",
+    "importance": "Airgeddon إطار تفاعلي يساعد في تدقيق أمان الشبكات اللاسلكية من خلال دمج مجموعة من الأدوات والتقنيات في واجهة قائمة واحدة. يفيد في المختبرات التعليمية لأنه يجمع مراحل متعددة من تقييم الشبكات اللاسلكية، ويساعد الباحث على فهم إعدادات Wi-Fi والمخاطر المرتبطة بها دون الحاجة إلى إدارة كل أداة بشكل منفصل.",
+    "use_cases": [
+      "تدقيق أمان شبكات Wi-Fi",
+      "التدريب على Wireless Security",
+      "اختبار إعدادات الشبكات اللاسلكية",
+      "التعلم على أدوات 802.11",
+      "بناء مختبرات Wi-Fi"
+    ],
+    "installation": "sudo apt update && sudo apt install airgeddon",
+    "basic_usage": "airgeddon --help",
+    "examples": [
+      "airgeddon --help",
+      "تشغيله داخل مختبر لاسلكي",
+      "مراجعة إعدادات شبكة Wi-Fi تملكها"
+    ],
+    "legal_note": "استخدم Airgeddon فقط على الشبكات والأجهزة اللاسلكية التي تملكها أو لديك تصريح صريح لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/airgeddon/images/airgeddon-logo.svg"
+    ]
+  },
+  {
+    "id": "bully",
+    "name": "Bully",
+    "category": "Wireless Security",
+    "importance": "Bully أداة مرتبطة بتقييم أمان WPS في شبكات Wi-Fi، وتستخدم في المختبرات لفهم المخاطر الناتجة عن إعدادات WPS غير الآمنة. تساعد مسؤولي الشبكات على تقييم ما إذا كانت آليات الإعداد اللاسلكي القديمة تحتاج إلى تعطيل أو تحسين.",
+    "use_cases": [
+      "تدقيق WPS",
+      "اختبار إعدادات Wi-Fi",
+      "التدريب على Wireless Security",
+      "تحليل إعدادات الراوتر",
+      "مختبرات الشبكات اللاسلكية"
+    ],
+    "installation": "sudo apt update && sudo apt install bully",
+    "basic_usage": "bully --help",
+    "examples": [
+      "bully --help",
+      "فحص الخيارات المتاحة",
+      "استخدامه على راوتر تجريبي تملكه"
+    ],
+    "legal_note": "لا تستخدم Bully على شبكات Wi-Fi لا تملك تصريحًا باختبارها.",
+    "img": [
+      "https://www.kali.org/tools/bully/images/bully-logo.svg"
+    ]
+  },
+  {
+    "id": "mdk4",
+    "name": "MDK4",
+    "category": "Wireless Security",
+    "importance": "MDK4 إطار لاختبار متانة شبكات 802.11 ضد مجموعة من سيناريوهات الضغط والتلاعب بحركة الشبكة. يستخدم بشكل أساسي في المختبرات لفهم كيفية تعامل نقاط الوصول مع أنواع مختلفة من حركة Wi-Fi غير الطبيعية، ويساعد في تقييم إعدادات الحماية والمراقبة.",
+    "use_cases": [
+      "اختبار متانة Wi-Fi",
+      "Wireless Security Research",
+      "التدريب على 802.11",
+      "اختبار أنظمة المراقبة",
+      "بناء مختبرات لاسلكية"
+    ],
+    "installation": "sudo apt update && sudo apt install mdk4",
+    "basic_usage": "mdk4 --help",
+    "examples": [
+      "mdk4 --help",
+      "دراسة أوضاع الاختبار داخل مختبر",
+      "اختبار نقطة وصول تملكها"
+    ],
+    "legal_note": "بعض أوضاع MDK4 قد تؤثر على الشبكات اللاسلكية فعليًا، لذلك يجب استخدامها في بيئة معزولة أو بتصريح واضح.",
+    "img": [
+      "https://www.kali.org/tools/mdk4/images/mdk4-logo.svg"
+    ]
+  },
+  {
+    "id": "macchanger",
+    "name": "Macchanger",
+    "category": "Network Utilities",
+    "importance": "Macchanger أداة لإدارة وتغيير عنوان MAC لواجهة الشبكة. تفيد في المختبرات عند دراسة طريقة تعامل الشبكات مع عناوين MAC، واختبار إعدادات التحكم في الوصول، وفهم العلاقة بين طبقة Ethernet وهوية واجهة الشبكة.",
+    "use_cases": [
+      "اختبار إعدادات MAC filtering",
+      "التعلم على Ethernet",
+      "إدارة واجهات الشبكة في المختبر",
+      "اختبار الشبكات",
+      "أبحاث الخصوصية الشبكية"
+    ],
+    "installation": "sudo apt update && sudo apt install macchanger",
+    "basic_usage": "macchanger --help",
+    "examples": [
+      "macchanger --help",
+      "macchanger -s eth0",
+      "عرض عنوان MAC الحالي لواجهة اختبار"
+    ],
+    "legal_note": "تغيير MAC على شبكة لا تملكها قد يتسبب في مشاكل أو تجاوز سياسات وصول؛ استخدمه في بيئة مصرح بها.",
+    "img": [
+      "https://www.kali.org/tools/macchanger/images/macchanger-logo.svg"
+    ]
+  },
+  {
+    "id": "recon-ng",
+    "name": "Recon-ng",
+    "category": "OSINT",
+    "importance": "Recon-ng إطار متكامل لجمع المعلومات المفتوحة وتنظيم مراحل الاستطلاع الأمني. يوفر نظام Modules يسمح بتوسيع قدراته وجمع معلومات من مصادر متعددة، ويعتبر مفيدًا في بناء منهجية منظمة للاستطلاع قبل اختبار الأمان.",
+    "use_cases": [
+      "OSINT",
+      "Reconnaissance",
+      "Asset Discovery",
+      "جمع المعلومات العامة",
+      "اختبارات أمنية مصرح بها"
+    ],
+    "installation": "sudo apt update && sudo apt install recon-ng",
+    "basic_usage": "recon-ng --help",
+    "examples": [
+      "recon-ng --help",
+      "إنشاء Workspace لمشروع اختبار",
+      "تنظيم نتائج الاستطلاع داخل مختبر"
+    ],
+    "legal_note": "اجمع المعلومات ضمن نطاق قانوني واحترم سياسات المصادر وخصوصية الأفراد.",
+    "img": [
+      "https://www.kali.org/tools/recon-ng/images/recon-ng-logo.svg"
+    ]
+  },
+  {
+    "id": "maltego",
+    "name": "Maltego",
+    "category": "OSINT",
+    "importance": "Maltego منصة مرئية لتحليل العلاقات بين الكيانات والمعلومات العامة. تساعد في تحويل بيانات OSINT إلى رسوم وعلاقات توضح الروابط بين النطاقات والأسماء والبنية التحتية وغيرها من الكيانات المتاحة من المصادر العامة. وهي مفيدة جدًا في التحقيقات الرقمية وتحليل البصمة الرقمية.",
+    "use_cases": [
+      "OSINT",
+      "Digital Investigation",
+      "تحليل العلاقات",
+      "Attack Surface Discovery",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install maltego",
+    "basic_usage": "maltego",
+    "examples": [
+      "تشغيل Maltego",
+      "إنشاء مشروع OSINT",
+      "تحليل نطاق تملكه أو لديك تصريح بتحليله"
+    ],
+    "legal_note": "استخدم المعلومات التي تجمعها Maltego بصورة قانونية واحترم الخصوصية وشروط المصادر.",
+    "img": [
+      "https://www.kali.org/tools/maltego/images/maltego-logo.svg"
+    ]
+  },
+  {
+    "id": "spiderfoot",
+    "name": "SpiderFoot",
+    "category": "OSINT",
+    "importance": "SpiderFoot منصة آلية لجمع وتحليل المعلومات العامة المتعلقة بالأهداف الرقمية. تستطيع الاستفادة من مصادر متعددة لبناء صورة عن النطاقات وعناوين IP والبنية التحتية وغيرها. تعد مناسبة للاستطلاع الأمني وإدارة سطح الهجوم عندما يكون نطاق البحث محددًا ومصرحًا.",
+    "use_cases": [
+      "OSINT",
+      "Attack Surface Management",
+      "Asset Discovery",
+      "Digital Footprint",
+      "Reconnaissance"
+    ],
+    "installation": "sudo apt update && sudo apt install spiderfoot",
+    "basic_usage": "spiderfoot -h",
+    "examples": [
+      "spiderfoot -h",
+      "تشغيل SpiderFoot في بيئة اختبار",
+      "تحليل نطاق مملوك للمستخدم"
+    ],
+    "legal_note": "يجب تحديد نطاق البحث مسبقًا وعدم استخدام الأداة لجمع بيانات حساسة عن أشخاص دون أساس قانوني.",
+    "img": [
+      "https://www.kali.org/tools/spiderfoot/images/spiderfoot-logo.svg"
+    ]
+  },
+  {
+    "id": "fierce",
+    "name": "Fierce",
+    "category": "DNS Reconnaissance",
+    "importance": "Fierce أداة استطلاع DNS تساعد الباحث الأمني في اكتشاف البنية المرتبطة بالنطاقات والنطاقات الفرعية. تستخدم في مرحلة reconnaissance لبناء صورة أوضح عن الأصول المنشورة قبل إجراء اختبارات أمنية أخرى.",
+    "use_cases": [
+      "DNS Enumeration",
+      "Subdomain Discovery",
+      "Reconnaissance",
+      "Asset Discovery",
+      "اختبارات أمنية"
+    ],
+    "installation": "sudo apt update && sudo apt install fierce",
+    "basic_usage": "fierce --help",
+    "examples": [
+      "fierce --help",
+      "فحص نطاق تملكه",
+      "تحليل بنية DNS لمختبر"
+    ],
+    "legal_note": "استخدم Fierce فقط على النطاقات المصرح لك بفحصها.",
+    "img": [
+      "https://www.kali.org/tools/fierce/images/fierce-logo.svg"
+    ]
+  },
+  {
+    "id": "dnsenum",
+    "name": "DNSenum",
+    "category": "DNS Enumeration",
+    "importance": "DNSenum أداة لجمع معلومات DNS وإجراء عمليات استطلاع مرتبطة بالنطاقات. تساعد في التعرف على السجلات والبنية العامة للنطاق، وتفيد مسؤولي الأنظمة في اكتشاف الإعدادات غير المتوقعة أثناء مراجعة البنية التحتية.",
+    "use_cases": [
+      "DNS Enumeration",
+      "مراجعة DNS",
+      "Subdomain Discovery",
+      "Reconnaissance",
+      "Security Auditing"
+    ],
+    "installation": "sudo apt update && sudo apt install dnsenum",
+    "basic_usage": "dnsenum --help",
+    "examples": [
+      "dnsenum --help",
+      "تحليل نطاق تجريبي",
+      "مراجعة DNS لنطاق تملكه"
+    ],
+    "legal_note": "نفذ عمليات الاستطلاع فقط على الأصول المصرح بها.",
+    "img": [
+      "https://www.kali.org/tools/dnsenum/images/dnsenum-logo.svg"
+    ]
+  },
+  {
+    "id": "netdiscover",
+    "name": "Netdiscover",
+    "category": "Network Discovery",
+    "importance": "Netdiscover أداة لاكتشاف الأجهزة داخل الشبكات المحلية باستخدام تقنيات مثل ARP. تعتبر مفيدة لمسؤولي الشبكات والباحثين الأمنيين لمعرفة الأجهزة الموجودة فعليًا داخل نطاق الشبكة ومراجعة الأصول غير المعروفة.",
+    "use_cases": [
+      "اكتشاف الأجهزة",
+      "Network Inventory",
+      "LAN Discovery",
+      "التدقيق الشبكي",
+      "التدريب على ARP"
+    ],
+    "installation": "sudo apt update && sudo apt install netdiscover",
+    "basic_usage": "netdiscover --help",
+    "examples": [
+      "netdiscover --help",
+      "استخدامه على شبكة مختبر",
+      "اكتشاف الأجهزة في LAN تملكها"
+    ],
+    "legal_note": "استخدم Netdiscover داخل الشبكات التي لديك صلاحية إدارتها أو اختبارها.",
+    "img": [
+      "https://www.kali.org/tools/netdiscover/images/netdiscover-logo.svg"
+    ]
+  },
+  {
+    "id": "fping",
+    "name": "Fping",
+    "category": "Network Discovery",
+    "importance": "Fping أداة تعتمد على ICMP وتوفر إمكانيات مرنة لاختبار إمكانية الوصول إلى مجموعة من المضيفين. تختلف عن ping التقليدية في قدرتها على التعامل بكفاءة مع قوائم متعددة من العناوين، مما يجعلها مفيدة في إدارة الشبكات واختبارات توفر الأجهزة.",
+    "use_cases": [
+      "Host Discovery",
+      "اختبار توفر الأجهزة",
+      "Network Monitoring",
+      "Inventory",
+      "تشخيص الشبكات"
+    ],
+    "installation": "sudo apt update && sudo apt install fping",
+    "basic_usage": "fping --help",
+    "examples": [
+      "fping --help",
+      "اختبار جهاز مختبري",
+      "مراقبة مجموعة أجهزة تملكها"
+    ],
+    "legal_note": "لا ترسل فحوصات إلى شبكات خارج نطاق صلاحيتك.",
+    "img": [
+      "https://www.kali.org/tools/fping/images/fping-logo.svg"
+    ]
+  },
+  {
+    "id": "hping3",
+    "name": "Hping3",
+    "category": "Network Testing",
+    "importance": "Hping3 أداة متقدمة لإنشاء وتحليل حزم شبكية مخصصة، وتستخدم في اختبار الشبكات والجدران النارية وأنظمة كشف التسلل. تسمح بفهم سلوك TCP وUDP وICMP بصورة عملية، ولذلك تعتبر أداة تعليمية قوية لمهندسي الشبكات والباحثين الأمنيين.",
+    "use_cases": [
+      "Network Testing",
+      "Firewall Testing",
+      "TCP/IP Research",
+      "تشخيص الشبكات",
+      "Security Labs"
+    ],
+    "installation": "sudo apt update && sudo apt install hping3",
+    "basic_usage": "hping3 --help",
+    "examples": [
+      "hping3 --help",
+      "اختبار جهاز localhost",
+      "دراسة TCP flags داخل مختبر"
+    ],
+    "legal_note": "الحزم المخصصة قد تؤثر على الخدمات؛ استخدم Hping3 فقط في بيئة اختبار مصرح بها.",
+    "img": [
+      "https://www.kali.org/tools/hping3/images/hping3-logo.svg"
+    ]
+  },
+  {
+    "id": "ike-scan",
+    "name": "Ike-scan",
+    "category": "Network Discovery",
+    "importance": "Ike-scan أداة متخصصة في اكتشاف وتحليل خدمات IKE المستخدمة في بعض تطبيقات IPsec VPN. تساعد الباحث الأمني في التعرف على الأجهزة التي تستجيب لـ IKE وفهم خصائص التفاوض الأساسية، وهي مفيدة في تقييم البنية التحتية الخاصة بالـVPN.",
+    "use_cases": [
+      "VPN Assessment",
+      "IPsec Discovery",
+      "Network Reconnaissance",
+      "Security Auditing",
+      "التدريب على IKE"
+    ],
+    "installation": "sudo apt update && sudo apt install ike-scan",
+    "basic_usage": "ike-scan --help",
+    "examples": [
+      "ike-scan --help",
+      "فحص VPN مختبري",
+      "تحليل استجابة IKE في بيئة تملكها"
+    ],
+    "legal_note": "لا تفحص خوادم VPN خارج نطاق التصريح.",
+    "img": [
+      "https://www.kali.org/tools/ike-scan/images/ike-scan-logo.svg"
+    ]
+  },
+  {
+    "id": "sslscan",
+    "name": "SSLScan",
+    "category": "TLS Security",
+    "importance": "SSLScan أداة لفحص خدمات SSL/TLS والتعرف على البروتوكولات والخوارزميات وإعدادات التشفير التي يدعمها الخادم. تساعد مسؤولي الأنظمة في اكتشاف الإعدادات القديمة أو غير المناسبة وتحسين مستوى أمان الاتصالات المشفرة.",
+    "use_cases": [
+      "TLS Auditing",
+      "فحص الشهادات",
+      "مراجعة Cipher Suites",
+      "Security Hardening",
+      "Web Security"
+    ],
+    "installation": "sudo apt update && sudo apt install sslscan",
+    "basic_usage": "sslscan --help",
+    "examples": [
+      "sslscan --help",
+      "sslscan localhost:443",
+      "فحص خادم HTTPS تملكه"
+    ],
+    "legal_note": "نفذ فحوصات TLS على الخوادم التي تملك تصريحًا لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/sslscan/images/sslscan-logo.svg"
+    ]
+  },
+  {
+    "id": "testssl",
+    "name": "testssl.sh",
+    "category": "TLS Security",
+    "importance": "testssl.sh أداة شاملة لفحص خدمات SSL وTLS، وتقدم معلومات تفصيلية عن البروتوكولات والتشفير والشهادات وبعض إعدادات الخادم. تعتبر مفيدة جدًا لمسؤولي البنية التحتية الذين يريدون مراجعة أمان HTTPS وVPN والخدمات المشفرة.",
+    "use_cases": [
+      "TLS Security Audit",
+      "HTTPS Hardening",
+      "فحص الشهادات",
+      "مراجعة البروتوكولات",
+      "Security Assessment"
+    ],
+    "installation": "sudo apt update && sudo apt install testssl.sh",
+    "basic_usage": "testssl.sh --help",
+    "examples": [
+      "testssl.sh --help",
+      "testssl.sh https://localhost",
+      "فحص خادم HTTPS تجريبي"
+    ],
+    "legal_note": "استخدم testssl.sh فقط على خدمات مصرح لك بفحصها.",
+    "img": [
+      "https://www.kali.org/tools/testssl.sh/images/testssl.sh-logo.svg"
+    ]
+  },
+  {
+    "id": "wafw00f",
+    "name": "WAFW00F",
+    "category": "Web Reconnaissance",
+    "importance": "WAFW00F أداة تساعد في التعرف على وجود بعض Web Application Firewalls وتقنيات الحماية التي قد تكون أمام تطبيق الويب. فائدتها في التدقيق الأمني هي فهم الطبقة الدفاعية الموجودة أمام التطبيق ومراجعة ما إذا كانت إعدادات الحماية تعمل كما هو متوقع.",
+    "use_cases": [
+      "WAF Detection",
+      "Web Reconnaissance",
+      "Security Assessment",
+      "تحليل البنية الدفاعية",
+      "Web Security"
+    ],
+    "installation": "sudo apt update && sudo apt install wafw00f",
+    "basic_usage": "wafw00f --help",
+    "examples": [
+      "wafw00f --help",
+      "فحص تطبيق محلي",
+      "التأكد من وجود WAF على موقع تملكه"
+    ],
+    "legal_note": "لا تفحص أو تحاول تجاوز أنظمة WAF خارج نطاق التصريح.",
+    "img": [
+      "https://www.kali.org/tools/wafw00f/images/wafw00f-logo.svg"
+    ]
+  },
+  {
+    "id": "legion",
+    "name": "Legion",
+    "category": "Network Reconnaissance",
+    "importance": "Legion منصة رسومية تساعد في تنظيم عمليات Network Reconnaissance وEnumeration. تجمع عددًا من الأدوات والأساليب في واجهة واحدة، وتساعد الباحث على بناء صورة عن الخدمات الموجودة على الأهداف المصرح بها بطريقة أكثر تنظيمًا.",
+    "use_cases": [
+      "Network Enumeration",
+      "Service Discovery",
+      "Reconnaissance",
+      "Penetration Testing Labs",
+      "Security Assessment"
+    ],
+    "installation": "sudo apt update && sudo apt install legion",
+    "basic_usage": "legion",
+    "examples": [
+      "تشغيل Legion",
+      "إنشاء مشروع اختبار",
+      "تحليل أجهزة مختبرية"
+    ],
+    "legal_note": "Legion يجمع عمليات استطلاع متعددة؛ استخدمه فقط ضمن نطاق اختبار مصرح.",
+    "img": [
+      "https://www.kali.org/tools/legion/images/legion-logo.svg"
+    ]
+  },
+  {
+    "id": "lynis",
+    "name": "Lynis",
+    "category": "System Auditing",
+    "importance": "Lynis أداة قوية لتدقيق أنظمة Linux وUnix وتحليل إعدادات النظام بحثًا عن فرص تحسين الأمان. تفحص مجموعة واسعة من الإعدادات والخدمات والسياسات وتقدم توصيات Hardening، ولذلك تعتبر مفيدة لمسؤولي الخوادم وDevSecOps.",
+    "use_cases": [
+      "Linux Security Audit",
+      "System Hardening",
+      "Server Security",
+      "Compliance",
+      "DevSecOps"
+    ],
+    "installation": "sudo apt update && sudo apt install lynis",
+    "basic_usage": "sudo lynis audit system",
+    "examples": [
+      "sudo lynis audit system",
+      "lynis --help",
+      "مراجعة خادم Linux تملكه"
+    ],
+    "legal_note": "شغل Lynis على الأنظمة التي تملك صلاحية إدارتها أو تدقيقها.",
+    "img": [
+      "https://www.kali.org/tools/lynis/images/lynis-logo.svg"
+    ]
+  },
+  {
+    "id": "chkrootkit",
+    "name": "Chkrootkit",
+    "category": "System Security",
+    "importance": "Chkrootkit مجموعة فحوصات تساعد في البحث عن مؤشرات مرتبطة ببعض أنواع rootkits المعروفة والتغييرات المشبوهة في النظام. تعتبر أداة مساعدة في الفحص الأمني وليست بديلًا عن حلول EDR أو التحليل الجنائي الكامل.",
+    "use_cases": [
+      "Rootkit Detection",
+      "Linux Security",
+      "Incident Response",
+      "Server Auditing",
+      "Security Monitoring"
+    ],
+    "installation": "sudo apt update && sudo apt install chkrootkit",
+    "basic_usage": "sudo chkrootkit",
+    "examples": [
+      "sudo chkrootkit",
+      "chkrootkit -h",
+      "تشغيل فحص على خادم تملكه"
+    ],
+    "legal_note": "استخدمها على الأنظمة التي تملك صلاحية إدارتها وتحليلها.",
+    "img": [
+      "https://www.kali.org/tools/chkrootkit/images/chkrootkit-logo.svg"
+    ]
+  },
+  {
+    "id": "rkhunter",
+    "name": "RKHunter",
+    "category": "System Security",
+    "importance": "Rootkit Hunter أداة للمساعدة في اكتشاف مؤشرات rootkits والملفات أو الإعدادات غير المعتادة في أنظمة Unix-like. تفيد مسؤولي الخوادم في عمليات المراقبة والتحقق الدوري من سلامة النظام، مع ضرورة تفسير النتائج يدويًا لأن أدوات الكشف قد تنتج إنذارات كاذبة.",
+    "use_cases": [
+      "Rootkit Detection",
+      "Linux Security",
+      "Server Monitoring",
+      "Incident Response",
+      "System Auditing"
+    ],
+    "installation": "sudo apt update && sudo apt install rkhunter",
+    "basic_usage": "sudo rkhunter --check",
+    "examples": [
+      "sudo rkhunter --check",
+      "rkhunter --help",
+      "مراجعة النتائج على نظام مختبري"
+    ],
+    "legal_note": "استخدم RKHunter على أنظمة لديك صلاحية فحصها فقط.",
+    "img": [
+      "https://www.kali.org/tools/rkhunter/images/rkhunter-logo.svg"
+    ]
+  },
+  {
+    "id": "yara",
+    "name": "YARA",
+    "category": "Malware Analysis",
+    "importance": "YARA إطار لإنشاء قواعد تساعد الباحثين في التعرف على ملفات أو عينات بناءً على أنماط وخصائص محددة. يعتبر من الأدوات المهمة في Malware Analysis وThreat Hunting، ويمكن استخدامه لبناء قواعد اكتشاف مخصصة داخل مختبرات تحليل البرمجيات الخبيثة.",
+    "use_cases": [
+      "Malware Analysis",
+      "Threat Hunting",
+      "File Classification",
+      "Incident Response",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install yara",
+    "basic_usage": "yara --help",
+    "examples": [
+      "yara --help",
+      "كتابة قاعدة YARA بسيطة لملفات اختبارية",
+      "فحص عينات مختبرية"
+    ],
+    "legal_note": "استخدم YARA لتحليل الملفات التي لديك الحق في فحصها، ويفضل استخدام عينات معزولة عند تحليل Malware.",
+    "img": [
+      "https://www.kali.org/tools/yara/images/yara-logo.svg"
+    ]
+  },
+  {
+    "id": "bulk-extractor",
+    "name": "Bulk Extractor",
+    "category": "Digital Forensics",
+    "importance": "Bulk Extractor أداة جنائية رقمية تقوم باستخراج أنواع من المعلومات والخصائص من مصادر البيانات دون الاعتماد على نظام ملفات تقليدي. يمكن أن تساعد في تحليل صور الأقراص والبيانات الكبيرة واستخراج مؤشرات مثل عناوين البريد وبعض الأنماط النصية.",
+    "use_cases": [
+      "Digital Forensics",
+      "Disk Image Analysis",
+      "Incident Response",
+      "Evidence Processing",
+      "Data Discovery"
+    ],
+    "installation": "sudo apt update && sudo apt install bulk-extractor",
+    "basic_usage": "bulk_extractor -h",
+    "examples": [
+      "bulk_extractor -h",
+      "تحليل disk image مختبرية",
+      "استخراج مؤشرات من بيانات اختبارية"
+    ],
+    "legal_note": "التحقيق الجنائي يجب أن يتم على البيانات التي لديك صلاحية قانونية لفحصها.",
+    "img": [
+      "https://www.kali.org/tools/bulk-extractor/images/bulk-extractor-logo.svg"
+    ]
+  },
+  {
+    "id": "scalpel",
+    "name": "Scalpel",
+    "category": "Digital Forensics",
+    "importance": "Scalpel أداة File Carving تساعد في استعادة الملفات من البيانات الخام بالاعتماد على تواقيع وأنماط الملفات. تستخدم في التحليل الجنائي الرقمي عندما يحتاج الباحث إلى البحث عن ملفات داخل صور أقراص أو بيانات لا يمكن الوصول إليها بالطريقة التقليدية.",
+    "use_cases": [
+      "File Carving",
+      "Digital Forensics",
+      "Data Recovery",
+      "Disk Image Analysis",
+      "Incident Response"
+    ],
+    "installation": "sudo apt update && sudo apt install scalpel",
+    "basic_usage": "scalpel -h",
+    "examples": [
+      "scalpel -h",
+      "إنشاء إعدادات File Carving لمختبر",
+      "تحليل صورة قرص اختبارية"
+    ],
+    "legal_note": "استخدم Scalpel فقط على وسائط وبيانات لديك صلاحية فحصها.",
+    "img": [
+      "https://www.kali.org/tools/scalpel/images/scalpel-logo.svg"
+    ]
+  },
+  {
+    "id": "exifprobe",
+    "name": "ExifProbe",
+    "category": "Digital Forensics",
+    "importance": "ExifProbe أداة لتحليل بيانات الصور والملفات واستخراج معلومات تقنية مرتبطة بالملف عند توفرها. يمكن أن تساعد في التحقيقات الرقمية وفهم خصائص الصور والكاميرات والبيانات الوصفية، مع الانتباه إلى أن Metadata يمكن حذفها أو تعديلها.",
+    "use_cases": [
+      "Metadata Analysis",
+      "Digital Forensics",
+      "Image Investigation",
+      "OSINT",
+      "File Analysis"
+    ],
+    "installation": "sudo apt update && sudo apt install exifprobe",
+    "basic_usage": "exifprobe --help",
+    "examples": [
+      "exifprobe --help",
+      "تحليل صورة اختبارية",
+      "فحص metadata لملف تملكه"
+    ],
+    "legal_note": "لا تجمع أو تنشر بيانات شخصية من ملفات الآخرين دون أساس قانوني.",
+    "img": [
+      "https://www.kali.org/tools/exifprobe/images/exifprobe-logo.svg"
+    ]
+  },
+  {
+    "id": "pdfid",
+    "name": "PDFiD",
+    "category": "Document Analysis",
+    "importance": "PDFiD أداة لفحص ملفات PDF والبحث عن مؤشرات وخصائص قد تكون مهمة في التحليل الأمني، مثل بعض أنواع العناصر والـJavaScript والـembedded objects. تستخدم في التحليل الأولي للملفات المشبوهة وفي التحقيقات الرقمية.",
+    "use_cases": [
+      "PDF Analysis",
+      "Malware Analysis",
+      "Digital Forensics",
+      "Document Security",
+      "Incident Response"
+    ],
+    "installation": "sudo apt update && sudo apt install pdfid",
+    "basic_usage": "pdfid --help",
+    "examples": [
+      "pdfid --help",
+      "فحص PDF تجريبي",
+      "تحليل خصائص ملف PDF"
+    ],
+    "legal_note": "حلل الملفات التي لديك صلاحية فحصها، ويفضل عزل الملفات المشبوهة.",
+    "img": [
+      "https://www.kali.org/tools/pdfid/images/pdfid-logo.svg"
+    ]
+  },
+  {
+    "id": "pdf-parser",
+    "name": "PDF-Parser",
+    "category": "Document Analysis",
+    "importance": "PDF-Parser أداة متقدمة لفحص البنية الداخلية لملفات PDF وتحليل Objects والبيانات الموجودة بداخلها. تعتبر مفيدة للباحثين الأمنيين عند التحقيق في ملفات PDF غير المعتادة أو دراسة كيفية بناء المستندات واكتشاف العناصر المشبوهة.",
+    "use_cases": [
+      "PDF Forensics",
+      "Malware Analysis",
+      "Document Security",
+      "Incident Response",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install pdf-parser",
+    "basic_usage": "pdf-parser --help",
+    "examples": [
+      "pdf-parser --help",
+      "تحليل PDF مختبري",
+      "استعراض Objects داخل مستند اختبار"
+    ],
+    "legal_note": "استخدم الأداة على المستندات التي لديك صلاحية تحليلها.",
+    "img": [
+      "https://www.kali.org/tools/pdf-parser/images/pdf-parser-logo.svg"
+    ]
+  },
+  {
+    "id": "apktool",
+    "name": "Apktool",
+    "category": "Android Security",
+    "importance": "Apktool أداة شهيرة لفك وتحليل بنية تطبيقات Android APK. تساعد الباحثين والمطورين في دراسة Resources وManifest وبعض مكونات التطبيق، وتستخدم في Reverse Engineering واختبارات أمان تطبيقات Android التي يملك الباحث الحق في تحليلها.",
+    "use_cases": [
+      "Android Reverse Engineering",
+      "Mobile Security",
+      "APK Analysis",
+      "دراسة Android Resources",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install apktool",
+    "basic_usage": "apktool --help",
+    "examples": [
+      "apktool --help",
+      "تحليل APK تجريبي",
+      "دراسة AndroidManifest.xml"
+    ],
+    "legal_note": "حلل تطبيقات Android التي تملكها أو لديك تصريح بتحليلها فقط.",
+    "img": [
+      "https://www.kali.org/tools/apktool/images/apktool-logo.svg"
+    ]
+  },
+  {
+    "id": "jadx",
+    "name": "JADX",
+    "category": "Android Reverse Engineering",
+    "importance": "JADX أداة لتحويل ملفات DEX وAPK إلى كود Java تقريبي قابل للقراءة، مما يجعلها مفيدة في Reverse Engineering وتحليل تطبيقات Android. تساعد في فهم منطق التطبيق واكتشاف إعدادات أو أخطاء برمجية ضمن تطبيقات يسمح لك بتحليلها.",
+    "use_cases": [
+      "Android Reverse Engineering",
+      "APK Analysis",
+      "Mobile Security",
+      "Code Review",
+      "CTF"
+    ],
+    "installation": "sudo apt update && sudo apt install jadx",
+    "basic_usage": "jadx --help",
+    "examples": [
+      "jadx --help",
+      "تحليل APK مختبري",
+      "استعراض Classes وResources"
+    ],
+    "legal_note": "استخدم JADX فقط على التطبيقات التي تملك حق تحليلها.",
+    "img": [
+      "https://www.kali.org/tools/jadx/images/jadx-logo.svg"
+    ]
+  },
+  {
+    "id": "bytecode-viewer",
+    "name": "Bytecode Viewer",
+    "category": "Reverse Engineering",
+    "importance": "Bytecode Viewer بيئة رسومية تساعد في تحليل ملفات Java وAndroid Bytecode من خلال دمج عدة أدوات للـdecompilation والتحليل. توفر للباحث إمكانية مقارنة مخرجات أكثر من Decompiler وفهم بنية التطبيقات والملفات التنفيذية.",
+    "use_cases": [
+      "Java Reverse Engineering",
+      "Android Analysis",
+      "Bytecode Analysis",
+      "Malware Research",
+      "CTF"
+    ],
+    "installation": "sudo apt update && sudo apt install bytecode-viewer",
+    "basic_usage": "bytecode-viewer",
+    "examples": [
+      "تشغيل Bytecode Viewer",
+      "فتح ملف JAR تجريبي",
+      "تحليل APK أو Java bytecode مصرح به"
+    ],
+    "legal_note": "لا تحلل برمجيات مملوكة للغير إلا إذا كان لديك الحق في تحليلها.",
+    "img": [
+      "https://www.kali.org/tools/bytecode-viewer/images/bytecode-viewer-logo.svg"
+    ]
+  },
+  {
+    "id": "rizin",
+    "name": "Rizin",
+    "category": "Reverse Engineering",
+    "importance": "Rizin إطار مفتوح المصدر للتحليل العكسي والـBinary Analysis، ويوفر أدوات لفحص الملفات التنفيذية والـassembly والذاكرة. يمثل خيارًا قويًا للباحثين الذين يريدون بيئة سطر أوامر قابلة للتخصيص لتحليل البرمجيات.",
+    "use_cases": [
+      "Reverse Engineering",
+      "Binary Analysis",
+      "CTF",
+      "Malware Research",
+      "Exploit Development Research"
+    ],
+    "installation": "sudo apt update && sudo apt install rizin",
+    "basic_usage": "rz --help",
+    "examples": [
+      "rz --help",
+      "rz ./sample",
+      "تحليل Binary تجريبي"
+    ],
+    "legal_note": "استخدم Rizin لتحليل الملفات التي تملك حق تحليلها.",
+    "img": [
+      "https://www.kali.org/tools/rizin/images/rizin-logo.svg"
+    ]
+  },
+  {
+    "id": "rizin-cutter",
+    "name": "Cutter",
+    "category": "Reverse Engineering",
+    "importance": "Cutter واجهة رسومية للتحليل العكسي مبنية حول Rizin، وتوفر بيئة أسهل للتعامل مع Disassembly وGraph Views وFunctions وStrings. مناسبة جدًا للمبتدئين في Reverse Engineering وللباحثين الذين يفضلون واجهة رسومية.",
+    "use_cases": [
+      "Reverse Engineering",
+      "Binary Analysis",
+      "Malware Research",
+      "CTF",
+      "Software Analysis"
+    ],
+    "installation": "sudo apt update && sudo apt install rizin-cutter",
+    "basic_usage": "cutter",
+    "examples": [
+      "تشغيل Cutter",
+      "فتح Binary تجريبي",
+      "استعراض الدوال والتعليمات"
+    ],
+    "legal_note": "حلل فقط الملفات التي تملك تصريحًا بتحليلها.",
+    "img": [
+      "https://www.kali.org/tools/rizin-cutter/images/rizin-cutter-logo.svg"
+    ]
+  },
+  {
+    "id": "aflplusplus",
+    "name": "AFL++",
+    "category": "Fuzzing",
+    "importance": "AFL++ إطار Fuzzing متقدم يستخدم لتوليد مدخلات مختلفة للبرامج بهدف اكتشاف حالات انهيار وأخطاء برمجية غير متوقعة. يعد من الأدوات المهمة في Software Security وVulnerability Research، خصوصًا عند اختبار parsers والبرامج التي تتعامل مع بيانات غير موثوقة.",
+    "use_cases": [
+      "Software Fuzzing",
+      "Vulnerability Research",
+      "Bug Discovery",
+      "Secure Development",
+      "Binary Testing"
+    ],
+    "installation": "sudo apt update && sudo apt install afl++",
+    "basic_usage": "afl-fuzz -h",
+    "examples": [
+      "afl-fuzz -h",
+      "إنشاء برنامج تجريبي صغير للفحص",
+      "اختبار Parser داخل مختبر"
+    ],
+    "legal_note": "استخدم AFL++ على برامج تملكها أو لديك تصريح صريح لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/aflplusplus/images/aflplusplus-logo.svg"
+    ]
+  },
+  {
+    "id": "wfuzz",
+    "name": "Wfuzz",
+    "category": "Web Fuzzing",
+    "importance": "Wfuzz أداة Web Fuzzing مرنة تساعد في اختبار تطبيقات الويب عن طريق استبدال أجزاء من الطلبات بمدخلات مختلفة. يمكن استخدامها في مختبرات الويب لاكتشاف سلوكيات غير متوقعة واختبار Parameters وHeaders ومسارات التطبيقات.",
+    "use_cases": [
+      "Web Fuzzing",
+      "Parameter Testing",
+      "API Testing",
+      "Web Security",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install wfuzz",
+    "basic_usage": "wfuzz --help",
+    "examples": [
+      "wfuzz --help",
+      "اختبار API محلي",
+      "فحص سلوك Parameter داخل مختبر"
+    ],
+    "legal_note": "Fuzzing قد ينتج عددًا كبيرًا من الطلبات؛ استخدمه فقط ضد تطبيقات مصرح بها.",
+    "img": [
+      "https://www.kali.org/tools/wfuzz/images/wfuzz-logo.svg"
+    ]
+  },
+  {
+    "id": "slowhttptest",
+    "name": "SlowHTTPTest",
+    "category": "Web Security Testing",
+    "importance": "SlowHTTPTest أداة بحثية لاختبار كيفية تعامل خوادم الويب مع أنواع معينة من الاتصالات البطيئة. تستخدم في المختبرات لتقييم قدرة الخادم وطبقات الحماية على التعامل مع اتصالات غير طبيعية، وتساعد في اختبار إعدادات Timeouts وConnection Limits.",
+    "use_cases": [
+      "Web Server Testing",
+      "DoS Resilience Research",
+      "Timeout Testing",
+      "Load Protection",
+      "Security Hardening"
+    ],
+    "installation": "sudo apt update && sudo apt install slowhttptest",
+    "basic_usage": "slowhttptest --help",
+    "examples": [
+      "slowhttptest --help",
+      "اختبار خادم localhost",
+      "مراجعة إعدادات timeout في مختبر"
+    ],
+    "legal_note": "اختبارات الضغط قد تؤدي إلى توقف الخدمة؛ نفذها فقط على أنظمة اختبارية أو بتصريح واضح.",
+    "img": [
+      "https://www.kali.org/tools/slowhttptest/images/slowhttptest-logo.svg"
+    ]
+  },
+  {
+    "id": "siege",
+    "name": "Siege",
+    "category": "Web Performance",
+    "importance": "Siege أداة لاختبار أداء وتحمل خوادم الويب من خلال إرسال طلبات متعددة وقياس الاستجابات. تستخدم في بيئات التطوير والاختبار لمعرفة قدرة التطبيق على تحمل عدد محدد من الطلبات ومراقبة أوقات الاستجابة والأخطاء.",
+    "use_cases": [
+      "Performance Testing",
+      "Load Testing",
+      "Web Optimization",
+      "Capacity Planning",
+      "Server Monitoring"
+    ],
+    "installation": "sudo apt update && sudo apt install siege",
+    "basic_usage": "siege --help",
+    "examples": [
+      "siege --help",
+      "اختبار localhost",
+      "قياس أداء تطبيق تجريبي"
+    ],
+    "legal_note": "اختبارات الحمل يجب أن تتم على خوادم تملكها أو لديك تصريح بإجراء اختبارات الضغط عليها.",
+    "img": [
+      "https://www.kali.org/tools/siege/images/siege-logo.svg"
+    ]
+  },
+  {
+    "id": "gvm",
+    "name": "Greenbone Vulnerability Management",
+    "category": "Vulnerability Assessment",
+    "importance": "Greenbone Vulnerability Management منصة متخصصة في إدارة وفحص الثغرات الأمنية. تساعد فرق الأمن على اكتشاف الثغرات المعروفة في الأنظمة والخدمات وإدارة نتائج التقييم وترتيب المخاطر. تعتبر مناسبة للمؤسسات التي تحتاج إلى عملية منظمة لإدارة Vulnerability Assessment.",
+    "use_cases": [
+      "Vulnerability Assessment",
+      "Security Auditing",
+      "Risk Management",
+      "Compliance",
+      "Infrastructure Security"
+    ],
+    "installation": "sudo apt update && sudo apt install gvm",
+    "basic_usage": "gvm-start",
+    "examples": [
+      "gvm-start",
+      "إعداد بيئة GVM",
+      "إنشاء فحص على أجهزة مختبرية"
+    ],
+    "legal_note": "لا تنفذ Vulnerability Scans على بنية تحتية خارج نطاق تصريحك.",
+    "img": [
+      "https://www.kali.org/tools/gvm/images/gvm-logo.svg"
+    ]
+  },
+  {
+    "id": "unicornscan",
+    "name": "Unicornscan",
+    "category": "Network Discovery",
+    "importance": "Unicornscan أداة متقدمة لجمع المعلومات عن الشبكات والخدمات، وتوفر أساليب مختلفة للتعامل مع TCP وUDP واكتشاف الخدمات. يمكن استخدامها في مرحلة الاستطلاع الشبكي داخل بيئات اختبارية لتكوين صورة عن الخدمات المتاحة.",
+    "use_cases": [
+      "Network Discovery",
+      "Service Enumeration",
+      "Reconnaissance",
+      "Security Assessment",
+      "Network Research"
+    ],
+    "installation": "sudo apt update && sudo apt install unicornscan",
+    "basic_usage": "unicornscan --help",
+    "examples": [
+      "unicornscan --help",
+      "اختبار جهاز مختبري",
+      "تحليل خدمات شبكة تملكها"
+    ],
+    "legal_note": "استخدم Unicornscan على الشبكات المصرح لك بفحصها فقط.",
+    "img": [
+      "https://www.kali.org/tools/unicornscan/images/unicornscan-logo.svg"
+    ]
+  },
+  {
+    "id": "p0f",
+    "name": "p0f",
+    "category": "Network Fingerprinting",
+    "importance": "p0f أداة Passive OS Fingerprinting تحاول التعرف على خصائص أنظمة التشغيل من خصائص حركة الشبكة دون الحاجة إلى إرسال حزم فحص نشطة تقليدية. تساعد في فهم البصمة الشبكية للأجهزة وفي الدراسات المتعلقة بتحليل حركة الشبكة.",
+    "use_cases": [
+      "Passive OS Fingerprinting",
+      "Network Monitoring",
+      "Traffic Analysis",
+      "Asset Identification",
+      "Security Research"
+    ],
+    "installation": "sudo apt update && sudo apt install p0f",
+    "basic_usage": "p0f -h",
+    "examples": [
+      "p0f -h",
+      "تشغيله على واجهة شبكة مختبرية",
+      "تحليل Traffic مصرح بمراقبته"
+    ],
+    "legal_note": "مراقبة حركة الشبكة يجب أن تتم فقط ضمن شبكات تملك صلاحية مراقبتها.",
+    "img": [
+      "https://www.kali.org/tools/p0f/images/p0f-logo.svg"
+    ]
+  },
+  {
+    "id": "onesixtyone",
+    "name": "Onesixtyone",
+    "category": "SNMP Enumeration",
+    "importance": "Onesixtyone أداة لاستطلاع خدمات SNMP واكتشاف الأجهزة التي تستجيب لهذا البروتوكول داخل نطاق مصرح به. تساعد مسؤولي الشبكات في اكتشاف الخدمات القديمة أو الإعدادات غير المناسبة ومراجعة تعرض SNMP داخل الشبكة.",
+    "use_cases": [
+      "SNMP Enumeration",
+      "Network Discovery",
+      "Infrastructure Auditing",
+      "Security Assessment",
+      "Network Administration"
+    ],
+    "installation": "sudo apt update && sudo apt install onesixtyone",
+    "basic_usage": "onesixtyone -h",
+    "examples": [
+      "onesixtyone -h",
+      "اختبار أجهزة SNMP داخل مختبر",
+      "مراجعة أجهزة الشبكة التي تملكها"
+    ],
+    "legal_note": "لا تستطلع خدمات SNMP خارج نطاق التصريح.",
+    "img": [
+      "https://www.kali.org/tools/onesixtyone/images/onesixtyone-logo.svg"
+    ]
+  },
+  {
+    "id": "snmpcheck",
+    "name": "SNMPcheck",
+    "category": "Network Enumeration",
+    "importance": "SNMPcheck أداة تساعد في جمع المعلومات المتاحة عبر SNMP من الأجهزة التي تسمح بذلك. يمكن أن تكون مفيدة في تدقيق أجهزة الشبكات واكتشاف المعلومات التي تكشفها خدمة SNMP، خصوصًا عند مراجعة الإعدادات الأمنية للبنية التحتية.",
+    "use_cases": [
+      "SNMP Auditing",
+      "Network Enumeration",
+      "Infrastructure Security",
+      "Device Discovery",
+      "Security Assessment"
+    ],
+    "installation": "sudo apt update && sudo apt install snmpcheck",
+    "basic_usage": "snmpcheck --help",
+    "examples": [
+      "snmpcheck --help",
+      "اختبار جهاز SNMP تجريبي",
+      "مراجعة المعلومات المكشوفة من جهاز تملكه"
+    ],
+    "legal_note": "استخدم SNMPcheck فقط على أجهزة الشبكة المصرح لك بتقييمها.",
+    "img": [
+      "https://www.kali.org/tools/snmpcheck/images/snmpcheck-logo.svg"
+    ]
+  },
+  {
+    "id": "smbmap",
+    "name": "SMBMap",
+    "category": "Windows Enumeration",
+    "importance": "SMBMap أداة متخصصة في تقييم خدمات SMB ومشاركة الملفات في بيئات Windows وSamba. تساعد في معرفة المشاركات والصلاحيات التي يمكن الوصول إليها ومراجعة إعدادات SMB داخل الشبكات الداخلية. وهي مفيدة جدًا في تدقيق Active Directory والأنظمة التي تعتمد على مشاركة الملفات.",
+    "use_cases": [
+      "SMB Enumeration",
+      "Windows Security",
+      "Share Auditing",
+      "Active Directory Labs",
+      "Network Security"
+    ],
+    "installation": "sudo apt update && sudo apt install smbmap",
+    "basic_usage": "smbmap -h",
+    "examples": [
+      "smbmap -h",
+      "اختبار Samba داخل مختبر",
+      "مراجعة صلاحيات المشاركات في شبكة تملكها"
+    ],
+    "legal_note": "SMBMap يمكنه الوصول إلى معلومات وملفات الشبكات؛ استخدمه فقط على البيئات المصرح بها.",
+    "img": [
+      "https://www.kali.org/tools/smbmap/images/smbmap-logo.svg"
+    ]
+  },
+  {
+    "id": "cisco-auditing-tool",
+    "name": "Cisco Auditing Tool",
+    "category": "Network Auditing",
+    "importance": "Cisco Auditing Tool أداة مخصصة للمساعدة في مراجعة بعض إعدادات أجهزة Cisco والخدمات المرتبطة بها. تستخدم في عمليات التدقيق الأمني للبنية التحتية الشبكية للتأكد من أن إعدادات الأجهزة لا تكشف معلومات غير ضرورية أو تستخدم إعدادات ضعيفة.",
+    "use_cases": [
+      "Cisco Security Audit",
+      "Network Infrastructure",
+      "Configuration Review",
+      "Network Hardening",
+      "Security Assessment"
+    ],
+    "installation": "sudo apt update && sudo apt install cisco-auditing-tool",
+    "basic_usage": "CAT --help",
+    "examples": [
+      "CAT --help",
+      "مراجعة جهاز Cisco في مختبر",
+      "اختبار إعدادات شبكة تملكها"
+    ],
+    "legal_note": "نفذ عمليات التدقيق فقط على أجهزة الشبكات التي لديك صلاحية إدارتها أو اختبارها.",
+    "img": [
+      "https://www.kali.org/tools/cisco-auditing-tool/images/cisco-auditing-tool-logo.svg"
+    ]
+  },
+  {
+    "id": "dmitry",
+    "name": "Dmitry",
+    "category": "Information Gathering",
+    "importance": "Dmitry أداة تجمع مجموعة من معلومات OSINT والاستطلاع الأساسية المتعلقة بالنطاقات والمضيفين. تساعد في تكوين صورة أولية عن الهدف قبل الانتقال إلى مراحل تحليل أكثر تخصصًا، وتناسب المختبرات التعليمية التي تشرح منهجية Reconnaissance.",
+    "use_cases": [
+      "Information Gathering",
+      "OSINT",
+      "Domain Reconnaissance",
+      "Security Assessment",
+      "Learning Recon"
+    ],
+    "installation": "sudo apt update && sudo apt install dmitry",
+    "basic_usage": "dmitry --help",
+    "examples": [
+      "dmitry --help",
+      "جمع معلومات عن نطاق تملكه",
+      "مراجعة المعلومات العامة لنظام تجريبي"
+    ],
+    "legal_note": "استخدم Dmitry على الأهداف التي تملك تصريحًا بفحصها فقط.",
+    "img": [
+      "https://www.kali.org/tools/dmitry/images/dmitry-logo.svg"
+    ]
+  },
+  {
+    "id": "fcrackzip",
+    "name": "Fcrackzip",
+    "category": "Password Auditing",
+    "importance": "Fcrackzip أداة لتدقيق حماية ملفات ZIP بكلمات المرور داخل البيئات المصرح بها. تستخدم في المختبرات لفهم أهمية كلمات المرور القوية وحماية الملفات المضغوطة، كما يمكن لمسؤولي الأنظمة استخدامها في استعادة الوصول إلى ملفاتهم الخاصة وفقًا للسياسات المعتمدة.",
+    "use_cases": [
+      "ZIP Password Auditing",
+      "File Security",
+      "Password Security",
+      "Digital Forensics",
+      "CTF"
+    ],
+    "installation": "sudo apt update && sudo apt install fcrackzip",
+    "basic_usage": "fcrackzip --help",
+    "examples": [
+      "fcrackzip --help",
+      "اختبار ملف ZIP تجريبي",
+      "تقييم قوة كلمة مرور ملف تملكه"
+    ],
+    "legal_note": "لا تستخدم Fcrackzip على ملفات ZIP لا تملك صلاحية الوصول إليها.",
+    "img": [
+      "https://www.kali.org/tools/fcrackzip/images/fcrackzip-logo.svg"
+    ]
+  },
+  {
+    "id": "ophcrack",
+    "name": "Ophcrack",
+    "category": "Password Auditing",
+    "importance": "Ophcrack أداة لتدقيق بعض أنواع Windows password hashes باستخدام تقنيات مخصصة مثل Rainbow Tables. تستخدم في البيئات التعليمية والجنائية المصرح بها لفهم ضعف كلمات المرور القديمة وتقييم سياسات المصادقة.",
+    "use_cases": [
+      "Windows Password Auditing",
+      "Password Security",
+      "Digital Forensics",
+      "Security Research",
+      "Training Labs"
+    ],
+    "installation": "sudo apt update && sudo apt install ophcrack",
+    "basic_usage": "ophcrack --help",
+    "examples": [
+      "ophcrack --help",
+      "اختبار hashes تجريبية",
+      "دراسة مفهوم Rainbow Tables"
+    ],
+    "legal_note": "استخدم Ophcrack فقط على بيانات اعتماد وhashes تملك تصريحًا قانونيًا لاختبارها.",
+    "img": [
+      "https://www.kali.org/tools/ophcrack/images/ophcrack-logo.svg"
+    ]
+  }
+    ]
