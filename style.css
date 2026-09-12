@@ -839,9 +839,9 @@ a {
 
 .card-image {
 
-    width: 100%;
+    width: 50%;
 
-    height: 100%;
+    height: 50%;
 
     object-fit: cover;
 
@@ -1411,7 +1411,7 @@ a {
 
     .card-image-wrap {
 
-        height: 120px;
+        height: 220px;
 
     }
 
