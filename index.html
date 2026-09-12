@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kali Tools بالعربي | دليل أدوات Kali Linux واستخداماتها</title>
+
+<meta name="description" content="دليل أدوات Kali Linux بالعربي. اكتشف أدوات الأمن السيبراني واختبار الاختراق وفحص الشبكات وتحليل الويب والـOSINT والـForensics مع شرح الاستخدام والتثبيت والأوامر والأمثلة.">
+
+<meta name="keywords" content="Kali Linux, Kali Tools, أدوات كالي لينكس, أدوات الأمن السيبراني, أدوات اختبار الاختراق, Cyber Security, Penetration Testing, Nmap, Metasploit, Burp Suite, Wireshark, OSINT">
+
+<meta name="author" content="Kali Tools بالعربي">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<link rel="canonical" href="https://YOUR-DOMAIN.com/">
+
+<link rel="icon" type="image/jpeg" href="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg">
+
+<link rel="apple-touch-icon" href="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg">
+
+<meta name="theme-color" content="#070a08">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:site_name" content="Kali Tools بالعربي">
+<meta property="og:title" content="Kali Tools بالعربي | دليل أدوات Kali Linux">
+<meta property="og:description" content="دليل عربي لأدوات Kali Linux مع شرح الوظائف والتثبيت والاستخدام والأمثلة والتصنيفات.">
+<meta property="og:url" content="https://YOUR-DOMAIN.com/">
+<meta property="og:image" content="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg">
+<meta property="og:image:alt" content="Kali Tools بالعربي">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kali Tools بالعربي | دليل أدوات Kali Linux">
+<meta name="twitter:description" content="اكتشف أدوات Kali Linux واستخداماتها وأوامرها وتصنيفاتها في دليل عربي واحد.">
+<meta name="twitter:image" content="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kali Tools بالعربي",
+    "alternateName": "Kali Tools Arabic",
+    "url": "https://YOUR-DOMAIN.com/",
+    "description": "دليل عربي لأدوات Kali Linux والأمن السيبراني واختبار الاختراق.",
+    "inLanguage": "ar"
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kali Tools بالعربي",
+    "url": "https://YOUR-DOMAIN.com/",
+    "logo": "https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+<div class="nav-container">
+
+<a href="./" class="brand">
+
+<img
+src="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"
+class="brand-logo"
+alt="Kali Tools بالعربي">
+
+<div class="brand-text">
+
+<strong>Kali Tools</strong>
+
+<span>دليل أدوات الأمن السيبراني</span>
+
+</div>
+
+</a>
+
+
+<nav class="desktop-nav">
+
+<button class="nav-link active" data-category="الكل">
+الكل
+</button>
+
+<button class="nav-link" data-category="Information Gathering">
+Information Gathering
+</button>
+
+<button class="nav-link" data-category="Network Scanning">
+Network Scanning
+</button>
+
+<button class="nav-link" data-category="Web">
+Web
+</button>
+
+<button class="nav-link" data-category="Vulnerability">
+Vulnerability
+</button>
+
+<button class="nav-link" data-category="Passwords">
+Passwords
+</button>
+
+</nav>
+
+
+<button class="mobile-menu" id="mobileMenu">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+
+<div class="mobile-nav" id="mobileNav">
+
+<button data-category="الكل">الكل</button>
+
+<button data-category="Information Gathering">
+Information Gathering
+</button>
+
+<button data-category="Network Scanning">
+Network Scanning
+</button>
+
+<button data-category="Web">
+Web
+</button>
+
+<button data-category="Vulnerability">
+Vulnerability
+</button>
+
+<button data-category="Passwords">
+Passwords
+</button>
+
+<button data-category="Wireless">
+Wireless
+</button>
+
+<button data-category="Reverse Engineering">
+Reverse Engineering
+</button>
+
+<button data-category="Forensics">
+Forensics
+</button>
+
+<button data-category="OSINT">
+OSINT
+</button>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+Kali Linux Security Tools
+</div>
+
+
+<h1>
+
+اكتشف أدوات
+
+<span>Kali Linux</span>
+
+في مكان واحد
+
+</h1>
+
+
+<p>
+
+دليل عربي لأدوات الأمن السيبراني واختبار الاختراق
+وفحص الشبكات وتحليل الويب والـOSINT والهندسة العكسية.
+
+</p>
+
+
+<div class="search-box">
+
+<div class="search-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M21 21l-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0z"/>
+
+</svg>
+
+</div>
+
+
+<input
+type="search"
+id="searchInput"
+placeholder="ابحث عن أداة مثل Nmap أو Wireshark..."
+autocomplete="off">
+
+
+<button id="clearSearch" class="clear-search">
+×
+</button>
+
+</div>
+
+
+<div class="quick-stats">
+
+<div>
+
+<strong id="totalTools">0</strong>
+
+<span>أداة</span>
+
+</div>
+
+
+<div>
+
+<strong id="totalCategories">0</strong>
+
+<span>تصنيف</span>
+
+</div>
+
+
+<div>
+
+<strong>Linux</strong>
+
+<span>Platform</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AD -->
+
+<section class="ad-section ad-top">
+
+<div class="ad-label">
+إعلان
+</div>
+
+<div class="ad-container ad-468">
+
+<script>
+
+atOptions = {
+
+'key' : 'dcff8a2cffdf0642c627a5bacf3a04fd',
+
+'format' : 'iframe',
+
+'height' : 60,
+
+'width' : 468,
+
+'params' : {}
+
+};
+
+</script>
+
+<script src="https://www.highperformanceformat.com/dcff8a2cffdf0642c627a5bacf3a04fd/invoke.js"></script>
+
+</div>
+
+</section>
+
+
+<section class="filters-section">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-label">
+استكشف
+</span>
+
+<h2>
+أدوات Kali Linux
+</h2>
+
+</div>
+
+
+<select id="sortSelect">
+
+<option value="default">
+الأهمية
+</option>
+
+<option value="name">
+الاسم
+</option>
+
+</select>
+
+</div>
+
+
+<div class="category-scroll" id="categoryScroll">
+
+<button class="category-chip active" data-category="الكل">
+الكل
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="tools-section">
+
+<div class="container">
+
+
+<div class="results-bar">
+
+<span id="resultsText">
+جميع الأدوات
+</span>
+
+</div>
+
+
+<div id="toolsGrid" class="tools-grid"></div>
+
+
+<div class="ad-section ad-between">
+
+<div class="ad-label">
+إعلان
+</div>
+
+<div class="ad-container ad-responsive">
+
+<script
+async="async"
+data-cfasync="false"
+src="https://pl28700474.effectivegatecpm.com/596225155ab3da796681d551cb4b7cf4/invoke.js">
+</script>
+
+<div id="container-596225155ab3da796681d551cb4b7cf4">
+</div>
+
+</div>
+
+</div>
+
+
+<div id="loading" class="loading-state">
+
+<div class="loader"></div>
+
+<p>
+جاري تحميل الأدوات...
+</p>
+
+</div>
+
+
+<div id="emptyState" class="empty-state hidden">
+
+<div class="empty-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M10 3H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/>
+
+<path d="M15 3h6v6"/>
+
+<path d="M21 3l-9 9"/>
+
+</svg>
+
+</div>
+
+
+<h3>
+لم نجد أدوات
+</h3>
+
+
+<p>
+جرب اسم أداة أو تصنيفًا مختلفًا.
+</p>
+
+
+<button id="resetFilters">
+إعادة ضبط البحث
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="ad-section ad-small-section">
+
+<div class="ad-label">
+إعلان
+</div>
+
+<div class="ad-container ad-160">
+
+<script>
+
+atOptions = {
+
+'key' : '0b7539a5227dc7b69da2ea94b0521ab6',
+
+'format' : 'iframe',
+
+'height' : 300,
+
+'width' : 160,
+
+'params' : {}
+
+};
+
+</script>
+
+<script src="https://www.highperformanceformat.com/0b7539a5227dc7b69da2ea94b0521ab6/invoke.js"></script>
+
+</div>
+
+</section>
+
+
+<section class="seo-section">
+
+<div class="container seo-container">
+
+<span class="section-label">
+Kali Tools
+</span>
+
+
+<h2>
+دليل أدوات Kali Linux للأمن السيبراني
+</h2>
+
+
+<p>
+
+يوفر هذا الموقع دليلًا عربيًا لأدوات Kali Linux
+المستخدمة في مجالات الأمن السيبراني واختبار الاختراق
+وفحص الشبكات وتحليل تطبيقات الويب والاستطلاع الرقمي
+والهندسة العكسية والتحليل الجنائي الرقمي.
+
+</p>
+
+
+<p>
+
+يمكنك البحث عن الأدوات حسب الاسم أو التصنيف،
+والاطلاع على وظيفة كل أداة وطريقة تثبيتها وأهم
+الاستخدامات والأوامر والأمثلة والمصادر الرسمية.
+
+</p>
+
+
+<p>
+
+هذا الموقع دليل تعليمي مستقل وليس موقعًا رسميًا تابعًا
+لمشروع Kali Linux أو Offensive Security.
+
+</p>
+
+</div>
+
+</section>
+
+
+<section class="ad-section ad-bottom">
+
+<div class="ad-label">
+إعلان
+</div>
+
+<div class="ad-container ad-responsive">
+
+<script src="https://pl28700469.effectivegatecpm.com/89/a6/b8/89a6b8558224cd67c0822829d68a87ad.js"></script>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+<div class="container footer-content">
+
+<div class="footer-brand">
+
+<img
+src="https://i.ibb.co/842QM2Ms/da3c60c60705ea25ae03d07cd940ff2d.jpg"
+alt="Kali Tools بالعربي">
+
+
+<div>
+
+<strong>
+Kali Tools بالعربي
+</strong>
+
+<span>
+دليل تعليمي مستقل لأدوات الأمن السيبراني
+</span>
+
+</div>
+
+</div>
+
+
+<div class="footer-copy">
+
+© <span id="year"></span>
+Kali Tools
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script src="https://pl28700485.effectivegatecpm.com/ad/c0/62/adc06235d53a0b6f378838879d3f116a.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+  </html>
